@@ -1000,10 +1000,10 @@
 					"-framework",
 					"\"UIKit\"",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.giftapp2.GiftApp;
+				PRODUCT_BUNDLE_IDENTIFIER = com.boxxit.boxxit;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "5f3152e1-eb7e-46d7-a55b-12e62927b44a";
-				PROVISIONING_PROFILE_SPECIFIER = GiftAppDevelopment;
+				PROVISIONING_PROFILE = "fd13eb20-eac4-4693-bd2e-92812624dd59";
+				PROVISIONING_PROFILE_SPECIFIER = BoxxitDevelopment;
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
@@ -1067,10 +1067,10 @@
 					"-framework",
 					"\"UIKit\"",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.giftapp2.GiftApp;
+				PRODUCT_BUNDLE_IDENTIFIER = com.boxxit.boxxit;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "5f3152e1-eb7e-46d7-a55b-12e62927b44a";
-				PROVISIONING_PROFILE_SPECIFIER = GiftAppDevelopment;
+				PROVISIONING_PROFILE = "fd13eb20-eac4-4693-bd2e-92812624dd59";
+				PROVISIONING_PROFILE_SPECIFIER = BoxxitDevelopment;
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
