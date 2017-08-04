@@ -23,9 +23,8 @@ extension UserWorker {
         let task = NetworkTask()
         return task.execute(withInput: request)
             .flatMap { fbData -> Single<FacebookProfile> in
-                let request = ParseRequest(withData: fbData)
                 let task = ParseFacebookProfileTask()
-                return task.execute(withInput: request)
+                return task.execute(withInput: fbData)
             }
             .do(onNext: { profile in
                 DataStore.shared.save(user: profile, forId: id)
@@ -66,9 +65,8 @@ extension UserWorker {
         return task.execute(withInput: request)
             .flatMap { friendData -> Single<FacebookData<FacebookProfile>> in
                 
-                let request = ParseRequest(withData: friendData)
                 let task = ParseFacebookDataTask<FacebookProfile>()
-                return task.execute(withInput: request)
+                return task.execute(withInput: friendData)
         }
     }
 }

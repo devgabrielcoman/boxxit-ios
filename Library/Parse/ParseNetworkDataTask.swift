@@ -4,15 +4,15 @@ import ObjectMapper
 
 class ParseNetworkDataTask<Data: Mappable>: Task {
 
-    typealias Input = ParseRequest
+    typealias Input = String
     typealias Output = BackendData<Data>
     typealias Result = Single<Output>
     
-    func execute(withInput input: ParseRequest) -> Single<BackendData<Data>> {
+    func execute(withInput input: String) -> Single<BackendData<Data>> {
         
         return Single<BackendData<Data>>.create { single -> Disposable in
             
-            if let data = BackendData<Data>(JSONString: input.rawData) {
+            if let data = BackendData<Data>(JSONString: input) {
                 single(.success(data))
             } else {
                 single(.error(BoxitError.ParseError))

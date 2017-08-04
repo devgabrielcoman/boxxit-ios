@@ -4,7 +4,7 @@ import ObjectMapper
 class BackendData <T:Mappable> : Mappable {
 
     var data: [T] = []
-    var total: Int?
+    var count: Int?
     var done: Bool?
     
     required init?(map: Map) {
@@ -13,7 +13,7 @@ class BackendData <T:Mappable> : Mappable {
     
     public func mapping(map: Map) {
         data <- map["data"]
-        total <- map["total"]
+        count <- map["count"]
         done <- map["done"]
     }
 }

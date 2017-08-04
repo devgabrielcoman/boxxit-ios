@@ -77,7 +77,7 @@ public class NetworkRequest: Request {
         switch operation {
         case .getProfileFromFacebook(_):
             return [
-                "fields" : "email,gender,name,picture.width(300),first_name,last_name,birthday,friends{id,name,email,birthday,picture.width(150)}",
+                "fields" : "email,gender,name,picture.width(300),first_name,last_name,birthday,friends{id}",
                 "access_token": token
             ]
         case .getFriendsFromFacebook(_, let offset):

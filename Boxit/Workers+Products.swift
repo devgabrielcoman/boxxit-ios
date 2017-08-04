@@ -22,9 +22,8 @@ extension ProductsWorker {
         return task.execute(withInput: request)
             .flatMap { productData -> Single<BackendData<Product>> in
                 
-                let request = ParseRequest(withData: productData)
                 let task = ParseNetworkDataTask<Product>()
-                return task.execute(withInput: request)
+                return task.execute(withInput: productData)
             }
             .asObservable()
             .flatMap { data -> Observable<Product> in
@@ -42,9 +41,8 @@ extension ProductsWorker {
         return task.execute(withInput: request)
             .flatMap { productData -> Single<BackendData<Product>> in
                 
-                let request = ParseRequest(withData: productData)
                 let task = ParseNetworkDataTask<Product>()
-                return task.execute(withInput: request)
+                return task.execute(withInput: productData)
             }
             .asObservable()
             .flatMap { data -> Observable<Product> in

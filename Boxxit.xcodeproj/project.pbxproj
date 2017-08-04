@@ -96,7 +96,6 @@
 		1BFA4CC81ED589FB00E00297 /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BFA4CC01ED589FB00E00297 /* String+Extensions.swift */; };
 		1BFA4CC91ED589FB00E00297 /* UIColor+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BFA4CC11ED589FB00E00297 /* UIColor+Extensions.swift */; };
 		1BFA4CCA1ED589FB00E00297 /* UnicodeScalar+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BFA4CC21ED589FB00E00297 /* UnicodeScalar+Extensions.swift */; };
-		1BFA4CCC1ED591F800E00297 /* ParseRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BFA4CCB1ED591F800E00297 /* ParseRequest.swift */; };
 		55AD50554BE5FD175E4F5161 /* Pods_Boxxit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 183F6C9D7A2EC67444282C11 /* Pods_Boxxit.framework */; };
 /* End PBXBuildFile section */
 
@@ -193,7 +192,6 @@
 		1BFA4CC01ED589FB00E00297 /* String+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Extensions.swift"; sourceTree = "<group>"; };
 		1BFA4CC11ED589FB00E00297 /* UIColor+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Extensions.swift"; sourceTree = "<group>"; };
 		1BFA4CC21ED589FB00E00297 /* UnicodeScalar+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UnicodeScalar+Extensions.swift"; sourceTree = "<group>"; };
-		1BFA4CCB1ED591F800E00297 /* ParseRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParseRequest.swift; sourceTree = "<group>"; };
 		1BFEA6CC1E89C1980023807D /* Boxxit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Boxxit.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5793E92E3FA1FE939A4918A9 /* Pods-Boxxit.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Boxxit.release.xcconfig"; path = "Pods/Target Support Files/Pods-Boxxit/Pods-Boxxit.release.xcconfig"; sourceTree = "<group>"; };
 		A2F8AB8AD04C53BCD6BA6783 /* Pods-Boxxit.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Boxxit.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Boxxit/Pods-Boxxit.debug.xcconfig"; sourceTree = "<group>"; };
@@ -497,7 +495,6 @@
 			isa = PBXGroup;
 			children = (
 				1BE7B45C1EC5DB890085427A /* Models */,
-				1BFA4CCB1ED591F800E00297 /* ParseRequest.swift */,
 				1BE7B4621EC5DB890085427A /* ParseFacebookDataTask.swift */,
 				1BB3F8111EE6065E00744B26 /* ParseNetworkDataTask.swift */,
 				1BE7B4631EC5DB890085427A /* ParseFacebookProfileTask.swift */,
@@ -786,7 +783,6 @@
 				1BB1322B1F2CC6270096B56C /* TutorialFriendsController.swift in Sources */,
 				1BE7B4691EC5DB890085427A /* Task.swift in Sources */,
 				1BE7B4651EC5DB890085427A /* FacebookAuthTask.swift in Sources */,
-				1BFA4CCC1ED591F800E00297 /* ParseRequest.swift in Sources */,
 				1B7229C61EA6A9CF00B9897F /* IntroController.swift in Sources */,
 				1B2A7A071EF81E5400552DE6 /* NetworkRequest.swift in Sources */,
 				1BAF66351EED774000F0AB4C /* EventsRouter.swift in Sources */,

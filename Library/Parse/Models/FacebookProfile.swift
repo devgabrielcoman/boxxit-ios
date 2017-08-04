@@ -9,11 +9,9 @@ public class FacebookProfile: Mappable {
     
     public var email: String?
     public var firstName: String?
-    public var lastName: String?
     public var gender: String?
     public var picture: String?
-    public var cover: String?
-    public var friends: [FacebookProfile] = []
+    public var friends: [Any] = []
     
     required public init?(map: Map) {
         // validation
@@ -35,10 +33,8 @@ public class FacebookProfile: Mappable {
         
         email <- map["email"]
         firstName <- map["first_name"]
-        lastName <- map["last_name"]
         gender <- map["gender"]
         picture <- map["picture.data.url"]
-        cover <- map["cover.source"]
         friends <- map["friends.data"]
     }
 }
@@ -79,13 +75,6 @@ extension FacebookProfile {
     var pictureUrl: URL? {
         get {
             guard let pic = picture else { return nil }
-            return URL(string: pic)
-        }
-    }
-    
-    var coverUrl: URL? {
-        get {
-            guard let pic = cover else { return pictureUrl }
             return URL(string: pic)
         }
     }
