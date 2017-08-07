@@ -71,7 +71,7 @@ extension ExploreController: BusinessLogic {
                         self.products += models
                         
                         // somehow still no products - means it's error
-                        if models.count == 0 {
+                        if self.products.count == 0 {
                             let vm = ViewModels.DataLoadError(hasRetry: true, errorText: "Product Error Message".localized)
                             self.setState(state: State.Explore.error(withViewModel: vm))
                         }

@@ -41,7 +41,7 @@
         <!--Intro Controller-->
         <scene sceneID="Zo9-cl-d6Z">
             <objects>
-                <viewController id="DqW-9W-lk2" customClass="IntroController" customModule="Boxit" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="DqW-9W-lk2" customClass="IntroController" customModule="Boxxit" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Cvh-T0-S46"/>
                         <viewControllerLayoutGuide type="bottom" id="AuH-Da-aZn"/>
@@ -96,7 +96,7 @@
         <!--Load Controller-->
         <scene sceneID="CEz-tM-Y2H">
             <objects>
-                <viewController id="7rd-t4-Q7i" customClass="LoadController" customModule="Boxit" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="7rd-t4-Q7i" customClass="LoadController" customModule="Boxxit" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="yUH-UD-grC"/>
                         <viewControllerLayoutGuide type="bottom" id="bpk-J7-jnL"/>
@@ -147,7 +147,7 @@
         <!--Main Controller-->
         <scene sceneID="ibp-gd-IjV">
             <objects>
-                <viewController id="FU4-c1-Ce3" customClass="MainController" customModule="Boxit" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="FU4-c1-Ce3" customClass="MainController" customModule="Boxxit" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="3xi-1e-oC1"/>
                         <viewControllerLayoutGuide type="bottom" id="HNF-08-bKo"/>
@@ -193,7 +193,7 @@
         <!--Login Controller-->
         <scene sceneID="DUn-Ye-Flp">
             <objects>
-                <viewController id="BTd-Zf-PIA" customClass="LoginController" customModule="Boxit" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BTd-Zf-PIA" customClass="LoginController" customModule="Boxxit" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="1OD-Hy-Jl3"/>
                         <viewControllerLayoutGuide type="bottom" id="YTs-WQ-lRp"/>
@@ -274,7 +274,7 @@
         <!--User Controller-->
         <scene sceneID="6mI-ws-cVg">
             <objects>
-                <viewController storyboardIdentifier="UserControllerID" id="AWS-OB-3z2" customClass="UserController" customModule="Boxit" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="UserControllerID" id="AWS-OB-3z2" customClass="UserController" customModule="Boxxit" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="5zT-qk-nlC"/>
                         <viewControllerLayoutGuide type="bottom" id="zKH-B0-4Y1"/>
@@ -320,7 +320,7 @@
         <!--Explore Controller-->
         <scene sceneID="liE-5v-hLI">
             <objects>
-                <viewController id="nHD-2z-Xjb" customClass="ExploreController" customModule="Boxit" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="nHD-2z-Xjb" customClass="ExploreController" customModule="Boxxit" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="6xx-8M-gzi"/>
                         <viewControllerLayoutGuide type="bottom" id="09x-oV-3QY"/>
@@ -333,7 +333,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="517"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="ProductRowID" id="Tal-Pm-OqM" customClass="ProductRow" customModule="Boxit" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="ProductRowID" id="Tal-Pm-OqM" customClass="ProductRow" customModule="Boxxit" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="370"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Tal-Pm-OqM" id="3wZ-iu-Yqs">
@@ -378,7 +378,7 @@
                                                             <color key="textColor" red="1" green="0.28235294117647058" blue="0.28235294117647058" alpha="1" colorSpace="calibratedRGB"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="445-Tk-fdD" customClass="RxButton" customModule="Boxit" customModuleProvider="target">
+                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="445-Tk-fdD" customClass="RxButton" customModule="Boxxit" customModuleProvider="target">
                                                             <rect key="frame" x="0.0" y="0.0" width="160" height="28"/>
                                                         </button>
                                                     </subviews>
@@ -407,7 +407,7 @@
                                                         </userDefinedRuntimeAttribute>
                                                     </userDefinedRuntimeAttributes>
                                                 </view>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="i5I-4r-VHv" customClass="RxButton" customModule="Boxit" customModuleProvider="target">
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="i5I-4r-VHv" customClass="RxButton" customModule="Boxxit" customModuleProvider="target">
                                                     <rect key="frame" x="66" y="317" width="25" height="22"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="25" id="5YG-Se-vbd"/>
@@ -511,7 +511,7 @@
         <!--Profile Header Controller-->
         <scene sceneID="Z4n-Cj-UGu">
             <objects>
-                <viewController id="XuC-Po-dTO" customClass="ProfileHeaderController" customModule="Boxit" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="XuC-Po-dTO" customClass="ProfileHeaderController" customModule="Boxxit" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="AXC-ut-doN"/>
                         <viewControllerLayoutGuide type="bottom" id="1iR-Un-3b2"/>
@@ -620,7 +620,7 @@
         <!--Favourite Controller-->
         <scene sceneID="c8G-je-PHn">
             <objects>
-                <viewController id="oFV-3q-6Th" customClass="FavouriteController" customModule="Boxit" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="oFV-3q-6Th" customClass="FavouriteController" customModule="Boxxit" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="3py-3m-uzd"/>
                         <viewControllerLayoutGuide type="bottom" id="6df-dG-EJ4"/>
@@ -642,7 +642,7 @@
                                 <rect key="frame" x="0.0" y="70" width="375" height="597"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="FavouriteRowId" rowHeight="152" id="w5D-gV-3Q9" customClass="FavouriteRow" customModule="Boxit" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="FavouriteRowId" rowHeight="152" id="w5D-gV-3Q9" customClass="FavouriteRow" customModule="Boxxit" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="152"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="w5D-gV-3Q9" id="zcu-aW-QXp">
@@ -748,7 +748,7 @@
         <!--Profile Main Controller-->
         <scene sceneID="dyv-jk-J5F">
             <objects>
-                <viewController id="3oP-Hq-aI8" customClass="ProfileMainController" customModule="Boxit" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="3oP-Hq-aI8" customClass="ProfileMainController" customModule="Boxxit" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="1Ys-1e-RZZ"/>
                         <viewControllerLayoutGuide type="bottom" id="vIm-EL-Dff"/>
@@ -864,7 +864,7 @@
         <!--Events Controller-->
         <scene sceneID="Ez1-Ff-dbH">
             <objects>
-                <viewController id="k8x-Rm-DZq" customClass="EventsController" customModule="Boxit" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="k8x-Rm-DZq" customClass="EventsController" customModule="Boxxit" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="EDg-zv-yGk"/>
                         <viewControllerLayoutGuide type="bottom" id="8ak-YP-YnO"/>
@@ -883,7 +883,7 @@
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="EventsCellId" id="1oD-4N-WaI" customClass="EventsCell" customModule="Boxit" customModuleProvider="target">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="EventsCellId" id="1oD-4N-WaI" customClass="EventsCell" customModule="Boxxit" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="160" height="200"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
@@ -956,7 +956,7 @@
                                             <outlet property="rightSeparator" destination="pcU-s7-dBs" id="vUk-l0-QgE"/>
                                         </connections>
                                     </collectionViewCell>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="InviteCellId" id="WGc-c6-BDV" customClass="InviteCell" customModule="Boxit" customModuleProvider="target">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="InviteCellId" id="WGc-c6-BDV" customClass="InviteCell" customModule="Boxxit" customModuleProvider="target">
                                         <rect key="frame" x="215" y="0.0" width="160" height="200"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
@@ -1058,7 +1058,7 @@
         <!--Delegate-->
         <scene sceneID="wFR-1A-Jxz">
             <objects>
-                <viewController id="Wa1-Md-sPk" customClass="SliderController" customModule="Boxit" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="Wa1-Md-sPk" customClass="SliderController" customModule="Boxxit" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="eJG-Vc-ZOR"/>
                         <viewControllerLayoutGuide type="bottom" id="P8g-jN-4Be"/>
@@ -1140,7 +1140,7 @@
         <!--Error Controller-->
         <scene sceneID="11y-GT-nwv">
             <objects>
-                <viewController id="Y5j-Zd-XmF" customClass="ErrorController" customModule="Boxit" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="Y5j-Zd-XmF" customClass="ErrorController" customModule="Boxxit" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="K4C-uB-8zt"/>
                         <viewControllerLayoutGuide type="bottom" id="8Zn-fh-UJI"/>
@@ -1202,7 +1202,7 @@
         <!--Tutorial Main Controller-->
         <scene sceneID="KcV-0a-Caf">
             <objects>
-                <viewController storyboardIdentifier="TutorialMainControllerID" id="Prs-lb-gd1" customClass="TutorialMainController" customModule="Boxit" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="TutorialMainControllerID" id="Prs-lb-gd1" customClass="TutorialMainController" customModule="Boxxit" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="HKg-Oz-Z0O"/>
                         <viewControllerLayoutGuide type="bottom" id="NrD-cU-80F"/>
@@ -1303,7 +1303,7 @@
         <!--Tutorial Welcome Controller-->
         <scene sceneID="KSi-cr-9Vh">
             <objects>
-                <viewController id="vkq-Ha-BG7" customClass="TutorialWelcomeController" customModule="Boxit" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="vkq-Ha-BG7" customClass="TutorialWelcomeController" customModule="Boxxit" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="L7T-hO-O86"/>
                         <viewControllerLayoutGuide type="bottom" id="enl-Qg-nyB"/>
@@ -1403,7 +1403,7 @@ Welcome to Boxxit, the app that helps you find interesting gift ideas for your f
         <!--Tutorial Profile Controller-->
         <scene sceneID="wtp-lz-B1i">
             <objects>
-                <viewController id="N3a-za-Asa" customClass="TutorialProfileController" customModule="Boxit" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="N3a-za-Asa" customClass="TutorialProfileController" customModule="Boxxit" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="J7M-5i-Ka6"/>
                         <viewControllerLayoutGuide type="bottom" id="MDl-9J-JbA"/>
@@ -1488,7 +1488,7 @@ Based on your likes and interests Boxxit has already prepared a list of gift ide
         <!--Tutorial Friends Controller-->
         <scene sceneID="6jo-vS-8dr">
             <objects>
-                <viewController id="HSd-72-Mxq" customClass="TutorialFriendsController" customModule="Boxit" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="HSd-72-Mxq" customClass="TutorialFriendsController" customModule="Boxxit" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="HyJ-b1-3AI"/>
                         <viewControllerLayoutGuide type="bottom" id="vj3-5f-x4h"/>
@@ -1573,7 +1573,7 @@ You can tap on any of them to see what gift ideas Boxxit suggests.</string>
         <!--Tutorial Explore Controller-->
         <scene sceneID="eAZ-QL-y6c">
             <objects>
-                <viewController id="cZA-7m-S1W" customClass="TutorialExploreController" customModule="Boxit" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="cZA-7m-S1W" customClass="TutorialExploreController" customModule="Boxxit" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="f2o-JW-axd"/>
                         <viewControllerLayoutGuide type="bottom" id="Xfp-74-t2q"/>
@@ -1658,7 +1658,7 @@ We hope you like them and find one that's just right!  </string>
         <!--Tutorial Notifications Controller-->
         <scene sceneID="K4S-no-is3">
             <objects>
-                <viewController id="xTm-Up-BvU" customClass="TutorialNotificationsController" customModule="Boxit" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="xTm-Up-BvU" customClass="TutorialNotificationsController" customModule="Boxxit" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="hDk-BN-Q8Y"/>
                         <viewControllerLayoutGuide type="bottom" id="O5n-YY-zQW"/>
@@ -1763,7 +1763,7 @@ Or tap anywhere else to start using Boxxit!</string>
         <!--Tutorial No Friends Controller-->
         <scene sceneID="sOM-Op-pHy">
             <objects>
-                <viewController id="knE-6s-Ogb" customClass="TutorialNoFriendsController" customModule="Boxit" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="knE-6s-Ogb" customClass="TutorialNoFriendsController" customModule="Boxxit" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="dgT-E0-25W"/>
                         <viewControllerLayoutGuide type="bottom" id="JK9-4D-isk"/>
