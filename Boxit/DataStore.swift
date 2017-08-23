@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import FBSDKLoginKit
 
 class DataStore {
 
@@ -23,5 +24,9 @@ class DataStore {
     
     func get(userForId id: String) -> FacebookProfile? {
         return profiles[id]
+    }
+    
+    func getOwnId () -> String {
+        return FBSDKProfile.current().userID
     }
 }

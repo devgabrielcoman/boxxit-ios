@@ -217,6 +217,14 @@
 			path = Button;
 			sourceTree = "<group>";
 		};
+		1B20D6981F3B451F005C049C /* DataStore */ = {
+			isa = PBXGroup;
+			children = (
+				1B7341B41EEDAD5300ED0FEC /* DataStore.swift */,
+			);
+			name = DataStore;
+			sourceTree = "<group>";
+		};
 		1B4E56E21EE1CD2F00F67FC3 /* Favourites */ = {
 			isa = PBXGroup;
 			children = (
@@ -277,7 +285,8 @@
 		1B72299E1EA6A9CF00B9897F /* App */ = {
 			isa = PBXGroup;
 			children = (
-				1BAF660A1EEB49CF00F0AB4C /* Common */,
+				1B20D6981F3B451F005C049C /* DataStore */,
+				1BAF660A1EEB49CF00F0AB4C /* Workers */,
 				1B7229CD1EA6AB7600B9897F /* Controllers */,
 				1B7229CC1EA6AB6700B9897F /* Storyboards */,
 				1B7229CB1EA6AB5B00B9897F /* Meta */,
@@ -389,7 +398,7 @@
 			name = Fonts;
 			sourceTree = "<group>";
 		};
-		1BAF660A1EEB49CF00F0AB4C /* Common */ = {
+		1BAF660A1EEB49CF00F0AB4C /* Workers */ = {
 			isa = PBXGroup;
 			children = (
 				1BAF660B1EEB49D900F0AB4C /* Workers.swift */,
@@ -397,9 +406,8 @@
 				1B7341BA1EEDE70100ED0FEC /* Workers+Profile.swift */,
 				1B7341C01EEDE84200ED0FEC /* Workers+Products.swift */,
 				1BAF660D1EEB49DE00F0AB4C /* Models.swift */,
-				1B7341B41EEDAD5300ED0FEC /* DataStore.swift */,
 			);
-			name = Common;
+			name = Workers;
 			sourceTree = "<group>";
 		};
 		1BAF660F1EEB4A4A00F0AB4C /* Load */ = {
