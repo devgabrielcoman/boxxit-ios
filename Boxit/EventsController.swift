@@ -11,6 +11,7 @@ import RxCocoa
 import RxSwift
 import RxTableAndCollectionView
 import Kingfisher
+import FBSDKShareKit
 
 extension State {
     enum Events {
@@ -46,7 +47,7 @@ class EventsController: BaseController {
 
 //
 // MARK: Business Logic
-extension EventsController: BusinessLogic {
+extension EventsController: BusinessLogic, FBSDKAppInviteDialogDelegate {
     
     func getEvents () {
         
@@ -102,14 +103,19 @@ extension EventsController: BusinessLogic {
     
     func inviteAction() {
         
-        UserWorker.inviteUsers(fromViewController: self)
-            .catchErrorAndContinue { error in
-                // do nothing
-            }
-            .subscribeNext {
-                // do nothing
-            }
-            .addDisposableTo(disposeBag)
+        let request = InviteRequest()
+        let content = FBSDKAppInviteContent()
+        content.appLinkURL = request.inviteUrl
+        content.appInvitePreviewImageURL = request.previewUrl
+        FBSDKAppInviteDialog.show(from: self, with: content, delegate: self)
+    }
+    
+    public func appInviteDialog(_ appInviteDialog: FBSDKAppInviteDialog!, didCompleteWithResults results: [AnyHashable : Any]!) {
+        print("Results are \(results)")
+    }
+    
+    public func appInviteDialog(_ appInviteDialog: FBSDKAppInviteDialog!, didFailWithError error: Error!) {
+        print("Complete with error \(error)")
     }
 }
 

@@ -7,9 +7,9 @@
 	<key>AD_UNIT_ID_FOR_INTERSTITIAL_TEST</key>
 	<string>ca-app-pub-3940256099942544/4411468910</string>
 	<key>CLIENT_ID</key>
-	<string>851430220786-m7i311lbvriis90tsbrmorqpj8jn3178.apps.googleusercontent.com</string>
+	<string>851430220786-gnd1s5kk129qk4b9fpejctcoqu60so4d.apps.googleusercontent.com</string>
 	<key>REVERSED_CLIENT_ID</key>
-	<string>com.googleusercontent.apps.851430220786-m7i311lbvriis90tsbrmorqpj8jn3178</string>
+	<string>com.googleusercontent.apps.851430220786-gnd1s5kk129qk4b9fpejctcoqu60so4d</string>
 	<key>API_KEY</key>
 	<string>AIzaSyCAZokbGW_NBmT3j5mFnfoOzcCK7T3Hf8c</string>
 	<key>GCM_SENDER_ID</key>
@@ -17,7 +17,7 @@
 	<key>PLIST_VERSION</key>
 	<string>1</string>
 	<key>BUNDLE_ID</key>
-	<string>com.giftapp2.GiftApp</string>
+	<string>com.boxxit.boxxit</string>
 	<key>PROJECT_ID</key>
 	<string>giftapp-9c105</string>
 	<key>STORAGE_BUCKET</key>
@@ -33,7 +33,7 @@
 	<key>IS_SIGNIN_ENABLED</key>
 	<true/>
 	<key>GOOGLE_APP_ID</key>
-	<string>1:851430220786:ios:78916284e1028d82</string>
+	<string>1:851430220786:ios:a76bc57967b0b114</string>
 	<key>DATABASE_URL</key>
 	<string>https://giftapp-9c105.firebaseio.com</string>
 </dict>

@@ -21,9 +21,9 @@ public class FacebookProfile: Mappable {
         if map.JSON["name"] == nil {
             return nil
         }
-        if map.JSON["birthday"] == nil {
-            return nil
-        }
+//        if map.JSON["birthday"] == nil {
+//            return nil
+//        }
     }
     
     public func mapping(map: Map) {
@@ -43,27 +43,29 @@ public class FacebookProfile: Mappable {
 // birthday extensions
 extension FacebookProfile {
     
-    var birthdayDate: Date {
+    var birthdayDate: Date? {
         get {
             return Date.from(facebookDate: birthday)
         }
     }
     
-    var birthdayTime: TimeInterval {
-        get {
-            return birthdayDate.timeIntervalSince1970
-        }
-    }
-    
     var timeUntilBirthday: (distance: Int, interval: BirthdayInterval) {
         get {
-            return birthdayDate.timeUntilBirthday
+            if let birthdayDate = birthdayDate {
+                return birthdayDate.timeUntilBirthday
+            } else {
+                return (-1, BirthdayInterval.Invalid)
+            }
         }
     }
     
     var nextBirthday: String {
         get {
-            return birthdayDate.nextBirthday
+            if let birthdayDate = birthdayDate {
+                return birthdayDate.nextBirthday
+            } else {
+                return ""
+            }
         }
     }
 }

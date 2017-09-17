@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import FBSDKShareKit
 
 extension State {
     enum TutorialNoFriends {
@@ -29,7 +30,7 @@ class TutorialNoFriendsController: BaseController {
 
 //
 // MARK: Business Logic
-extension TutorialNoFriendsController: BusinessLogic {
+extension TutorialNoFriendsController: BusinessLogic, FBSDKAppInviteDialogDelegate {
     
     @IBAction func exploreAction(_ sender: Any) {
         TutorialDriver.shared.drivenAction?()
@@ -37,14 +38,19 @@ extension TutorialNoFriendsController: BusinessLogic {
     
     @IBAction func inviteAction(_ sender: Any) {
         
-        UserWorker.inviteUsers(fromViewController: self)
-            .catchErrorAndContinue { error in
-                // do nothing
-            }
-            .subscribeNext {
-                // do nothing
-            }
-            .addDisposableTo(disposeBag)
+        let request = InviteRequest()
+        let content = FBSDKAppInviteContent()
+        content.appLinkURL = request.inviteUrl
+        content.appInvitePreviewImageURL = request.previewUrl
+        FBSDKAppInviteDialog.show(from: self, with: content, delegate: self)
+    }
+    
+    public func appInviteDialog(_ appInviteDialog: FBSDKAppInviteDialog!, didCompleteWithResults results: [AnyHashable : Any]!) {
+        print("Results are \(results)")
+    }
+    
+    public func appInviteDialog(_ appInviteDialog: FBSDKAppInviteDialog!, didFailWithError error: Error!) {
+        print("Complete with error \(error)")
     }
 }
 

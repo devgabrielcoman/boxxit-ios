@@ -1,6 +1,7 @@
 import UIKit
 
 public enum BirthdayInterval: Int {
+    case Invalid = -1
     case Today = 0
     case Days = 1
     case Weeks = 2
@@ -10,7 +11,11 @@ public enum BirthdayInterval: Int {
 
 public extension Date {
     
-    public static func from(facebookDate date: String) -> Date {
+    public static func from(facebookDate date: String?) -> Date? {
+        
+        guard let date = date, date != "" else {
+            return nil
+        }
         
         let components = date.components(separatedBy: "/")
         

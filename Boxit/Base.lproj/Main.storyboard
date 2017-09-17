@@ -206,7 +206,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ft4-ih-VdD">
-                                <rect key="frame" x="67" y="527" width="240" height="40"/>
+                                <rect key="frame" x="67" y="587" width="240" height="40"/>
                                 <color key="backgroundColor" red="0.078431372550000003" green="0.48627450979999998" blue="0.80392156859999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="240" id="7Jf-3R-FO3"/>
@@ -248,7 +248,7 @@
                             <constraint firstItem="ft4-ih-VdD" firstAttribute="centerX" secondItem="3H3-6k-Wbr" secondAttribute="centerX" id="3gU-q8-Zsr"/>
                             <constraint firstItem="Sxh-fv-tzF" firstAttribute="top" secondItem="1OD-Hy-Jl3" secondAttribute="bottom" constant="304" id="86S-mj-X6E"/>
                             <constraint firstItem="YTs-WQ-lRp" firstAttribute="top" secondItem="TMp-7U-hCB" secondAttribute="bottom" constant="110" id="8ec-UW-UfK"/>
-                            <constraint firstItem="YTs-WQ-lRp" firstAttribute="top" secondItem="ft4-ih-VdD" secondAttribute="bottom" constant="100" id="QfK-E2-TuF"/>
+                            <constraint firstItem="YTs-WQ-lRp" firstAttribute="top" secondItem="ft4-ih-VdD" secondAttribute="bottom" constant="40" id="QfK-E2-TuF"/>
                             <constraint firstItem="evc-VK-cOw" firstAttribute="top" secondItem="1OD-Hy-Jl3" secondAttribute="bottom" constant="195" id="Tge-Xs-HdM"/>
                             <constraint firstAttribute="trailing" secondItem="yEL-Np-OHk" secondAttribute="trailing" id="VSs-uU-E7B"/>
                             <constraint firstItem="Sxh-fv-tzF" firstAttribute="centerX" secondItem="3H3-6k-Wbr" secondAttribute="centerX" id="eTL-wY-G8i"/>
@@ -1874,9 +1874,9 @@ Invite them to the app or explore gift ideas for you.  </string>
         <image name="title" width="214" height="27"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="gHf-x3-zak"/>
+        <segue reference="mVb-r4-LXu"/>
         <segue reference="wWh-Jh-PeB"/>
-        <segue reference="rig-Ba-hK6"/>
+        <segue reference="gHf-x3-zak"/>
         <segue reference="lDA-lJ-h1A"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -71,13 +71,13 @@ extension UserWorker {
     }
 }
 
-//
-// MARK: Invite
-extension UserWorker {
-    
-    static func inviteUsers(fromViewController controller: UIViewController) -> Observable<Void> {
-        let request = InviteRequest(withViewController: controller)
-        let task = InviteTask()
-        return task.execute(withInput: request)
-    }
-}
+////
+//// MARK: Invite
+//extension UserWorker {
+//    
+//    static func inviteUsers(fromViewController controller: UIViewController) -> Observable<Void> {
+//        let request = InviteRequest(withViewController: controller)
+//        let task = InviteTask()
+//        return task.execute(withInput: request)
+//    }
+//}

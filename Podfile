@@ -24,7 +24,6 @@ target 'Boxxit' do
   pod 'Alamofire', '~> 4.4'
   pod 'IDZSwiftCommonCrypto'
   pod 'SWXMLHash'
-  pod 'PermissionScope'
   pod 'Alertift', '~> 1.3'
 end
 

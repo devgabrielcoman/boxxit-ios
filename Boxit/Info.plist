@@ -22,6 +22,7 @@
 			<key>CFBundleURLSchemes</key>
 			<array>
 				<string>fb181375615709434</string>
+				<string>boxxit://</string>
 			</array>
 		</dict>
 	</array>

@@ -22,7 +22,10 @@ struct ViewModels {
             get {
                 let result = profile.timeUntilBirthday
                 
-                if result.interval == .Today {
+                if result.interval == .Invalid {
+                    return ""
+                }
+                else if result.interval == .Today {
                     return "Birthday Today Message".localized
                 }
                 else if result.interval == .Days {

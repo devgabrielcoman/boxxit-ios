@@ -3,9 +3,19 @@ import FBSDKShareKit
 
 public class InviteRequest: Request {
     
-    var viewController: UIViewController
+    private var inviteUrlString: String {
+        return "https://fb.me/208626762984319"
+    }
     
-    public init(withViewController viewController: UIViewController) {
-        self.viewController = viewController
+    private var previewUrlString: String {
+        return "https://boxxit-3231.nodechef.com/fbpreviewimg.png"
+    }
+    
+    var inviteUrl: URL! {
+        return URL(string: inviteUrlString)
+    }
+    
+    var previewUrl: URL! {
+        return URL(string: previewUrlString)
     }
 }

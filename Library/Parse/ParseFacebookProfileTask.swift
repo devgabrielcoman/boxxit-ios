@@ -13,6 +13,8 @@ class ParseFacebookProfileTask: Task {
         
         return Single<FacebookProfile>.create { single -> Disposable in
             
+            print(input)
+            
             if let profile = FacebookProfile(JSONString: input)  {
                 single(.success(profile))
             } else {

@@ -4,7 +4,6 @@ import Crashlytics
 import FBSDKCoreKit
 import Firebase
 import UserNotifications
-import PermissionScope
 import RxSwift
 
 protocol EnableNotificationResponder {
