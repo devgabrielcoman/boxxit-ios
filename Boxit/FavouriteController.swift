@@ -10,6 +10,7 @@ import UIKit
 import RxSwift
 import RxTableAndCollectionView
 import Kingfisher
+import Firebase
 
 extension State {
     enum Favourite {
@@ -124,15 +125,36 @@ extension FavouriteController: StateLogic {
                     row.icon.kf.setImage(with: model.largeIconUrl)
                     row.separator.isHidden = index.row == total - 1
                 }
-                .did(clickOnRowWithReuseIdentifier: FavouriteRow.Identifier) { (index, model: Product) in
-                    self.openProductPage(withUrl: model.clickUrl)
+                .did(clickOnRowWithReuseIdentifier: FavouriteRow.Identifier) { (index, product: Product) in
+                    //
+                    // open product
+                    self.openProductPage(withUrl: product.clickUrl)
+                    
+                    //
+                    // get current user
+                    guard let ownId = DataStore.shared.getOwnId() else { return }
+                    guard let user = DataStore.shared.get(userForId: self.facebookUser) else { return }
+                    
+                    //
+                    // prep data
+                    let data = [
+                        "user_id": ownId,
+                        "friend_id": user.id,
+                        "friend_name": user.name,
+                        "product_id": product.asin,
+                        "product_name": product.title
+                    ]
+                    
+                    //
+                    // send analytics
+                    Analytics.logEvent("view_product", parameters: data)
                 }
-                .can(editRowWithReuseIdentifier: FavouriteRow.Identifier) { (index, model: Product) -> Bool in
+                .can(editRowWithReuseIdentifier: FavouriteRow.Identifier) { (index, product: Product) -> Bool in
                     return self.facebookUser == "me"
                 }
-                .commit(editForRowWithReuseIdentifier: FavouriteRow.Identifier) { (index, style, model: Product) in
+                .commit(editForRowWithReuseIdentifier: FavouriteRow.Identifier) { (index, style, product: Product) in
                     if style == .delete {
-                        self.delete(product: model, atIndex: index.row)
+                        self.delete(product: product, atIndex: index.row)
                     }
                 }
             

@@ -147,6 +147,9 @@ extension EventsController: StateLogic {
                     cell.profilePicture.kf.indicatorType = .activity
                     cell.profileName.text = model.profile.name
                     cell.profileBirthday.text = model.birthdayShort
+                    
+                    print("BDAY: \(model.profile.birthday)\t\t\(model.profile.nextBirthday)")
+                    
                 }
                 .customise(cellForReuseIdentifier: InviteCell.Identifier) { (index, cell: InviteCell, model: ViewModels.Invite, total) in
                     

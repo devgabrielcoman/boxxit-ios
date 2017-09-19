@@ -20,19 +20,20 @@ struct ViewModels {
         
         var birthdayShort: String {
             get {
-                let result = profile.timeUntilBirthday
+                let formatter = DateFormatter()
+                formatter.dateFormat = "EEEE, MMM d, yyyy"
+                let today = Date()
+                let birthdayStr = profile.nextBirthday
+                let todayStr = formatter.string(from: today)
                 
-                if result.interval == .Invalid {
-                    return ""
-                }
-                else if result.interval == .Today {
-                    return "Birthday Today Message".localized
-                }
-                else if result.interval == .Days {
-                    return String(format: "Birthday This Week Message", result.distance)
-                }
-                else {
-                    return profile.nextBirthday
+                if let birthdayStr = birthdayStr {
+                    if birthdayStr == todayStr {
+                        return "Birthday Today Message".localized
+                    } else {
+                        return birthdayStr
+                    }
+                } else {
+                    return "Birthday No Message".localized
                 }
             }
         }

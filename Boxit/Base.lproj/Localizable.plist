@@ -59,15 +59,9 @@
 	<key>General</key>
 	<dict>
 		<key>Birthday Today Message</key>
-		<string>Wow! Seems like your birthday is Today! Happy Birthday!</string>
-		<key>Birthday This Week Message</key>
-		<string>Looks like your birthday is coming up in %d days.</string>
-		<key>Birthday This Month Message</key>
-		<string>Looks like your birthday is coming up in %d weeks.</string>
-		<key>Birthday 3 Months Message</key>
-		<string>Seems like your birthday will be in about %d months.</string>
-		<key>Birthday Far Away Message</key>
-		<string>Seems like your birthday is somewhat far away, but that&apos;s all right too. </string>
+		<string>Birthday Today!</string>
+		<key>Birthday No Message</key>
+		<string>Not available</string>
 	</dict>
 	<key>Tutorial</key>
 	<dict>

@@ -26,7 +26,18 @@ class DataStore {
         return profiles[id]
     }
     
-    func getOwnId () -> String {
-        return FBSDKProfile.current().userID
+    func getOwnId () -> String? {
+        let profile = FBSDKProfile.current()
+        let token = FBSDKAccessToken.current()
+        
+        if let profile = profile {
+            return profile.userID
+        }
+        else if let token = token {
+            return token.userID
+        }
+        else {
+            return nil
+        }
     }
 }

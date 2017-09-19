@@ -49,23 +49,9 @@ extension FacebookProfile {
         }
     }
     
-    var timeUntilBirthday: (distance: Int, interval: BirthdayInterval) {
+    var nextBirthday: String? {
         get {
-            if let birthdayDate = birthdayDate {
-                return birthdayDate.timeUntilBirthday
-            } else {
-                return (-1, BirthdayInterval.Invalid)
-            }
-        }
-    }
-    
-    var nextBirthday: String {
-        get {
-            if let birthdayDate = birthdayDate {
-                return birthdayDate.nextBirthday
-            } else {
-                return ""
-            }
+            return birthdayDate?.nextBirthday
         }
     }
 }

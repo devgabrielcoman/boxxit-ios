@@ -11,6 +11,7 @@ import RxCocoa
 import RxSwift
 import RxTableAndCollectionView
 import Alertift
+import Firebase
 
 extension State {
     enum Explore {
@@ -127,7 +128,29 @@ extension ExploreController: StateLogic {
                     
                     // when clicking on "buy", user is redirected to Amazon website
                     row.getOnAmazon.onAction {
+                        
+                        //
+                        // open page
                         self.openProductPage(withUrl: product.clickUrl)
+                        
+                        //
+                        // get current user
+                        guard let ownId = DataStore.shared.getOwnId() else { return }
+                        guard let user = DataStore.shared.get(userForId: self.facebookUser) else { return }
+                        
+                        //
+                        // prep data
+                        let data = [
+                            "user_id": ownId,
+                            "friend_id": user.id,
+                            "friend_name": user.name,
+                            "product_id": product.asin,
+                            "product_name": product.title
+                        ]
+                        
+                        //
+                        // send analytics
+                        Analytics.logEvent("view_product", parameters: data)
                     }
                     
                     // favourites
