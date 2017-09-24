@@ -30,7 +30,7 @@ public class FacebookAuthTask: Task {
                             single(.success(token))
                             
                         } else {
-                            print("Fb Error is \(error)")
+                            print("Fb Error is \(String(describing: error))")
                             single(.error(BoxitError.FbAuthError))
                         }
                     }
