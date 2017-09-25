@@ -14,6 +14,7 @@ class Product: Mappable {
     
     var isFavourite: Bool = false
     var category: String = "N/A"
+    var isOwn: Bool = false
     
     init() {
     }
@@ -31,6 +32,7 @@ class Product: Mappable {
         largeIcon <- map["largeIcon"]
         isFavourite <- map["isFavourite"]
         category <- map["categId"]
+        isOwn <- map["isOwn"]
     }
 }
 

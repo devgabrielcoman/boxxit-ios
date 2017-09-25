@@ -122,7 +122,7 @@ extension FavouriteController: StateLogic {
                 .customise(rowForReuseIdentifier: FavouriteRow.Identifier, andHeight: UITableViewAutomaticDimension) { (index, row: FavouriteRow, model: Product, total) in
                     row.title.text = model.title
                     row.price.text = model.price
-                    row.icon.kf.setImage(with: model.largeIconUrl)
+                    row.icon.kf.setImage(with: model.largeIconUrl, placeholder: UIImage(named: "no_ama_pic"))
                     row.separator.isHidden = index.row == total - 1
                 }
                 .did(clickOnRowWithReuseIdentifier: FavouriteRow.Identifier) { (index, product: Product) in

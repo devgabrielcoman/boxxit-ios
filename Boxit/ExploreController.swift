@@ -116,11 +116,15 @@ extension ExploreController: StateLogic {
                 .customise(rowForReuseIdentifier: ProductRow.Identifier, andHeight: UITableViewAutomaticDimension) { (index, row: ProductRow, product: Product, total) in
                     
                     row.productName.text = product.title
-                    row.productReason.text = String(format: self.facebookUser == "me" ? "Product Reason - You".localized : "Product Reason - Friend".localized, product.category.capitalized)
+                    
+                    row.productReason.text = String(format: self.facebookUser == "me" ?
+                                                            product.isOwn ? "Product Reason - Sure - You".localized : "Product Reason - Maybe - You".localized :
+                                                            product.isOwn ? "Product Reason - Sure - Friend".localized : "Product Reason - Maybe - Friend".localized,
+                                                    product.category.capitalized)
+                    
                     row.productPrice.text = product.price
                     row.getOnAmazonLabel.text = "Buy Amazon".localized
-                    row.productPicture.kf.setImage(with: product.largeIconUrl)
-                    row.productPicture.kf.indicatorType = .activity
+                    row.productPicture.kf.setImage(with: product.largeIconUrl, placeholder: UIImage(named: "no_ama_pic"))
                     row.saveToFavourites.isHidden = self.facebookUser != "me"
                     row.saveToFavourites.setImage(product.isFavourite ? UIImage(named: "like") : UIImage(named: "nolike"), for: .normal)
                     row.buttonHolder.layer.borderWidth = 1

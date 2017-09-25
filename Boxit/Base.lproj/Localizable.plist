@@ -42,10 +42,14 @@
 	</dict>
 	<key>Explore</key>
 	<dict>
-		<key>Product Reason - You</key>
+		<key>Product Reason - Sure - You</key>
 		<string>Recommended because you like %@</string>
-		<key>Product Reason - Friend</key>
+		<key>Product Reason - Sure - Friend</key>
 		<string>Recommended because your friend likes %@</string>
+		<key>Product Reason - Maybe - You</key>
+		<string>Recommended because you might like %@</string>
+		<key>Product Reason - Maybe - Friend</key>
+		<string>Recommended because your friend might like %@</string>
 		<key>Buy Amazon</key>
 		<string>Get on Amazon</string>
 		<key>Product Error Message</key>
