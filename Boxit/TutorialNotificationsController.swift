@@ -41,7 +41,9 @@ extension TutorialNotificationsController: BusinessLogic, EnableNotificationResp
         if #available(iOS 10.0, *) {
             let authOptions: UNAuthorizationOptions = [.alert, .badge, .sound]
             UNUserNotificationCenter.current().requestAuthorization(options: authOptions) { result, error in
-                self.didTapOnNotificationAlert()
+                DispatchQueue.main.async {
+                    self.didTapOnNotificationAlert()
+                }
             }
             
         } else {
