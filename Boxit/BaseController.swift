@@ -25,6 +25,7 @@ enum AppSegues: String {
     case EventsEmbedsError = "EventsEmbedsError"
     case FavouritesEmbedsError = "FavouritesEmbedsError"
     
+    
     // popup
     case NotificationsToSetup = "NotificationsToSetup"
 }
