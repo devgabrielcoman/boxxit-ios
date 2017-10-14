@@ -38,10 +38,6 @@ class LoginController: BaseController {
         super.viewDidLoad()
         self.setState(state: State.Login.initial)
     }
-    
-//    override var preferredStatusBarStyle: UIStatusBarStyle {
-//        return .lightContent
-//    }
 }
 
 // MARK: Business

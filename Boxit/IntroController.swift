@@ -16,10 +16,6 @@ class IntroController: BaseController {
         super.viewDidAppear(animated)
         self.checkLogin()
     }
-    
-//    override var preferredStatusBarStyle: UIStatusBarStyle {
-//        return .lightContent
-//    }
 }
 
 //
