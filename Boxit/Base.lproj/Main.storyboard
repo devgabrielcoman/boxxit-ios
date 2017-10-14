@@ -374,7 +374,7 @@
                                                             <subviews>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Get on Amazon" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vhU-4e-pRQ">
                                                                     <rect key="frame" x="61" y="0.0" width="92" height="28"/>
-                                                                    <fontDescription key="fontDescription" name="Raleway-Bold" family="Raleway" pointSize="10"/>
+                                                                    <fontDescription key="fontDescription" name="Raleway-Bold" family="Raleway" pointSize="12"/>
                                                                     <color key="textColor" red="0.015686274509803921" green="0.51764705882352935" blue="0.63921568627450975" alpha="1" colorSpace="calibratedRGB"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
@@ -428,8 +428,8 @@
                                                             <state key="normal" image="nolike"/>
                                                         </button>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OSY-7c-OQe">
-                                                            <rect key="frame" x="8" y="242" width="327" height="30"/>
-                                                            <fontDescription key="fontDescription" name="Raleway-Bold" family="Raleway" pointSize="13"/>
+                                                            <rect key="frame" x="8" y="246" width="327" height="28"/>
+                                                            <fontDescription key="fontDescription" name="Raleway-Bold" family="Raleway" pointSize="15"/>
                                                             <color key="textColor" red="0.015686274510000001" green="0.51764705879999995" blue="0.63921568630000003" alpha="1" colorSpace="calibratedRGB"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
@@ -443,11 +443,11 @@
                                                         <constraint firstItem="OSY-7c-OQe" firstAttribute="leading" secondItem="e4l-pK-qlw" secondAttribute="leading" constant="8" id="FQw-wM-xaa"/>
                                                         <constraint firstAttribute="bottom" secondItem="i5I-4r-VHv" secondAttribute="bottom" constant="19" id="JB7-9F-Cbc"/>
                                                         <constraint firstItem="N8r-wa-bsx" firstAttribute="centerX" secondItem="e4l-pK-qlw" secondAttribute="centerX" id="L4n-WZ-xIh"/>
-                                                        <constraint firstItem="OSY-7c-OQe" firstAttribute="top" secondItem="N8r-wa-bsx" secondAttribute="bottom" constant="16" id="Nh4-wu-Ke2"/>
+                                                        <constraint firstItem="OSY-7c-OQe" firstAttribute="top" secondItem="N8r-wa-bsx" secondAttribute="bottom" constant="20" id="Nh4-wu-Ke2"/>
                                                         <constraint firstItem="N8r-wa-bsx" firstAttribute="top" secondItem="e4l-pK-qlw" secondAttribute="top" constant="16" id="RI9-gc-Puy"/>
                                                         <constraint firstAttribute="trailing" secondItem="7YG-g5-dgK" secondAttribute="trailing" constant="8" id="Z9E-rd-f1z"/>
                                                         <constraint firstItem="xqp-Db-o6J" firstAttribute="centerX" secondItem="e4l-pK-qlw" secondAttribute="centerX" id="c7d-X0-nFM"/>
-                                                        <constraint firstItem="7YG-g5-dgK" firstAttribute="top" secondItem="OSY-7c-OQe" secondAttribute="bottom" constant="8" id="cHH-gt-PCX"/>
+                                                        <constraint firstItem="7YG-g5-dgK" firstAttribute="top" secondItem="OSY-7c-OQe" secondAttribute="bottom" constant="6" id="cHH-gt-PCX"/>
                                                         <constraint firstAttribute="bottom" secondItem="xqp-Db-o6J" secondAttribute="bottom" constant="16" id="yFF-GF-h7I"/>
                                                     </constraints>
                                                 </view>
@@ -697,7 +697,7 @@
                                                                 <constraint firstAttribute="height" constant="28" id="2ek-pK-gbp"/>
                                                                 <constraint firstAttribute="width" constant="120" id="lfv-Bv-7mL"/>
                                                             </constraints>
-                                                            <fontDescription key="fontDescription" name="Raleway-Bold" family="Raleway" pointSize="10"/>
+                                                            <fontDescription key="fontDescription" name="Raleway-Bold" family="Raleway" pointSize="12"/>
                                                             <state key="normal" title="Get on Amazon">
                                                                 <color key="titleColor" red="0.015686274510000001" green="0.51764705879999995" blue="0.63921568630000003" alpha="1" colorSpace="calibratedRGB"/>
                                                             </state>
@@ -1818,7 +1818,7 @@ Or tap anywhere else to start using Boxxit!</string>
                                             </constraints>
                                         </imageView>
                                         <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AVh-Js-0cJ">
-                                            <rect key="frame" x="122" y="227" width="130" height="27"/>
+                                            <rect key="frame" x="122" y="228" width="130" height="26"/>
                                             <color key="backgroundColor" red="0.89411764709999997" green="0.8980392157" blue="0.086274509799999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="130" id="eJ9-6V-GK3"/>
