@@ -25,9 +25,9 @@ class LoadController: BaseController {
         self.loadUser()
     }
     
-    override var preferredStatusBarStyle: UIStatusBarStyle {
-        return .lightContent
-    }
+//    override var preferredStatusBarStyle: UIStatusBarStyle {
+//        return .lightContent
+//    }
 }
 
 // MARK: Business

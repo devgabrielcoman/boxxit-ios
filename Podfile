@@ -22,7 +22,6 @@ target 'Boxxit' do
   pod 'Firebase/Database'
   pod 'Firebase/Messaging'
   pod 'Alamofire', '~> 4.4'
-  pod 'IDZSwiftCommonCrypto'
   pod 'SWXMLHash'
   pod 'Alertift', '~> 1.3'
 end
