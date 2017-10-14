@@ -4,6 +4,7 @@ class ProductRow: UITableViewCell {
 
     public static let Identifier = "ProductRowID"
     
+    @IBOutlet weak var panelView: UIView!
     @IBOutlet weak var productPicture: UIImageView!
     @IBOutlet weak var productName: UILabel!
     @IBOutlet weak var productReason: UILabel!

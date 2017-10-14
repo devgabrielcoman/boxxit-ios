@@ -128,7 +128,12 @@ extension ExploreController: StateLogic {
                     row.saveToFavourites.isHidden = self.facebookUser != "me"
                     row.saveToFavourites.setImage(product.isFavourite ? UIImage(named: "like") : UIImage(named: "nolike"), for: .normal)
                     row.buttonHolder.layer.borderWidth = 1
-                    row.buttonHolder.layer.borderColor = UIColor(rgb: 0x0f2a42).cgColor
+                    row.buttonHolder.layer.borderColor = UIColor(rgb: 0xe6e7dc).cgColor
+                    row.panelView.layer.cornerRadius = 5
+                    row.panelView.layer.shadowColor = UIColor.black.cgColor
+                    row.panelView.layer.shadowRadius = 4
+                    row.panelView.layer.shadowOpacity = 0.15
+                    row.panelView.layer.shadowOffset = CGSize.zero
                     
                     // when clicking on "buy", user is redirected to Amazon website
                     row.getOnAmazon.onAction {

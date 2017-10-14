@@ -128,9 +128,9 @@ extension FavouriteController: StateLogic {
                     row.panelView.layer.shadowRadius = 4
                     row.panelView.layer.shadowOpacity = 0.15
                     row.panelView.layer.shadowOffset = CGSize.zero
-                    row.amazonButton.layer.cornerRadius = 15
+                    row.amazonButton.layer.cornerRadius = 14
                     row.amazonButton.layer.borderWidth = 1
-                    row.amazonButton.layer.borderColor = UIColor(red: 230/255, green: 231/255, blue: 220/255, alpha: 1).cgColor
+                    row.amazonButton.layer.borderColor = UIColor(rgb: 0xe6e7dc).cgColor
                     row.topConstraint.constant = index.row == 0 ? 16 : 8
                     row.bottomContraint.constant = index.row == total - 1 ? 16 : 8
                 }
