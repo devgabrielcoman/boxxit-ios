@@ -123,7 +123,16 @@ extension FavouriteController: StateLogic {
                     row.title.text = model.title
                     row.price.text = model.price
                     row.icon.kf.setImage(with: model.largeIconUrl, placeholder: UIImage(named: "no_ama_pic"))
-                    row.separator.isHidden = index.row == total - 1
+                    row.panelView.layer.cornerRadius = 5
+                    row.panelView.layer.shadowColor = UIColor.black.cgColor
+                    row.panelView.layer.shadowRadius = 4
+                    row.panelView.layer.shadowOpacity = 0.15
+                    row.panelView.layer.shadowOffset = CGSize.zero
+                    row.amazonButton.layer.cornerRadius = 15
+                    row.amazonButton.layer.borderWidth = 1
+                    row.amazonButton.layer.borderColor = UIColor(red: 230/255, green: 231/255, blue: 220/255, alpha: 1).cgColor
+                    row.topConstraint.constant = index.row == 0 ? 16 : 8
+                    row.bottomContraint.constant = index.row == total - 1 ? 16 : 8
                 }
                 .did(clickOnRowWithReuseIdentifier: FavouriteRow.Identifier) { (index, product: Product) in
                     //

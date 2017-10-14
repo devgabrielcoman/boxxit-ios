@@ -952,7 +952,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = Boxit/Boxit.entitlements;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = K79XEZP48K;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1005,8 +1005,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.boxxit.boxxit;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "818ac5ad-24db-4937-ba12-bbac756e5457";
-				PROVISIONING_PROFILE_SPECIFIER = BoxxitProduction;
+				PROVISIONING_PROFILE = "fd13eb20-eac4-4693-bd2e-92812624dd59";
+				PROVISIONING_PROFILE_SPECIFIER = BoxxitDevelopment;
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
