@@ -5,7 +5,7 @@
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13174"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
@@ -640,13 +640,7 @@
                                     <segue destination="XuC-Po-dTO" kind="embed" id="GE8-e8-uOY"/>
                                 </connections>
                             </containerView>
-                            <containerView opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hhl-hJ-oaW" userLabel="Error Controller">
-                                <rect key="frame" x="20" y="110" width="335" height="537"/>
-                                <connections>
-                                    <segue destination="Y5j-Zd-XmF" kind="embed" identifier="FavouritesEmbedsError" id="p4C-KC-lY3"/>
-                                </connections>
-                            </containerView>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="152" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="xIB-sD-KEL">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="152" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="xIB-sD-KEL">
                                 <rect key="frame" x="0.0" y="90" width="375" height="577"/>
                                 <color key="backgroundColor" red="0.96470588239999999" green="0.96862745100000003" blue="0.92156862750000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <prototypes>
@@ -669,7 +663,7 @@
                                                             <color key="textColor" red="0.96862745098039216" green="0.32156862745098036" blue="0.33725490196078434" alpha="1" colorSpace="calibratedRGB"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="geN-vZ-d3H">
+                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="geN-vZ-d3H" customClass="RxButton" customModule="Boxxit" customModuleProvider="target">
                                                             <rect key="frame" x="312" y="8" width="23" height="22"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="width" constant="23" id="Mbq-yq-DGf"/>
@@ -685,7 +679,7 @@
                                                                 <constraint firstAttribute="width" constant="100" id="yJa-Je-sNL"/>
                                                             </constraints>
                                                         </imageView>
-                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="N0k-th-t5b">
+                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="N0k-th-t5b" customClass="RxButton" customModule="Boxxit" customModuleProvider="target">
                                                             <rect key="frame" x="132" y="88" width="120" height="28"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="28" id="2ek-pK-gbp"/>
@@ -736,12 +730,19 @@
                                             <outlet property="icon" destination="dCd-cA-Ogv" id="1UT-Ya-RTg"/>
                                             <outlet property="panelView" destination="NUi-hS-Oth" id="dis-B8-gR5"/>
                                             <outlet property="price" destination="89P-fD-vwF" id="0f6-vJ-P3n"/>
+                                            <outlet property="removeButton" destination="geN-vZ-d3H" id="G1k-lL-W2S"/>
                                             <outlet property="title" destination="Ud0-Ql-pkm" id="0CC-ER-zVe"/>
                                             <outlet property="topConstraint" destination="XVB-f7-TJt" id="jz4-xw-NJ2"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
+                            <containerView opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hhl-hJ-oaW" userLabel="Error Controller">
+                                <rect key="frame" x="20" y="110" width="335" height="537"/>
+                                <connections>
+                                    <segue destination="Y5j-Zd-XmF" kind="embed" identifier="FavouritesEmbedsError" id="p4C-KC-lY3"/>
+                                </connections>
+                            </containerView>
                             <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="BJc-ls-9Sp">
                                 <rect key="frame" x="177" y="324" width="20" height="20"/>
                                 <constraints>
@@ -1216,7 +1217,7 @@
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="K99-5E-qpd" firstAttribute="top" secondItem="QNx-8c-gr9" secondAttribute="top" constant="20" id="6aQ-Ko-DXM"/>
                             <constraint firstItem="K99-5E-qpd" firstAttribute="leading" secondItem="QNx-8c-gr9" secondAttribute="leading" constant="20" id="CQG-eL-wPp"/>
@@ -1826,7 +1827,7 @@ Or tap anywhere else to start using Boxxit!</string>
                                             </constraints>
                                         </imageView>
                                         <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AVh-Js-0cJ">
-                                            <rect key="frame" x="122" y="228" width="130" height="26"/>
+                                            <rect key="frame" x="122" y="227" width="130" height="27"/>
                                             <color key="backgroundColor" red="0.89411764709999997" green="0.8980392157" blue="0.086274509799999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="130" id="eJ9-6V-GK3"/>

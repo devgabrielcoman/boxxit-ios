@@ -133,37 +133,35 @@ extension FavouriteController: StateLogic {
                     row.amazonButton.layer.borderColor = UIColor(rgb: 0xe6e7dc).cgColor
                     row.topConstraint.constant = index.row == 0 ? 16 : 8
                     row.bottomContraint.constant = index.row == total - 1 ? 16 : 8
-                }
-                .did(clickOnRowWithReuseIdentifier: FavouriteRow.Identifier) { (index, product: Product) in
-                    //
-                    // open product
-                    self.openProductPage(withUrl: product.clickUrl)
+                    row.removeButton.isHidden = self.facebookUser != "me"
+                
+                    row.removeButton.onAction {
+                        self.delete(product: model, atIndex: index.row)
+                    }
                     
-                    //
-                    // get current user
-                    guard let ownId = DataStore.shared.getOwnId() else { return }
-                    guard let user = DataStore.shared.get(userForId: self.facebookUser) else { return }
-                    
-                    //
-                    // prep data
-                    let data = [
-                        "user_id": ownId,
-                        "friend_id": user.id,
-                        "friend_name": user.name,
-                        "product_id": product.asin,
-                        "product_name": product.title
-                    ]
-                    
-                    //
-                    // send analytics
-                    Analytics.logEvent("view_product", parameters: data)
-                }
-                .can(editRowWithReuseIdentifier: FavouriteRow.Identifier) { (index, product: Product) -> Bool in
-                    return self.facebookUser == "me"
-                }
-                .commit(editForRowWithReuseIdentifier: FavouriteRow.Identifier) { (index, style, product: Product) in
-                    if style == .delete {
-                        self.delete(product: product, atIndex: index.row)
+                    row.amazonButton.onAction {
+                        //
+                        // open product
+                        self.openProductPage(withUrl: model.clickUrl)
+                        
+                        //
+                        // get current user
+                        guard let ownId = DataStore.shared.getOwnId() else { return }
+                        guard let user = DataStore.shared.get(userForId: self.facebookUser) else { return }
+                        
+                        //
+                        // prep data
+                        let data = [
+                            "user_id": ownId,
+                            "friend_id": user.id,
+                            "friend_name": user.name,
+                            "product_id": model.asin,
+                            "product_name": model.title
+                        ]
+                        
+                        //
+                        // send analytics
+                        Analytics.logEvent("view_product", parameters: data)
                     }
                 }
             
