@@ -31,6 +31,13 @@
 		<key>Retry Button</key>
 		<string>Retry</string>
 	</dict>
+	<key>Invite</key>
+	<dict>
+		<key>Invite Invite Text</key>
+		<string>It&apos;s better with friends.</string>
+		<key>Invite Invite Button</key>
+		<string>Invite friends</string>
+	</dict>
 	<key>Events</key>
 	<dict>
 		<key>Events Invite Text</key>

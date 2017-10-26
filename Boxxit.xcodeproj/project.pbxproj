@@ -87,7 +87,7 @@
 		1BE7B47B1EC5DB890085427A /* FacebookProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BE7B4601EC5DB890085427A /* FacebookProfile.swift */; };
 		1BE7B47D1EC5DB890085427A /* ParseFacebookDataTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BE7B4621EC5DB890085427A /* ParseFacebookDataTask.swift */; };
 		1BE7B47E1EC5DB890085427A /* ParseFacebookProfileTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BE7B4631EC5DB890085427A /* ParseFacebookProfileTask.swift */; };
-		1BF54BC71F255D68007C35F3 /* InviteCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BF54BC61F255D68007C35F3 /* InviteCell.swift */; };
+		1BEEA3011FA2007E0007E565 /* InviteController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BEEA3001FA2007E0007E565 /* InviteController.swift */; };
 		1BFA4CC31ED589FB00E00297 /* Array+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BFA4CBB1ED589FB00E00297 /* Array+Extensions.swift */; };
 		1BFA4CC41ED589FB00E00297 /* Bundle+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BFA4CBC1ED589FB00E00297 /* Bundle+Extensions.swift */; };
 		1BFA4CC51ED589FB00E00297 /* Data+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BFA4CBD1ED589FB00E00297 /* Data+Extensions.swift */; };
@@ -182,7 +182,7 @@
 		1BE7B4601EC5DB890085427A /* FacebookProfile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FacebookProfile.swift; sourceTree = "<group>"; };
 		1BE7B4621EC5DB890085427A /* ParseFacebookDataTask.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParseFacebookDataTask.swift; sourceTree = "<group>"; };
 		1BE7B4631EC5DB890085427A /* ParseFacebookProfileTask.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParseFacebookProfileTask.swift; sourceTree = "<group>"; };
-		1BF54BC61F255D68007C35F3 /* InviteCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InviteCell.swift; sourceTree = "<group>"; };
+		1BEEA3001FA2007E0007E565 /* InviteController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InviteController.swift; sourceTree = "<group>"; };
 		1BFA4CBB1ED589FB00E00297 /* Array+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Array+Extensions.swift"; sourceTree = "<group>"; };
 		1BFA4CBC1ED589FB00E00297 /* Bundle+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Bundle+Extensions.swift"; sourceTree = "<group>"; };
 		1BFA4CBD1ED589FB00E00297 /* Data+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Data+Extensions.swift"; sourceTree = "<group>"; };
@@ -277,7 +277,6 @@
 				1BAF66341EED774000F0AB4C /* EventsRouter.swift */,
 				1B520BE71EAEB03F006FD05E /* EventsController.swift */,
 				1B520BE91EAEB052006FD05E /* EventsCell.swift */,
-				1BF54BC61F255D68007C35F3 /* InviteCell.swift */,
 			);
 			name = Events;
 			sourceTree = "<group>";
@@ -328,6 +327,7 @@
 				1B7229CF1EA6AB8000B9897F /* Login */,
 				1BAF663C1EED7ABE00F0AB4C /* ProfileMain */,
 				1B520BE61EAEB02E006FD05E /* Events */,
+				1BEEA2FF1FA200680007E565 /* Invite */,
 				1B520BDB1EAE8DF3006FD05E /* ProfileHeader */,
 				1B520BBE1EABF2DA006FD05E /* Explore */,
 				1B4E56E21EE1CD2F00F67FC3 /* Favourites */,
@@ -519,6 +519,14 @@
 				1BE7B4601EC5DB890085427A /* FacebookProfile.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		1BEEA2FF1FA200680007E565 /* Invite */ = {
+			isa = PBXGroup;
+			children = (
+				1BEEA3001FA2007E0007E565 /* InviteController.swift */,
+			);
+			name = Invite;
 			sourceTree = "<group>";
 		};
 		1BFA4CB91ED589FB00E00297 /* Aux */ = {
@@ -771,13 +779,13 @@
 				1BAF660C1EEB49D900F0AB4C /* Workers.swift in Sources */,
 				1B520B9D1EA9236F006FD05E /* UserController.swift in Sources */,
 				1BAF66111EEB4A5900F0AB4C /* LoadController.swift in Sources */,
+				1BEEA3011FA2007E0007E565 /* InviteController.swift in Sources */,
 				1BFA4CC51ED589FB00E00297 /* Data+Extensions.swift in Sources */,
 				1BE7B4721EC5DB890085427A /* InviteRequest.swift in Sources */,
 				1BB3F8161EE6122400744B26 /* BoxitErrors.swift in Sources */,
 				1BDB050A1EE6D5F70028E9A8 /* ErrorController.swift in Sources */,
 				1BB132291F2CC61D0096B56C /* TutorialProfileController.swift in Sources */,
 				1BE7B4771EC5DB890085427A /* NetworkTask.swift in Sources */,
-				1BF54BC71F255D68007C35F3 /* InviteCell.swift in Sources */,
 				1B4E5DFF1EBF3B2E002DA018 /* SliderController.swift in Sources */,
 				1BB3F8141EE606BE00744B26 /* BackendData.swift in Sources */,
 				1B7229BC1EA6A9CF00B9897F /* BaseController.swift in Sources */,

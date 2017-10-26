@@ -47,7 +47,7 @@ class EventsController: BaseController {
 
 //
 // MARK: Business Logic
-extension EventsController: BusinessLogic, FBSDKAppInviteDialogDelegate {
+extension EventsController: BusinessLogic {
     
     func getEvents () {
         
@@ -100,23 +100,6 @@ extension EventsController: BusinessLogic, FBSDKAppInviteDialogDelegate {
         self.performSegue(.EventsToUser)
         
     }
-    
-    func inviteAction() {
-        
-        let request = InviteRequest()
-        let content = FBSDKAppInviteContent()
-        content.appLinkURL = request.inviteUrl
-        content.appInvitePreviewImageURL = request.previewUrl
-        FBSDKAppInviteDialog.show(from: self, with: content, delegate: self)
-    }
-    
-    public func appInviteDialog(_ appInviteDialog: FBSDKAppInviteDialog!, didCompleteWithResults results: [AnyHashable : Any]!) {
-        print("Results are \(results)")
-    }
-    
-    public func appInviteDialog(_ appInviteDialog: FBSDKAppInviteDialog!, didFailWithError error: Error!) {
-        print("Complete with error \(error)")
-    }
 }
 
 //
@@ -130,38 +113,30 @@ extension EventsController: StateLogic {
         case .initial:
             
             let size = UIScreen.main.bounds.size.width / 2
+            let height = UIScreen.main.bounds.size.height - 441
             
             rxCollectionView = RxCollectionView.create()
                 .bind(toCollection: eventsCollection)
-                .set(sizeForCellWithReuseIdentifier: InviteCell.Identifier) { (index, model: ViewModels.User) -> CGSize in
-                    return CGSize(width: size, height: 200)
-                }
-                .set(sizeForCellWithReuseIdentifier: EventsCell.Identifier) { (index, model: ViewModels.Invite) -> CGSize in
-                    return CGSize(width: size, height: 200)
+                .set(sizeForCellWithReuseIdentifier: EventsCell.Identifier) { (index, model: ViewModels.User) -> CGSize in
+                    return CGSize(width: size, height: height)
                 }
                 .customise(cellForReuseIdentifier: EventsCell.Identifier) { (index, cell: EventsCell, model: ViewModels.User, total) in
                     
-                    cell.rightSeparator.isHidden = index.row % 2 != 0
+                    cell.layer.cornerRadius = 15
+                    cell.layer.shadowColor = UIColor.black.cgColor
+                    cell.layer.shadowRadius = 4
+                    cell.layer.shadowOpacity = 0.15
+                    cell.layer.shadowOffset = CGSize.zero
+                    cell.layer.masksToBounds = false
+                    
                     cell.profilePicture.kf.setImage(with: model.profile.pictureUrl)
-                    cell.profilePicture.layer.cornerRadius = cell.profilePicture.frame.size.width / 2
                     cell.profilePicture.kf.indicatorType = .activity
                     cell.profileName.text = model.profile.name
                     cell.profileBirthday.text = model.birthdayShort
                     
                 }
-                .customise(cellForReuseIdentifier: InviteCell.Identifier) { (index, cell: InviteCell, model: ViewModels.Invite, total) in
-                    
-                    cell.rightSeparator.isHidden = index.row % 2 != 0
-                    cell.inviteLabel.text = "Invite Button".localized
-                    cell.inviteLabel.layer.cornerRadius = 15
-                    cell.inviteIcon.layer.cornerRadius = 35
-                    
-                }
                 .did(clickOnCellWithReuseIdentifier: EventsCell.Identifier) { (index, model: ViewModels.User) in
                     self.select(user: model.profile)
-                }
-                .did(clickOnCellWithReuseIdentifier: InviteCell.Identifier) { (index, model: ViewModels.Invite) in
-                    self.inviteAction()
                 }
                 .did(reachEnd: {
                     if self.offset != nil {
@@ -184,11 +159,11 @@ extension EventsController: StateLogic {
             
             spinner.stopAnimating()
             
-            let controller: ErrorController? = self.getChild()
-            controller?.setState(state: State.Error.visible(withErrorMessage: "Events Invite Text".localized, andHasRetryButton: true, andRetryButtonText: "Invite Button".localized))
-            controller?.didClickOnRetry = {
-                self.inviteAction()
-            }
+//            let controller: ErrorController? = self.getChild()
+//            controller?.setState(state: State.Error.visible(withErrorMessage: "Events Invite Text".localized, andHasRetryButton: true, andRetryButtonText: "Invite Button".localized))
+//            controller?.didClickOnRetry = {
+//                self.inviteAction()
+//            }
             
             break
         //
