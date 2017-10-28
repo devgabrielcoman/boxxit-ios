@@ -4,6 +4,7 @@ class EventsCell: UICollectionViewCell {
     
     public static let Identifier = "EventsCellId"
     
+    @IBOutlet weak var profilePanel: UIView!
     @IBOutlet weak var profilePicture: UIImageView!
     @IBOutlet weak var profileName: UILabel!
     @IBOutlet weak var profileBirthday: UILabel!
@@ -13,7 +14,7 @@ class EventsCell: UICollectionViewCell {
         
         let path = UIBezierPath(roundedRect: profilePicture.bounds,
                                 byRoundingCorners:[.topRight, .topLeft],
-                                cornerRadii: CGSize(width: 15, height:  15))
+                                cornerRadii: CGSize(width: 10, height:  10))
         
         let maskLayer = CAShapeLayer()
         maskLayer.path = path.cgPath

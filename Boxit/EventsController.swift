@@ -112,8 +112,8 @@ extension EventsController: StateLogic {
         // initial case
         case .initial:
             
-            let size = UIScreen.main.bounds.size.width / 2
-            let height = UIScreen.main.bounds.size.height - 441
+            let size = UIScreen.main.bounds.size.width / 2.15
+            let height = (UIScreen.main.bounds.size.height - 80) / 2 - 41
             
             rxCollectionView = RxCollectionView.create()
                 .bind(toCollection: eventsCollection)
@@ -122,12 +122,12 @@ extension EventsController: StateLogic {
                 }
                 .customise(cellForReuseIdentifier: EventsCell.Identifier) { (index, cell: EventsCell, model: ViewModels.User, total) in
                     
-                    cell.layer.cornerRadius = 15
-                    cell.layer.shadowColor = UIColor.black.cgColor
-                    cell.layer.shadowRadius = 4
-                    cell.layer.shadowOpacity = 0.15
-                    cell.layer.shadowOffset = CGSize.zero
-                    cell.layer.masksToBounds = false
+                    cell.profilePanel.layer.cornerRadius = 10
+                    cell.profilePanel.layer.shadowColor = UIColor.black.cgColor
+                    cell.profilePanel.layer.shadowRadius = 4
+                    cell.profilePanel.layer.shadowOpacity = 0.15
+                    cell.profilePanel.layer.shadowOffset = CGSize.zero
+                    cell.profilePanel.layer.masksToBounds = false
                     
                     cell.profilePicture.kf.setImage(with: model.profile.pictureUrl)
                     cell.profilePicture.kf.indicatorType = .activity

@@ -49,7 +49,7 @@ public extension Date {
             let ryear = days < 0 ? cyear + 1 : cyear
             
             next = formatter.date(from: "\(bmonth)/\(bday)/\(ryear)")
-            formatter.dateFormat = "EEEE, MMM d, yyyy"
+            formatter.dateFormat = "EEE, MMM d, yyyy"
             
             return formatter.string(from: next!)
         }
