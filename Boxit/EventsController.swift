@@ -28,6 +28,8 @@ class EventsController: BaseController {
     
     @IBOutlet weak var spinner: UIActivityIndicatorView!
     @IBOutlet weak var eventsCollection: UICollectionView!
+    @IBOutlet weak var inviteControllerView: UIView!
+    @IBOutlet weak var yourFriendsLabel: UILabel!
     
     var rxCollectionView: RxCollectionView?
     
@@ -64,25 +66,22 @@ extension EventsController: BusinessLogic {
                 self.setState(state: State.Events.error(withViewModel: vm))
             }
             .subscribeNext { profiles in
-                
+
                 // update data
                 self.data += profiles
-                
+
                 // no friends state
                 if self.data.count == 0 {
                     self.setState(state: State.Events.empty)
                 }
                 // success state
                 else {
-                    
+
                     // get users
-                    var viewModels: [Any] = self.data.map { profile -> ViewModels.User in
+                    let viewModels = self.data.map { profile -> ViewModels.User in
                         return ViewModels.User(profile: profile)
                     }
-                    
-                    // now add the invite cell
-                    viewModels += [ViewModels.Invite()]
-                    
+
                     //
                     // and set the state as success with appropiate view models
                     self.setState(state: State.Events.success(withViewModels: viewModels))
@@ -111,6 +110,9 @@ extension EventsController: StateLogic {
         //
         // initial case
         case .initial:
+            
+            yourFriendsLabel.text = "Your Friends".localized
+            inviteControllerView.isHidden = true
             
             let size = UIScreen.main.bounds.size.width / 2.15
             let height = (UIScreen.main.bounds.size.height - 80) / 2 - 41
@@ -158,13 +160,8 @@ extension EventsController: StateLogic {
         case .empty:
             
             spinner.stopAnimating()
-            
-//            let controller: ErrorController? = self.getChild()
-//            controller?.setState(state: State.Error.visible(withErrorMessage: "Events Invite Text".localized, andHasRetryButton: true, andRetryButtonText: "Invite Button".localized))
-//            controller?.didClickOnRetry = {
-//                self.inviteAction()
-//            }
-            
+            yourFriendsLabel.isHidden = true
+            inviteControllerView.isHidden = false
             break
         //
         // error case

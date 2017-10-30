@@ -912,12 +912,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="500"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <containerView hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2GG-9u-Aza">
-                                <rect key="frame" x="20" y="40" width="335" height="440"/>
-                                <connections>
-                                    <segue destination="Y5j-Zd-XmF" kind="embed" identifier="EventsEmbedsError" id="jem-Bd-3yA"/>
-                                </connections>
-                            </containerView>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="3Ek-50-kH1">
                                 <rect key="frame" x="0.0" y="61" width="375" height="439"/>
                                 <color key="backgroundColor" red="0.96470588239999999" green="0.96862745100000003" blue="0.92156862750000001" alpha="1" colorSpace="calibratedRGB"/>
@@ -991,6 +985,18 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                 </collectionReusableView>
                             </collectionView>
+                            <containerView opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2GG-9u-Aza">
+                                <rect key="frame" x="20" y="40" width="335" height="440"/>
+                                <connections>
+                                    <segue destination="Y5j-Zd-XmF" kind="embed" identifier="EventsEmbedsError" id="jem-Bd-3yA"/>
+                                </connections>
+                            </containerView>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Bf4-U2-a0R">
+                                <rect key="frame" x="20" y="40" width="335" height="440"/>
+                                <connections>
+                                    <segue destination="Y4b-6w-20w" kind="embed" id="Bu8-m7-o9P"/>
+                                </connections>
+                            </containerView>
                             <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="kNv-3k-kCh">
                                 <rect key="frame" x="178" y="240" width="20" height="20"/>
                             </activityIndicatorView>
@@ -1008,6 +1014,8 @@
                         <constraints>
                             <constraint firstItem="8ak-YP-YnO" firstAttribute="top" secondItem="2GG-9u-Aza" secondAttribute="bottom" constant="20" id="582-Zr-quF"/>
                             <constraint firstAttribute="trailing" secondItem="3Ek-50-kH1" secondAttribute="trailing" id="Axo-xt-Ube"/>
+                            <constraint firstItem="Bf4-U2-a0R" firstAttribute="top" secondItem="EDg-zv-yGk" secondAttribute="bottom" constant="20" id="BbR-oL-bzn"/>
+                            <constraint firstItem="8ak-YP-YnO" firstAttribute="top" secondItem="Bf4-U2-a0R" secondAttribute="bottom" constant="20" id="Dt5-hf-4gY"/>
                             <constraint firstItem="2GG-9u-Aza" firstAttribute="leading" secondItem="muY-g1-1El" secondAttribute="leading" constant="20" id="EKy-bW-WhN"/>
                             <constraint firstAttribute="trailing" secondItem="FGA-GN-5bo" secondAttribute="trailing" constant="20" id="GX5-hN-oiL"/>
                             <constraint firstItem="FGA-GN-5bo" firstAttribute="top" secondItem="EDg-zv-yGk" secondAttribute="bottom" constant="12" id="Km5-JY-x6f"/>
@@ -1015,9 +1023,11 @@
                             <constraint firstItem="8ak-YP-YnO" firstAttribute="top" secondItem="3Ek-50-kH1" secondAttribute="bottom" id="N8J-O4-Ic7"/>
                             <constraint firstItem="3Ek-50-kH1" firstAttribute="leading" secondItem="muY-g1-1El" secondAttribute="leading" id="QkQ-jP-FVE"/>
                             <constraint firstAttribute="trailing" secondItem="2GG-9u-Aza" secondAttribute="trailing" constant="20" id="Vm6-x7-7Z8"/>
+                            <constraint firstItem="Bf4-U2-a0R" firstAttribute="leading" secondItem="muY-g1-1El" secondAttribute="leading" constant="20" id="apx-Sb-qeL"/>
                             <constraint firstItem="kNv-3k-kCh" firstAttribute="centerX" secondItem="muY-g1-1El" secondAttribute="centerX" id="mwq-1X-1lP"/>
                             <constraint firstItem="kNv-3k-kCh" firstAttribute="centerY" secondItem="muY-g1-1El" secondAttribute="centerY" id="oFl-B9-42n"/>
                             <constraint firstItem="FGA-GN-5bo" firstAttribute="leading" secondItem="muY-g1-1El" secondAttribute="leading" constant="20" id="oxF-fR-ChR"/>
+                            <constraint firstAttribute="trailing" secondItem="Bf4-U2-a0R" secondAttribute="trailing" constant="20" id="p7R-uK-4vV"/>
                             <constraint firstItem="3Ek-50-kH1" firstAttribute="top" secondItem="FGA-GN-5bo" secondAttribute="bottom" constant="8" id="wF3-Fl-Xia"/>
                         </constraints>
                     </view>
@@ -1025,7 +1035,9 @@
                     <size key="freeformSize" width="375" height="500"/>
                     <connections>
                         <outlet property="eventsCollection" destination="3Ek-50-kH1" id="jW5-6l-Feo"/>
+                        <outlet property="inviteControllerView" destination="Bf4-U2-a0R" id="ppz-MU-ITm"/>
                         <outlet property="spinner" destination="kNv-3k-kCh" id="k9P-Ns-5sW"/>
+                        <outlet property="yourFriendsLabel" destination="FGA-GN-5bo" id="dhY-ru-Ug8"/>
                         <segue destination="AWS-OB-3z2" kind="show" identifier="EventsToUser" id="X0K-L3-TN7"/>
                     </connections>
                 </viewController>
@@ -1923,7 +1935,93 @@ Invite them to the app or explore gift ideas for you.  </string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IOl-nM-887" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1380" y="1114.5427286356824"/>
+            <point key="canvasLocation" x="1273" y="951"/>
+        </scene>
+        <!--Invite Controller-->
+        <scene sceneID="JYP-Uo-USf">
+            <objects>
+                <viewController id="Y4b-6w-20w" customClass="InviteController" customModule="Boxxit" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="B4Y-L5-MEQ">
+                        <rect key="frame" x="0.0" y="0.0" width="335" height="440"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="invitebg" translatesAutoresizingMaskIntoConstraints="NO" id="H2P-Q6-Ezu">
+                                <rect key="frame" x="0.0" y="0.0" width="335" height="440"/>
+                            </imageView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kxk-qN-ubc">
+                                <rect key="frame" x="16" y="177.5" width="303" height="85"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="p43-oK-x7d">
+                                        <rect key="frame" x="0.0" y="0.0" width="303" height="31"/>
+                                        <fontDescription key="fontDescription" name="Raleway-Bold" family="Raleway" pointSize="26"/>
+                                        <color key="textColor" red="0.89411764705882346" green="0.89803921568627454" blue="0.086274509803921567" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wBF-5A-cHE">
+                                        <rect key="frame" x="0.0" y="39" width="303" height="26"/>
+                                        <fontDescription key="fontDescription" name="Raleway-Bold" family="Raleway" pointSize="22"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="p43-oK-x7d" firstAttribute="leading" secondItem="kxk-qN-ubc" secondAttribute="leading" id="302-Uu-tU1"/>
+                                    <constraint firstItem="wBF-5A-cHE" firstAttribute="top" secondItem="p43-oK-x7d" secondAttribute="bottom" constant="8" id="KB6-b1-7ff"/>
+                                    <constraint firstAttribute="trailing" secondItem="p43-oK-x7d" secondAttribute="trailing" id="XWE-yH-g5z"/>
+                                    <constraint firstItem="wBF-5A-cHE" firstAttribute="leading" secondItem="kxk-qN-ubc" secondAttribute="leading" id="brv-86-J8z"/>
+                                    <constraint firstAttribute="trailing" secondItem="wBF-5A-cHE" secondAttribute="trailing" id="jNt-lF-kI7"/>
+                                    <constraint firstItem="p43-oK-x7d" firstAttribute="top" secondItem="kxk-qN-ubc" secondAttribute="top" id="m7e-NM-spV"/>
+                                    <constraint firstAttribute="bottom" secondItem="wBF-5A-cHE" secondAttribute="bottom" constant="20" id="zZn-0I-P5e"/>
+                                </constraints>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="T86-jm-Y8m">
+                                <rect key="frame" x="127" y="270.5" width="80" height="26"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="80" id="0ip-6e-XPB"/>
+                                    <constraint firstAttribute="height" constant="26" id="p5c-qd-xgU"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Raleway-Bold" family="Raleway" pointSize="10"/>
+                                <state key="normal" title="Button">
+                                    <color key="titleColor" red="0.015686274510000001" green="0.51764705879999995" blue="0.63921568630000003" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="13"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="inviteAction" destination="Y4b-6w-20w" eventType="touchUpInside" id="i2I-Nh-Mby"/>
+                                    <action selector="inviteAction" destination="TgA-W5-BFo" eventType="touchUpInside" id="jMj-88-uYY"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="kxk-qN-ubc" firstAttribute="centerX" secondItem="H2P-Q6-Ezu" secondAttribute="centerX" id="FN1-gh-nRF"/>
+                            <constraint firstAttribute="trailing" secondItem="H2P-Q6-Ezu" secondAttribute="trailing" id="JSZ-da-T0Q"/>
+                            <constraint firstItem="H2P-Q6-Ezu" firstAttribute="centerY" secondItem="kxk-qN-ubc" secondAttribute="centerY" id="TCS-C4-M1K"/>
+                            <constraint firstItem="H2P-Q6-Ezu" firstAttribute="leading" secondItem="B4Y-L5-MEQ" secondAttribute="leading" id="Ych-8e-ODR"/>
+                            <constraint firstItem="H2P-Q6-Ezu" firstAttribute="top" secondItem="B4Y-L5-MEQ" secondAttribute="top" id="es9-Iv-hu0"/>
+                            <constraint firstAttribute="trailing" secondItem="kxk-qN-ubc" secondAttribute="trailing" constant="16" id="huk-Kr-4jl"/>
+                            <constraint firstItem="kxk-qN-ubc" firstAttribute="centerY" secondItem="B4Y-L5-MEQ" secondAttribute="centerY" id="kUb-6a-qrR"/>
+                            <constraint firstItem="kxk-qN-ubc" firstAttribute="leading" secondItem="B4Y-L5-MEQ" secondAttribute="leading" constant="16" id="osP-Jx-BCa"/>
+                            <constraint firstItem="T86-jm-Y8m" firstAttribute="top" secondItem="kxk-qN-ubc" secondAttribute="bottom" constant="8" id="r8S-pj-jyw"/>
+                            <constraint firstItem="H2P-Q6-Ezu" firstAttribute="leading" secondItem="B4Y-L5-MEQ" secondAttribute="leading" id="sKs-de-qvn"/>
+                            <constraint firstItem="T86-jm-Y8m" firstAttribute="centerX" secondItem="B4Y-L5-MEQ" secondAttribute="centerX" id="wIl-1E-P0v"/>
+                            <constraint firstAttribute="bottom" secondItem="H2P-Q6-Ezu" secondAttribute="bottom" id="zs7-sT-9Y4"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="bigInviteText1" destination="p43-oK-x7d" id="ngu-PC-mJ0"/>
+                        <outlet property="bigInviteText2" destination="wBF-5A-cHE" id="EVg-Jr-ZrT"/>
+                        <outlet property="inviteButton" destination="T86-jm-Y8m" id="goP-fA-DjY"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ASB-OR-yzx" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1773.5999999999999" y="1329.5352323838083"/>
         </scene>
     </scenes>
     <resources>
@@ -1933,6 +2031,7 @@ Invite them to the app or explore gift ideas for you.  </string>
         <image name="closebtn" width="23" height="21"/>
         <image name="favs" width="66" height="57"/>
         <image name="headerbg" width="126" height="19"/>
+        <image name="invitebg" width="337" height="272"/>
         <image name="logo" width="281" height="316"/>
         <image name="nolike" width="66" height="57"/>
         <image name="testprofile" width="160" height="160"/>
@@ -1941,7 +2040,7 @@ Invite them to the app or explore gift ideas for you.  </string>
     <inferredMetricsTieBreakers>
         <segue reference="jem-Bd-3yA"/>
         <segue reference="gHf-x3-zak"/>
-        <segue reference="wWh-Jh-PeB"/>
+        <segue reference="X0K-L3-TN7"/>
         <segue reference="mVb-r4-LXu"/>
     </inferredMetricsTieBreakers>
 </document>

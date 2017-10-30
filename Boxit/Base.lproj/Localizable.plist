@@ -37,6 +37,10 @@
 		<string>It&apos;s better with friends.</string>
 		<key>Invite Invite Button</key>
 		<string>Invite friends</string>
+		<key>Big Invite Text 1</key>
+		<string>Connect with your friends </string>
+		<key>Big Invite Text 2</key>
+		<string>and discover new ideas for gifts</string>
 	</dict>
 	<key>Events</key>
 	<dict>
@@ -46,6 +50,8 @@
 		<string>Error trying to get your friends data</string>
 		<key>Invite Button</key>
 		<string>Invite Friends</string>
+		<key>Your Friends</key>
+		<string>your friends</string>
 	</dict>
 	<key>Explore</key>
 	<dict>

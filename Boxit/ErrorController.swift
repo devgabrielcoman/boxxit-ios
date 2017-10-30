@@ -98,5 +98,4 @@ extension ErrorController: StateLogic {
             break
         }
     }
-    
 }
