@@ -30,12 +30,25 @@ enum AppSegues: String {
     case NotificationsToSetup = "NotificationsToSetup"
 }
 
-class BaseController: UIViewController {
+class BaseController: UIViewController, HandlesStateUpdates {
 
+    var store: Store<AppState>!
     let disposeBag = DisposeBag ()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        let del = UIApplication.shared.delegate as! AppDelegate
+        store = del.store
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        store?.addListener(self)
+    }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        store?.removeListener(self)
     }
     
     override func didReceiveMemoryWarning() {
@@ -44,6 +57,10 @@ class BaseController: UIViewController {
     
     func performSegue (_ identifier: AppSegues) {
         self.performSegue(withIdentifier: identifier.rawValue, sender: self)
+    }
+    
+    func handle(_ state: AppState) {
+        // do nothing
     }
 }
 

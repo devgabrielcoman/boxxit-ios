@@ -8,21 +8,18 @@
 
 import UIKit
 
-//
-// MARK: Base
 class IntroController: BaseController {
 
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        self.checkLogin()
+        store.dispatch(Event.checkLoginState())
     }
-}
-
-//
-// MARK: Business
-extension IntroController: BusinessLogic {
     
-    func checkLogin() {
-        UserWorker.isUserLoggedIn() ? performSegue(.IntroToLoad) : performSegue(.IntroToLogin)
+    override func handle(_ state: AppState) {
+        let loginState = state.loginState
+        let isLoading = loginState.isLoading
+        if isLoading { return }
+        let segue = loginState.ownId != nil && loginState.token != nil ? AppSegues.IntroToLoad : AppSegues.IntroToLogin
+        performSegue(segue)
     }
 }

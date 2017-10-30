@@ -1941,6 +1941,10 @@ Invite them to the app or explore gift ideas for you.  </string>
         <scene sceneID="JYP-Uo-USf">
             <objects>
                 <viewController id="Y4b-6w-20w" customClass="InviteController" customModule="Boxxit" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="T5U-6I-ptX"/>
+                        <viewControllerLayoutGuide type="bottom" id="UCE-tg-yWS"/>
+                    </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="B4Y-L5-MEQ">
                         <rect key="frame" x="0.0" y="0.0" width="335" height="440"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

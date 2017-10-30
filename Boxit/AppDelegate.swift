@@ -13,6 +13,7 @@ protocol EnableNotificationResponder {
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
     
+    var store: Store<AppState>!
     var window: UIWindow?
     let gcmMessageIDKey = "gcm.message_id"
     var delegate: EnableNotificationResponder?
@@ -20,6 +21,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     let bag = DisposeBag()
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+        
+        store = Store<AppState>(state: AppState(), reducer: appReducer)
         
         let view = UIView(frame: CGRect(x: 0.0, y: 0.0, width: UIScreen.main.bounds.size.width, height: 20.0))
         view.backgroundColor = UIColor(red: 0, green: 87/255, blue: 116/255, alpha: 1)
