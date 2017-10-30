@@ -18,8 +18,10 @@ class IntroController: BaseController {
     override func handle(_ state: AppState) {
         let loginState = state.loginState
         let isLoading = loginState.isLoading
+        let ownId = loginState.ownId
+        let token = loginState.token
         if isLoading { return }
-        let segue = loginState.ownId != nil && loginState.token != nil ? AppSegues.IntroToLoad : AppSegues.IntroToLogin
+        let segue: AppSegues = ownId != nil && token != nil ? .IntroToLoad : .IntroToLogin
         performSegue(segue)
     }
 }

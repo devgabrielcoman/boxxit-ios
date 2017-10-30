@@ -14,6 +14,7 @@ enum Event{
     // login
     case loadingLoginData
     case checkedLoginState(token: String?, ownId: String?)
+    case logedUserIn(token: String?, error: BoxitError?)
 }
 
 extension Event {
@@ -34,6 +35,26 @@ extension Event {
         
         return Observable
             .just(Event.checkedLoginState(token: accessToken, ownId: ownId))
+            .startWith(Event.loadingLoginData)
+    }
+    
+    static func loginUser (fromViewController controller: UIViewController) -> Observable<Event> {
+        
+        let request = FacebookAuthRequest(withViewController: controller)
+        let task = FacebookAuthTask()
+        return task.execute(withInput: request)
+            .asObservable()
+            .map { token -> Event in
+                return Event.logedUserIn(token: token, error: nil)
+            }
+            .catchError { error -> Observable<Event> in
+                switch error {
+                case BoxitError.FbAuthCancelled:
+                    return Observable.just(Event.logedUserIn(token: nil, error: nil))
+                default:
+                    return Observable.just(Event.logedUserIn(token: nil, error: BoxitError.FbAuthError))
+                }
+            }
             .startWith(Event.loadingLoginData)
     }
 }

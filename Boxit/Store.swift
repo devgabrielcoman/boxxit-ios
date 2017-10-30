@@ -11,7 +11,7 @@ import RxSwift
 
 typealias Reducer <S: ReduxState> = (S, Event) -> S
 
-protocol HandlesStateUpdates {
+protocol HandlesStateUpdates: class {
     func handle(_ state: AppState) -> Void
 }
 
@@ -27,7 +27,7 @@ class Store <S: ReduxState> {
             }
         }
     }
-    
+
     private let handlers: NSMutableArray = NSMutableArray()
     
     private let bag = DisposeBag()
@@ -51,7 +51,15 @@ class Store <S: ReduxState> {
     }
     
     func addListener (_ listener: HandlesStateUpdates) {
-        handlers.add(listener)
+        var isAlready = false
+        handlers.forEach { handler in
+            if let h = handler as? HandlesStateUpdates, h === listener {
+                isAlready = true
+            }
+        }
+        if (!isAlready) {
+            handlers.add(listener)
+        }
     }
     
     func removeListener(_ listener: HandlesStateUpdates) {

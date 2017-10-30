@@ -19,5 +19,6 @@ struct LoginState: ReduxState {
     var isLoading = false
     var token: String?
     var ownId: String?
+    var error: BoxitError? = nil
 }
 

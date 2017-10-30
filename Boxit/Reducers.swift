@@ -15,6 +15,7 @@ func appReducer (_ previous: AppState, _ event: Event) -> AppState {
 func loginReducer (_ previous: LoginState, _ event: Event) -> LoginState {
     var state = previous
     state.isLoading = false
+    state.error = nil
     
     switch event {
     case .loadingLoginData:
@@ -23,6 +24,10 @@ func loginReducer (_ previous: LoginState, _ event: Event) -> LoginState {
     case .checkedLoginState(let token, let ownId):
         state.token = token
         state.ownId = ownId
+        break
+    case .logedUserIn(let token, let error):
+        state.token = token
+        state.error = error
         break
     default:
         // do nothing
