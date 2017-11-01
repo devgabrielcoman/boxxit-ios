@@ -11,18 +11,6 @@ import RxCocoa
 import RxSwift
 import Alertift
 
-//extension State {
-//    enum Login {
-//        case initial
-//        case loading
-//        case notLoading
-//        case error
-//        case tutorial
-//    }
-//}
-
-//
-// MARK: Base
 class LoginController: BaseController {
 
     @IBOutlet weak var loginButton: UIButton!

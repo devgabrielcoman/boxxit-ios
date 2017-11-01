@@ -32,16 +32,16 @@ extension UserWorker {
     }
 }
 
+////
+//// Send Profile data main function
+//extension UserWorker {
 //
-// Send Profile data main function
-extension UserWorker {
-    
-    static func populateUserProfile(forToken token: String) -> Single<Void> {
-        let request = NetworkRequest(withOperation: NetworkOperation.populateUserProfile(token: token))
-        let task = NetworkTask()
-        return task.execute(withInput: request).map { value -> Void in return () }
-    }
-}
+//    static func populateUserProfile(forToken token: String) -> Single<Void> {
+//        let request = NetworkRequest(withOperation: NetworkOperation.populateUserProfile(token: token))
+//        let task = NetworkTask()
+//        return task.execute(withInput: request).map { value -> Void in return () }
+//    }
+//}
 
 //
 // MARK: Update Token

@@ -21,12 +21,9 @@ func loginReducer (_ previous: LoginState, _ event: Event) -> LoginState {
     case .loadingLoginData:
         state.isLoading = true
         break
-    case .checkedLoginState(let token, let ownId):
+    case .checkedLoginState(let token, let ownId, let error):
         state.token = token
         state.ownId = ownId
-        break
-    case .logedUserIn(let token, let error):
-        state.token = token
         state.error = error
         break
     default:

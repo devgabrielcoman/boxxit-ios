@@ -13,8 +13,7 @@ import FBSDKCoreKit
 enum Event{
     // login
     case loadingLoginData
-    case checkedLoginState(token: String?, ownId: String?)
-    case logedUserIn(token: String?, error: BoxitError?)
+    case checkedLoginState(token: String?, ownId: String?, error: BoxitError?)
 }
 
 extension Event {
@@ -34,7 +33,7 @@ extension Event {
         }
         
         return Observable
-            .just(Event.checkedLoginState(token: accessToken, ownId: ownId))
+            .just(Event.checkedLoginState(token: accessToken, ownId: ownId, error: nil))
             .startWith(Event.loadingLoginData)
     }
     
@@ -44,15 +43,16 @@ extension Event {
         let task = FacebookAuthTask()
         return task.execute(withInput: request)
             .asObservable()
-            .flatMap { token -> Observable<Event> in
+            .flatMap { token -> Observable<Void> in
                 let request2 = NetworkRequest(withOperation: NetworkOperation.populateUserProfile(token: token))
                 let task2 = NetworkTask()
-                return task2.execute(withInput: request2).asObservable().map { value -> Event in
-                    return Event.logedUserIn(token: token, error: nil)
-                }
+                return task2.execute(withInput: request2).asObservable().map { value -> Void in return () }
+            }
+            .flatMap { _ -> Observable<Event> in
+                return Event.checkLoginState()
             }
             .catchError { error -> Observable<Event> in
-                return Observable.just(Event.logedUserIn(token: nil, error: BoxitError.FbAuthError))
+                return Observable.just(Event.checkedLoginState(token: nil, ownId: nil, error: BoxitError.FbAuthError))
             }
             .startWith(Event.loadingLoginData)
     }
