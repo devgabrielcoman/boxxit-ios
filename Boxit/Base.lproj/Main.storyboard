@@ -34,7 +34,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ekd-no-OdG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1018" y="-513"/>
+            <point key="canvasLocation" x="-1655" y="-506"/>
         </scene>
         <!--Intro Controller-->
         <scene sceneID="Zo9-cl-d6Z">
@@ -89,7 +89,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Oax-Ck-xPV" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1" y="-513"/>
+            <point key="canvasLocation" x="-639" y="-506"/>
         </scene>
         <!--Load Controller-->
         <scene sceneID="CEz-tM-Y2H">
@@ -272,12 +272,12 @@
                     <connections>
                         <outlet property="loginButton" destination="ft4-ih-VdD" id="qgk-fN-7aA"/>
                         <outlet property="spinner" destination="TMp-7U-hCB" id="mLE-m0-sAE"/>
-                        <segue destination="FU4-c1-Ce3" kind="show" identifier="LoginToMain" id="mVb-r4-LXu"/>
+                        <segue destination="7rd-t4-Q7i" kind="show" identifier="LoginToLoad" id="vxm-ae-saz"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cnD-uN-USk" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1273" y="-513"/>
+            <point key="canvasLocation" x="636" y="-506"/>
         </scene>
         <!--User Controller-->
         <scene sceneID="6mI-ws-cVg">
@@ -2045,6 +2045,6 @@ Invite them to the app or explore gift ideas for you.  </string>
         <segue reference="jem-Bd-3yA"/>
         <segue reference="gHf-x3-zak"/>
         <segue reference="X0K-L3-TN7"/>
-        <segue reference="mVb-r4-LXu"/>
+        <segue reference="vxm-ae-saz"/>
     </inferredMetricsTieBreakers>
 </document>

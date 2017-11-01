@@ -7,7 +7,7 @@ enum AppSegues: String {
     case IntroToLogin = "IntroToLogin"
     case IntroToLoad = "IntroToLoad"
     case LoadToMain = "LoadToMain"
-    case LoginToMain = "LoginToMain"
+    case LoginToLoad = "LoginToLoad"
     case Next1ToMain = "Next1ToMain"
     case Next2ToMain = "Next2ToMain"
     case ProfileMainToUser = "ProfileMainToUser"

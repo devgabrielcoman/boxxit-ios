@@ -44,16 +44,15 @@ extension Event {
         let task = FacebookAuthTask()
         return task.execute(withInput: request)
             .asObservable()
-            .map { token -> Event in
-                return Event.logedUserIn(token: token, error: nil)
+            .flatMap { token -> Observable<Event> in
+                let request2 = NetworkRequest(withOperation: NetworkOperation.populateUserProfile(token: token))
+                let task2 = NetworkTask()
+                return task2.execute(withInput: request2).asObservable().map { value -> Event in
+                    return Event.logedUserIn(token: token, error: nil)
+                }
             }
             .catchError { error -> Observable<Event> in
-                switch error {
-                case BoxitError.FbAuthCancelled:
-                    return Observable.just(Event.logedUserIn(token: nil, error: nil))
-                default:
-                    return Observable.just(Event.logedUserIn(token: nil, error: BoxitError.FbAuthError))
-                }
+                return Observable.just(Event.logedUserIn(token: nil, error: BoxitError.FbAuthError))
             }
             .startWith(Event.loadingLoginData)
     }

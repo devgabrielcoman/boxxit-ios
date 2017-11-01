@@ -57,6 +57,12 @@ class LoginController: BaseController {
                 .action(.default("Alert OK".localized))
                 .show()
         }
+        
+        //
+        // login success
+        if loginState.token != nil {
+            performSegue(.LoginToLoad)
+        }
     }
 }
 
