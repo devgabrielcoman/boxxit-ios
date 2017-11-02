@@ -179,8 +179,8 @@ extension FavouriteController: StateLogic {
             
             //
             // set previous error controller invisible
-            let controller: ErrorController? = self.getChild()
-            controller?.setState(state: State.Error.hidden)
+//            let controller: ErrorController? = self.getChild()
+//            controller?.setState(state: State.Error.hidden)
             
             //
             // update data
@@ -193,8 +193,8 @@ extension FavouriteController: StateLogic {
             
             spinner.stopAnimating()
             
-            let controller: ErrorController? = self.getChild()
-            controller?.setState(state: State.Error.visible(withErrorMessage: viewModel.errorText, andHasRetryButton: viewModel.hasRetry, andRetryButtonText: nil))
+//            let controller: ErrorController? = self.getChild()
+//            controller?.setState(state: State.Error.visible(withErrorMessage: viewModel.errorText, andHasRetryButton: viewModel.hasRetry, andRetryButtonText: nil))
             
             break
         }
@@ -212,7 +212,7 @@ extension FavouriteController: FavouriteRoutingLogic {
     
     func embed(controller2: ErrorController) {
         controller2.didClickOnRetry = {
-            controller2.setState(state: State.Error.hidden)
+//            controller2.setState(state: State.Error.hidden)
             self.spinner.startAnimating()
             self.getProducts()
         }

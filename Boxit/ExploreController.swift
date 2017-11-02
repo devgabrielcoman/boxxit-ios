@@ -204,8 +204,8 @@ extension ExploreController: StateLogic {
         case .error(let viewModel):
             
             self.loadingIcon.isHidden = true
-            let controller: ErrorController? = self.getChild()
-            controller?.setState(state: State.Error.visible(withErrorMessage: viewModel.errorText, andHasRetryButton: viewModel.hasRetry, andRetryButtonText: nil))
+//            let controller: ErrorController? = self.getChild()
+//            controller?.setState(state: State.Error.visible(withErrorMessage: viewModel.errorText, andHasRetryButton: viewModel.hasRetry, andRetryButtonText: nil))
             break
         }
     }
@@ -228,7 +228,7 @@ extension ExploreController: ExploreRoutingLogic {
     
     func embed(controller2: ErrorController) {
         controller2.didClickOnRetry = {
-            controller2.setState(state: State.Error.hidden)
+//            controller2.setState(state: State.Error.hidden)
             self.loadingIcon.isHidden = false
             self.getProducts()
         }

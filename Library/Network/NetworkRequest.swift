@@ -84,7 +84,7 @@ public class NetworkRequest: Request {
                 "fields" : "id,email,picture.width(300),name,birthday,cover",
                 "access_token": token,
                 "after": offset ?? "",
-                "limit": 3,
+//                "limit": 3,
                 "summary": "true"
             ]
         case .populateUserProfile(let fbToken):

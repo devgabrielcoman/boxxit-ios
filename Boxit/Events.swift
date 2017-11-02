@@ -79,7 +79,6 @@ extension Event {
         let task = NetworkTask ()
         return task.execute(withInput: request)
             .flatMap { friendData -> Single<FacebookData<FacebookProfile>> in
-                
                 let task = ParseFacebookDataTask<FacebookProfile>()
                 return task.execute(withInput: friendData)
             }

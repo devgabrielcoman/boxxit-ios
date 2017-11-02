@@ -989,7 +989,7 @@
                                     <outlet property="delegate" destination="k8x-Rm-DZq" id="DEv-JV-vUs"/>
                                 </connections>
                             </collectionView>
-                            <containerView hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2GG-9u-Aza" userLabel="ErrorContainer">
+                            <containerView hidden="YES" opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2GG-9u-Aza" userLabel="ErrorContainer">
                                 <rect key="frame" x="20" y="40" width="335" height="440"/>
                                 <connections>
                                     <segue destination="Y5j-Zd-XmF" kind="embed" identifier="EventsEmbedsError" id="jem-Bd-3yA"/>
@@ -1192,8 +1192,6 @@
                     <size key="freeformSize" width="335" height="327"/>
                     <connections>
                         <outlet property="retryButton" destination="lVt-z1-Zor" id="JWd-De-caV"/>
-                        <outlet property="retryButtonBContraint" destination="mBQ-OD-bVo" id="9Vy-4H-Bql"/>
-                        <outlet property="retryButtonHContraint" destination="fqL-WR-S1C" id="Okx-Tm-ndZ"/>
                         <outlet property="textLabel" destination="K99-5E-qpd" id="N3Q-bP-njO"/>
                     </connections>
                 </viewController>

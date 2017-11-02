@@ -19,9 +19,6 @@ class MainController: BaseController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        print("State is \(store.current)")
-        
 //        // set state
 //        TutorialDriver.shared.setState(state: State.Tutorial.welcome)
     }
