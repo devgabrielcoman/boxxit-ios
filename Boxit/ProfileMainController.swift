@@ -22,11 +22,11 @@ import RxSwift
 // MARK: Base
 class ProfileMainController: BaseController {
 
-    @IBOutlet weak var backButton: UIButton!
-    @IBOutlet weak var profilePicture: UIImageView!
-    @IBOutlet weak var profileName: UILabel!
-    @IBOutlet weak var profileBirthday: UILabel!
-    @IBOutlet weak var favouriteButton: UIButton!
+    @IBOutlet weak var backButton: UIButton?
+    @IBOutlet weak var profilePicture: UIImageView?
+    @IBOutlet weak var profileName: UILabel?
+    @IBOutlet weak var profileBirthday: UILabel?
+    @IBOutlet weak var favouriteButton: UIButton?
     
 //    var facebookUser: String = "me"
     
@@ -51,18 +51,19 @@ class ProfileMainController: BaseController {
         super.viewDidLoad()
         let user = store.current.selectedUser ?? store.current.currentUserState.currentUser
         let viewModel = ViewModels.User(profile: user!)
-        profilePicture.kf.setImage(with: viewModel.profile.pictureUrl)
-        profileName.text = viewModel.profile.name
-        profileBirthday.text = viewModel.birthdayShort
+        profilePicture?.kf.setImage(with: viewModel.profile.pictureUrl)
+        profileName?.text = viewModel.profile.name
+        profileBirthday?.text = viewModel.birthdayShort
     }
     
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-        
+    @IBAction func backButtonAction(_ sender: Any) {
+        self.navigationController?.popViewController(animated: true)
     }
     
-    override func handle(_ state: AppState) {
-        
+    @IBAction func gotoUserController(_ sender: Any) {
+       let current = store.current.currentUserState.currentUser
+       store.dispatch(Event.selectUser(user: current))
+       performSegue(AppSegues.ProfileMainToUser)
     }
 }
 

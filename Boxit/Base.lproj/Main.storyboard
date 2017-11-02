@@ -521,10 +521,10 @@
             </objects>
             <point key="canvasLocation" x="3993" y="444"/>
         </scene>
-        <!--Profile Header Controller-->
+        <!--Profile Main Controller-->
         <scene sceneID="Z4n-Cj-UGu">
             <objects>
-                <viewController id="XuC-Po-dTO" customClass="ProfileHeaderController" customModule="Boxxit" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="XuC-Po-dTO" customClass="ProfileMainController" customModule="Boxxit" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="AXC-ut-doN"/>
                         <viewControllerLayoutGuide type="bottom" id="1iR-Un-3b2"/>
@@ -577,7 +577,7 @@
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
-                                    <action selector="backButtonAction:" destination="XuC-Po-dTO" eventType="touchUpInside" id="agb-dO-Y0l"/>
+                                    <action selector="backButtonAction:" destination="XuC-Po-dTO" eventType="touchUpInside" id="Br9-gO-YgY"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3d0-lg-1Zu">
@@ -589,7 +589,7 @@
                                 <inset key="imageEdgeInsets" minX="9" minY="19" maxX="9" maxY="19"/>
                                 <state key="normal" image="favs"/>
                                 <connections>
-                                    <segue destination="oFV-3q-6Th" kind="show" identifier="UserToFavourite" id="yVP-tU-NF5"/>
+                                    <segue destination="oFV-3q-6Th" kind="show" id="tOD-K6-QPN"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -616,11 +616,11 @@
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="375" height="70"/>
                     <connections>
-                        <outlet property="backButton" destination="j7R-uL-GRO" id="2JJ-5D-hch"/>
-                        <outlet property="favouriteButton" destination="3d0-lg-1Zu" id="BiF-HL-GHv"/>
-                        <outlet property="profileBirthday" destination="YRi-6D-T8I" id="yVf-oZ-QO2"/>
-                        <outlet property="profileName" destination="GYc-6U-IvW" id="R2i-E3-5kf"/>
-                        <outlet property="profilePicture" destination="2t3-M1-eEu" id="y3T-Pf-YDx"/>
+                        <outlet property="backButton" destination="j7R-uL-GRO" id="ahU-Z1-6j8"/>
+                        <outlet property="favouriteButton" destination="3d0-lg-1Zu" id="Tw6-Bu-MSd"/>
+                        <outlet property="profileBirthday" destination="YRi-6D-T8I" id="qUu-Hv-Qha"/>
+                        <outlet property="profileName" destination="GYc-6U-IvW" id="pvD-6V-c5f"/>
+                        <outlet property="profilePicture" destination="2t3-M1-eEu" id="OIt-SP-liE"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="X6Z-UQ-RyR" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -802,12 +802,6 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bigheaderbg" translatesAutoresizingMaskIntoConstraints="NO" id="8dN-Gu-l5Y">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="250"/>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZxC-Ya-rVL">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="250"/>
-                                <connections>
-                                    <segue destination="AWS-OB-3z2" kind="show" identifier="MainHeaderToUser" id="wWh-Jh-PeB"/>
-                                </connections>
-                            </button>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="testprofile" translatesAutoresizingMaskIntoConstraints="NO" id="pzo-WP-djB">
                                 <rect key="frame" x="245" y="40" width="90" height="90"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -863,6 +857,12 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZxC-Ya-rVL">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="250"/>
+                                <connections>
+                                    <action selector="gotoUserController:" destination="3oP-Hq-aI8" eventType="touchUpInside" id="wB0-D3-LZk"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -894,6 +894,7 @@
                         <outlet property="profileBirthday" destination="WTc-pV-3xy" id="oBc-Pz-pki"/>
                         <outlet property="profileName" destination="fjQ-nK-tAk" id="Hqr-Sd-fvO"/>
                         <outlet property="profilePicture" destination="pzo-WP-djB" id="W2i-fe-xg4"/>
+                        <segue destination="AWS-OB-3z2" kind="show" identifier="ProfileMainToUser" id="Jfg-N3-0k3"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Xwf-x0-asV" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1786,7 +1787,7 @@ Or tap anywhere else to start using Boxxit!</string>
                                             </constraints>
                                         </imageView>
                                         <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AVh-Js-0cJ">
-                                            <rect key="frame" x="122" y="228" width="130" height="26"/>
+                                            <rect key="frame" x="122" y="227" width="130" height="27"/>
                                             <color key="backgroundColor" red="0.89411764709999997" green="0.8980392157" blue="0.086274509799999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="130" id="eJ9-6V-GK3"/>
@@ -2047,7 +2048,7 @@ Invite them to the app or explore gift ideas for you.  </string>
     <inferredMetricsTieBreakers>
         <segue reference="jem-Bd-3yA"/>
         <segue reference="gHf-x3-zak"/>
-        <segue reference="X0K-L3-TN7"/>
+        <segue reference="Jfg-N3-0k3"/>
         <segue reference="vxm-ae-saz"/>
     </inferredMetricsTieBreakers>
 </document>
