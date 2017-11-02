@@ -14,6 +14,7 @@ enum Event{
     // login
     case loadingLoginData
     case checkedLoginState(token: String?, ownId: String?, error: BoxitError?)
+    case gotUser(forUserId: String, user: FacebookProfile?, error: BoxitError?)
 }
 
 extension Event {
@@ -51,10 +52,24 @@ extension Event {
             .flatMap { _ -> Observable<Event> in
                 return Event.checkLoginState()
             }
-            .catchError { error -> Observable<Event> in
-                return Observable.just(Event.checkedLoginState(token: nil, ownId: nil, error: BoxitError.FbAuthError))
-            }
+            .catchErrorJustReturn(Event.checkedLoginState(token: nil, ownId: nil, error: BoxitError.FbAuthError))
             .startWith(Event.loadingLoginData)
+    }
+    
+    static func get(profileForUserId id: String) -> Observable<Event> {
+        
+        let request = NetworkRequest(withOperation: NetworkOperation.getProfileFromFacebook(forUser: id))
+        let task = NetworkTask()
+        return task.execute(withInput: request)
+            .flatMap { fbData -> Single<FacebookProfile> in
+                let task = ParseFacebookProfileTask()
+                return task.execute(withInput: fbData)
+            }
+            .asObservable()
+            .map { profile -> Event in
+                return Event.gotUser(forUserId: id, user: profile, error: nil)
+            }
+            .catchErrorJustReturn(Event.gotUser(forUserId: id, user: nil, error: BoxitError.NoInternet))
     }
 }
 

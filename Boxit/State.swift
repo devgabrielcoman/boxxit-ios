@@ -12,7 +12,9 @@ protocol ReduxState {}
 
 struct AppState: ReduxState {
     var loginState: LoginState = LoginState()
-//    var profiles: [String : FacebookProfile] = [:]
+    var profilesState: ProfilesState = ProfilesState()
+    var currentUser: FacebookProfile?
+    var selectedUser: FacebookProfile? 
 }
 
 struct LoginState: ReduxState {
@@ -22,3 +24,7 @@ struct LoginState: ReduxState {
     var error: BoxitError? = nil
 }
 
+struct ProfilesState: ReduxState {
+    var profiles: [String : FacebookProfile] = [:]
+    var error: BoxitError? = nil
+}

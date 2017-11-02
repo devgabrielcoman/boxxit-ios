@@ -20,32 +20,35 @@ class MainController: BaseController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // set state
-        TutorialDriver.shared.setState(state: State.Tutorial.welcome)
+        print("State is \(store.current)")
+        
+//        // set state
+//        TutorialDriver.shared.setState(state: State.Tutorial.welcome)
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        
-        if TutorialDriver.shared.shouldShowNotifications() {
-            TutorialDriver.shared.setState(state: State.Tutorial.notifications)
-        }
-    }
+//    override func viewWillAppear(_ animated: Bool) {
+//        super.viewWillAppear(animated)
+//
+//        if TutorialDriver.shared.shouldShowNotifications() {
+//            TutorialDriver.shared.setState(state: State.Tutorial.notifications)
+//        }
+//    }
 }
 
+////
+//// MARK: Routing Logic
+//extension MainController: MainRoutingLogic {
 //
-// MARK: Routing Logic
-extension MainController: MainRoutingLogic {
-    
-    func prepare(controller1: UserController) {
-        controller1.facebookUser = "me"
-    }
-    
-    func embed(controller2: ProfileMainController) {
-        controller2.facebookUser = "me"
-    }
-    
-    func embed(controller3: EventsController) {
-        controller3.facebookUser = "me"
-    }
-}
+//    func prepare(controller1: UserController) {
+//        controller1.facebookUser = "me"
+//    }
+//
+//    func embed(controller2: ProfileMainController) {
+//        controller2.facebookUser = "me"
+//    }
+//
+//    func embed(controller3: EventsController) {
+//        controller3.facebookUser = "me"
+//    }
+//}
+

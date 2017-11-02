@@ -50,6 +50,7 @@ class LoginController: BaseController {
         // login success
         if loginState.token != nil {
             performSegue(.LoginToLoad)
+            store.removeListener(self)
         }
     }
 }

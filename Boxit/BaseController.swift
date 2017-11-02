@@ -43,12 +43,12 @@ class BaseController: UIViewController, HandlesStateUpdates {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        store?.addListener(self)
+        store.addListener(self)
     }
     
     override func viewDidDisappear(_ animated: Bool) {
         super.viewDidDisappear(animated)
-        store?.removeListener(self)
+        store.removeListener(self)
     }
     
     override func didReceiveMemoryWarning() {

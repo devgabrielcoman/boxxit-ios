@@ -10,56 +10,39 @@ import UIKit
 import RxSwift
 import Alertift
 
-//extension State {
-//    enum Load {
-//        case error
-//    }
-//}
-
-//
-// MARK: Base
 class LoadController: BaseController {
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        print("State is \(store.current)")
-//        self.loadUser()
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        self.loadUser()
+    }
+    
+    private func loadUser () {
+        if let userId = store.current.loginState.ownId {
+            store.dispatch(Event.get(profileForUserId: userId))
+        }
+    }
+    
+    override func handle(_ state: AppState) {
+        let profileState = state.profilesState
+        
+        //
+        // error case
+        if profileState.error != nil {
+            
+            Alertift.alert(title: "Network Error Title".localized, message: "Network Error Message".localized)
+                .action(.cancel("Alert Cancel".localized))
+                .action(.default("Alert Try Again".localized), isPreferred: true, handler: {
+                    self.loadUser()
+                })
+                .show()
+        }
+        
+        //
+        // success case
+        if let userId = store.current.loginState.ownId, let _ = profileState.profiles[userId] {
+            performSegue(AppSegues.LoadToMain)
+        }
     }
 }
-
-//// MARK: Business
-//extension LoadController: BusinessLogic {
-//
-//    func loadUser() {
-//
-//        UserWorker.get(profileForUserId: "me")
-//            .subscribe(onSuccess: { profile in
-//                self.performSegue(AppSegues.LoadToMain)
-//            }, onError: { error in
-//                self.setState(state: .error)
-//            })
-//            .addDisposableTo(disposeBag)
-//    }
-//}
-
-//// MARK: State Logic
-//extension LoadController: StateLogic {
-//    
-//    func setState (state: State.Load) {
-//        switch state {
-//        //
-//        // error state
-//        case .error:
-//            
-//            Alertift.alert(title: "Network Error Title".localized, message: "Network Error Message".localized)
-//                .action(.cancel("Alert Cancel".localized))
-//                .action(.default("Alert Try Again".localized), isPreferred: true, handler: {
-//                    self.loadUser()
-//                })
-//                .show()
-//            
-//            break
-//        }
-//    }
-//}
 
