@@ -12,7 +12,7 @@ func appReducer (_ previous: AppState, _ event: Event) -> AppState {
     return AppState(loginState: loginReducer(previous.loginState, event),
                     friendsState: friendsReducer(previous.friendsState, event),
                     currentUserState: currentUserReducer(previous, event),
-                    selectedUser: selectedUserReducer(previous.selectedUser, event),
+                    selectedUserState: selectedUserReducer(previous, event),
                     productState: productsReducer(previous.productState, event))
 }
 
@@ -81,19 +81,24 @@ func friendsReducer (_ previous: FriendsState, _ event: Event) -> FriendsState {
     return state
 }
 
-func selectedUserReducer (_ previous: FacebookProfile?, _ event: Event) -> FacebookProfile? {
+func selectedUserReducer (_ previous: AppState, _ event: Event) -> SelectedUserState {
     var state = previous
     
     switch event {
     case .selectUser(let user):
-        state = user
+        state.selectedUserState.user = user
+        if let ownId = state.loginState.ownId, let userId = user?.id, ownId == userId {
+            state.selectedUserState.isSelf = true
+        } else {
+            state.selectedUserState.isSelf = false
+        }
         break
     default:
         // do nothing
         break
     }
     
-    return state
+    return state.selectedUserState
 }
 
 func productsReducer (_ previous: ProductState, _ event: Event) -> ProductState {

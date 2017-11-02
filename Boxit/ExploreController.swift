@@ -52,7 +52,7 @@ class ExploreController: BaseController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        if let userId = store.current.selectedUser?.id {
+        if let userId = store.current.selectedUserState.user?.id {
             store.dispatch(Event.get(productsForUserid: userId, withMinPrice: 0, andMaxPrice: 5000))
         }
     }
@@ -87,7 +87,9 @@ extension ExploreController: UITableViewDelegate, UITableViewDataSource,UIScroll
     }
     
     public func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
-        //
+        if scrollView.bounds.maxY >= scrollView.contentSize.height {
+            print("GOT TO THE END!")
+        }
     }
 }
 
