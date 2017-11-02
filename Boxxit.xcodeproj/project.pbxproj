@@ -20,7 +20,6 @@
 		1B520B9D1EA9236F006FD05E /* UserController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B520B9C1EA9236F006FD05E /* UserController.swift */; };
 		1B520BAB1EA9DF67006FD05E /* ProductRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B520BA91EA9DF67006FD05E /* ProductRow.swift */; };
 		1B520BC01EABF2F2006FD05E /* ExploreController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B520BBF1EABF2F2006FD05E /* ExploreController.swift */; };
-		1B520BDD1EAE8E05006FD05E /* ProfileHeaderController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B520BDC1EAE8E05006FD05E /* ProfileHeaderController.swift */; };
 		1B520BE21EAE9A69006FD05E /* ProfileMainController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B520BE11EAE9A69006FD05E /* ProfileMainController.swift */; };
 		1B520BE81EAEB03F006FD05E /* EventsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B520BE71EAEB03F006FD05E /* EventsController.swift */; };
 		1B520BEA1EAEB052006FD05E /* EventsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B520BE91EAEB052006FD05E /* EventsCell.swift */; };
@@ -66,7 +65,6 @@
 		1BAF66371EED77CC00F0AB4C /* FavouriteRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BAF66361EED77CC00F0AB4C /* FavouriteRouter.swift */; };
 		1BAF66391EED786E00F0AB4C /* MainRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BAF66381EED786E00F0AB4C /* MainRouter.swift */; };
 		1BAF663B1EED791600F0AB4C /* UserRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BAF663A1EED791600F0AB4C /* UserRouter.swift */; };
-		1BAF66401EED7F1F00F0AB4C /* ProfileHeaderRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BAF663F1EED7F1F00F0AB4C /* ProfileHeaderRouter.swift */; };
 		1BAF66421EED832800F0AB4C /* ExploreRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BAF66411EED832800F0AB4C /* ExploreRouter.swift */; };
 		1BB132271F2CC60E0096B56C /* TutorialWelcomeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BB132261F2CC60E0096B56C /* TutorialWelcomeController.swift */; };
 		1BB132291F2CC61D0096B56C /* TutorialProfileController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BB132281F2CC61D0096B56C /* TutorialProfileController.swift */; };
@@ -116,7 +114,6 @@
 		1B520B9C1EA9236F006FD05E /* UserController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserController.swift; sourceTree = "<group>"; };
 		1B520BA91EA9DF67006FD05E /* ProductRow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductRow.swift; sourceTree = "<group>"; };
 		1B520BBF1EABF2F2006FD05E /* ExploreController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExploreController.swift; sourceTree = "<group>"; };
-		1B520BDC1EAE8E05006FD05E /* ProfileHeaderController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileHeaderController.swift; sourceTree = "<group>"; };
 		1B520BE11EAE9A69006FD05E /* ProfileMainController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileMainController.swift; sourceTree = "<group>"; };
 		1B520BE71EAEB03F006FD05E /* EventsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventsController.swift; sourceTree = "<group>"; };
 		1B520BE91EAEB052006FD05E /* EventsCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventsCell.swift; sourceTree = "<group>"; };
@@ -163,7 +160,6 @@
 		1BAF66361EED77CC00F0AB4C /* FavouriteRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FavouriteRouter.swift; sourceTree = "<group>"; };
 		1BAF66381EED786E00F0AB4C /* MainRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainRouter.swift; sourceTree = "<group>"; };
 		1BAF663A1EED791600F0AB4C /* UserRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserRouter.swift; sourceTree = "<group>"; };
-		1BAF663F1EED7F1F00F0AB4C /* ProfileHeaderRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileHeaderRouter.swift; sourceTree = "<group>"; };
 		1BAF66411EED832800F0AB4C /* ExploreRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExploreRouter.swift; sourceTree = "<group>"; };
 		1BB132261F2CC60E0096B56C /* TutorialWelcomeController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TutorialWelcomeController.swift; sourceTree = "<group>"; };
 		1BB132281F2CC61D0096B56C /* TutorialProfileController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TutorialProfileController.swift; sourceTree = "<group>"; };
@@ -270,15 +266,6 @@
 			name = Explore;
 			sourceTree = "<group>";
 		};
-		1B520BDB1EAE8DF3006FD05E /* ProfileHeader */ = {
-			isa = PBXGroup;
-			children = (
-				1BAF663F1EED7F1F00F0AB4C /* ProfileHeaderRouter.swift */,
-				1B520BDC1EAE8E05006FD05E /* ProfileHeaderController.swift */,
-			);
-			name = ProfileHeader;
-			sourceTree = "<group>";
-		};
 		1B520BE31EAE9C63006FD05E /* User */ = {
 			isa = PBXGroup;
 			children = (
@@ -346,10 +333,9 @@
 				1BAF663C1EED7ABE00F0AB4C /* ProfileMain */,
 				1B520BE61EAEB02E006FD05E /* Events */,
 				1BEEA2FF1FA200680007E565 /* Invite */,
-				1B520BDB1EAE8DF3006FD05E /* ProfileHeader */,
+				1B520BE31EAE9C63006FD05E /* User */,
 				1B520BBE1EABF2DA006FD05E /* Explore */,
 				1B4E56E21EE1CD2F00F67FC3 /* Favourites */,
-				1B520BE31EAE9C63006FD05E /* User */,
 				1BDB05081EE6D5E70028E9A8 /* Error */,
 				1B4E5DFD1EBF3B1B002DA018 /* Slider */,
 				1BC9302F1F277256002E5114 /* Tutorial */,
@@ -822,7 +808,6 @@
 				1B2A7A071EF81E5400552DE6 /* NetworkRequest.swift in Sources */,
 				1BAF663B1EED791600F0AB4C /* UserRouter.swift in Sources */,
 				1BFA4CC91ED589FB00E00297 /* UIColor+Extensions.swift in Sources */,
-				1B520BDD1EAE8E05006FD05E /* ProfileHeaderController.swift in Sources */,
 				1BE7B47E1EC5DB890085427A /* ParseFacebookProfileTask.swift in Sources */,
 				1BE7B4781EC5DB890085427A /* Product.swift in Sources */,
 				1B904CAD1F17A353008254FB /* Style.swift in Sources */,
@@ -842,7 +827,6 @@
 				1BE7B47D1EC5DB890085427A /* ParseFacebookDataTask.swift in Sources */,
 				1BA23B131ECDBECB00BBBB45 /* TutorialNotificationsController.swift in Sources */,
 				1B7229C71EA6A9CF00B9897F /* LoginController.swift in Sources */,
-				1BAF66401EED7F1F00F0AB4C /* ProfileHeaderRouter.swift in Sources */,
 				1BB132271F2CC60E0096B56C /* TutorialWelcomeController.swift in Sources */,
 				1B3E53221FA78A9700D76F49 /* Reducers.swift in Sources */,
 				1BE7B4681EC5DB890085427A /* Request.swift in Sources */,

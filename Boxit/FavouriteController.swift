@@ -201,20 +201,21 @@ extension FavouriteController: StateLogic {
     }
 }
 
-//
-// MARK: Routing Logic
-extension FavouriteController: FavouriteRoutingLogic {
-    
-    func embed(controller1: ProfileHeaderController) {
-        controller1.facebookUser = facebookUser
-        controller1.hasInfoButton = false
-    }
-    
-    func embed(controller2: ErrorController) {
-        controller2.didClickOnRetry = {
-//            controller2.setState(state: State.Error.hidden)
-            self.spinner.startAnimating()
-            self.getProducts()
-        }
-    }
-}
+////
+//// MARK: Routing Logic
+//extension FavouriteController: FavouriteRoutingLogic {
+//    
+//    func embed(controller1: ProfileHeaderController) {
+//        controller1.facebookUser = facebookUser
+//        controller1.hasInfoButton = false
+//    }
+//    
+//    func embed(controller2: ErrorController) {
+//        controller2.didClickOnRetry = {
+////            controller2.setState(state: State.Error.hidden)
+//            self.spinner.startAnimating()
+//            self.getProducts()
+//        }
+//    }
+//}
+

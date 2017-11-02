@@ -337,7 +337,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="567"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="370" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="4HO-Zf-hbr">
+                            <tableView hidden="YES" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="370" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="4HO-Zf-hbr">
                                 <rect key="frame" x="0.0" y="20" width="375" height="497"/>
                                 <color key="backgroundColor" red="0.96470588239999999" green="0.96862745100000003" blue="0.92156862750000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <prototypes>
@@ -468,6 +468,10 @@
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="nHD-2z-Xjb" id="PNv-1C-UJz"/>
+                                    <outlet property="delegate" destination="nHD-2z-Xjb" id="uEo-fE-YXj"/>
+                                </connections>
                             </tableView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="AZm-aN-1Fi" userLabel="Loading">
                                 <rect key="frame" x="157" y="253" width="60" height="60"/>
@@ -476,7 +480,7 @@
                                     <constraint firstAttribute="height" constant="60" id="hCN-Bh-dQ3"/>
                                 </constraints>
                             </imageView>
-                            <containerView opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Xir-yb-aEd" userLabel="Error Controller">
+                            <containerView hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Xir-yb-aEd" userLabel="Error Controller">
                                 <rect key="frame" x="20" y="40" width="335" height="457"/>
                                 <connections>
                                     <segue destination="Y5j-Zd-XmF" kind="embed" identifier="ExploreEmbedsError" id="lDA-lJ-h1A"/>
@@ -512,6 +516,7 @@
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="375" height="567"/>
                     <connections>
+                        <outlet property="errorContainerView" destination="Xir-yb-aEd" id="Ncw-Bi-Cp3"/>
                         <outlet property="loadingIcon" destination="AZm-aN-1Fi" id="atO-0M-XX3"/>
                         <outlet property="sliderContainer" destination="Dyb-BT-LWb" id="Vv7-Pe-E90"/>
                         <outlet property="tableView" destination="4HO-Zf-hbr" id="Nym-Sv-8aG"/>
@@ -2046,7 +2051,7 @@ Invite them to the app or explore gift ideas for you.  </string>
         <image name="title" width="214" height="27"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="jem-Bd-3yA"/>
+        <segue reference="lDA-lJ-h1A"/>
         <segue reference="gHf-x3-zak"/>
         <segue reference="Jfg-N3-0k3"/>
         <segue reference="vxm-ae-saz"/>

@@ -8,22 +8,23 @@
 
 import UIKit
 
-protocol UserRoutingLogic: RoutingLogic {
-    func embed(controller1: ProfileHeaderController)
-    func embed(controller2: ExploreController)
-}
+//protocol UserRoutingLogic: RoutingLogic {
+//    func embed(controller1: ProfileHeaderController)
+//    func embed(controller2: ExploreController)
+//}
+//
+//extension UserController {
+//    
+//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+//        super.prepare(for: segue, sender: sender)
+//        
+//        if let embed = segue.destination as? ProfileHeaderController {
+//            self.embed(controller1: embed)
+//        }
+//        
+//        if let embed = segue.destination as? ExploreController {
+//            self.embed(controller2: embed)
+//        }
+//    }
+//}
 
-extension UserController {
-    
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        super.prepare(for: segue, sender: sender)
-        
-        if let embed = segue.destination as? ProfileHeaderController {
-            self.embed(controller1: embed)
-        }
-        
-        if let embed = segue.destination as? ExploreController {
-            self.embed(controller2: embed)
-        }
-    }
-}

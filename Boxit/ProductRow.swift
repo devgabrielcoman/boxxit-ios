@@ -13,4 +13,28 @@ class ProductRow: UITableViewCell {
     @IBOutlet weak var getOnAmazonLabel: UILabel!
     @IBOutlet weak var saveToFavourites: RxButton!
     @IBOutlet weak var buttonHolder: UIView!
+    
+    var viewModel: Product! {
+        didSet {
+            productName.text = viewModel.title
+            
+//            productReason.text = String(format: self.facebookUser == "me" ?
+//                viewModel.isOwn ? "Product Reason - Sure - You".localized : "Product Reason - Maybe - You".localized :
+//                viewModel.isOwn ? "Product Reason - Sure - Friend".localized : "Product Reason - Maybe - Friend".localized,
+//                                            viewModel.category.capitalized)
+            
+            productPrice.text = viewModel.price
+            getOnAmazonLabel.text = "Buy Amazon".localized
+            productPicture.kf.setImage(with: viewModel.largeIconUrl, placeholder: UIImage(named: "no_ama_pic"))
+            // saveToFavourites.isHidden = self.facebookUser != "me"
+            saveToFavourites.setImage(viewModel.isFavourite ? UIImage(named: "like") : UIImage(named: "nolike"), for: .normal)
+            buttonHolder.layer.borderWidth = 1
+            buttonHolder.layer.borderColor = UIColor(rgb: 0xe6e7dc).cgColor
+            panelView.layer.cornerRadius = 5
+            panelView.layer.shadowColor = UIColor.black.cgColor
+            panelView.layer.shadowRadius = 4
+            panelView.layer.shadowOpacity = 0.15
+            panelView.layer.shadowOffset = CGSize.zero
+        }
+    }
 }

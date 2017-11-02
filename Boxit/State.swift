@@ -14,7 +14,8 @@ struct AppState: ReduxState {
     var loginState = LoginState()
     var friendsState = FriendsState()
     var currentUserState = CurrentUserState()
-    var selectedUser: FacebookProfile? 
+    var selectedUser: FacebookProfile?
+    var productState = ProductState()
 }
 
 struct LoginState: ReduxState {
@@ -35,4 +36,12 @@ struct FriendsState: ReduxState {
     var error: BoxitError? = nil
     var offset: String? = nil
     var canStillAdd: Bool = false
+}
+
+struct ProductState: ReduxState {
+    var isLoading: Bool = false
+    var products: [Product] = []
+    var error: BoxitError? = nil
+    var minProie: Int = 0
+    var maxPrice: Int = 5000
 }

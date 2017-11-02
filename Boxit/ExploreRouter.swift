@@ -8,22 +8,23 @@
 
 import UIKit
 
-protocol ExploreRoutingLogic: RoutingLogic {
-    func embed(controller1: SliderController)
-    func embed(controller2: ErrorController)
-}
+//protocol ExploreRoutingLogic: RoutingLogic {
+//    func embed(controller1: SliderController)
+//    func embed(controller2: ErrorController)
+//}
+//
+//extension ExploreController {
+//    
+//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+//        super.prepare(for: segue, sender: sender)
+//        
+//        if let embed = segue.destination as? SliderController {
+//            self.embed(controller1: embed)
+//        }
+//        
+//        if let embed = segue.destination as? ErrorController {
+//            self.embed(controller2: embed)
+//        }
+//    }
+//}
 
-extension ExploreController {
-    
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        super.prepare(for: segue, sender: sender)
-        
-        if let embed = segue.destination as? SliderController {
-            self.embed(controller1: embed)
-        }
-        
-        if let embed = segue.destination as? ErrorController {
-            self.embed(controller2: embed)
-        }
-    }
-}

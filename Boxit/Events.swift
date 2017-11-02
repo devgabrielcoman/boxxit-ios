@@ -17,6 +17,8 @@ enum Event{
     case loadingFriendsData
     case gotFriends(friends: [FacebookProfile], offset: String?, error: BoxitError?)
     case selectUser(user: FacebookProfile?)
+    case loadingProductsData
+    case gotProducts(products: [Product], error: BoxitError?)
 }
 
 extension Event {
@@ -89,6 +91,27 @@ extension Event {
             }
             .catchErrorJustReturn(Event.gotFriends(friends: [], offset: nil, error: BoxitError.NoInternet))
             .startWith(Event.loadingFriendsData)
+    }
+    
+    static func get(productsForUserid id: String, withMinPrice min: Int, andMaxPrice max: Int) -> Observable<Event> {
+        
+        let request = NetworkRequest(withOperation: NetworkOperation.getProductsForUser(id: id, min: min, max: max))
+        let task = NetworkTask()
+        return task.execute(withInput: request)
+            .flatMap { productData -> Single<BackendData<Product>> in
+                let task = ParseNetworkDataTask<Product>()
+                return task.execute(withInput: productData)
+            }
+            .asObservable()
+            .flatMap { data -> Observable<Product> in
+                return Observable.from(data.data)
+            }
+            .toArray()
+            .map { products -> Event in
+                Event.gotProducts(products: products, error: nil)
+            }
+            .catchErrorJustReturn(Event.gotProducts(products: [], error: BoxitError.NoInternet))
+            .startWith(Event.loadingProductsData)
     }
 }
 

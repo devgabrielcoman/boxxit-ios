@@ -24,16 +24,17 @@ class UserController: BaseController {
     }
 }
 
-//
-// MARK: Routing Logic
-extension UserController: UserRoutingLogic {
-    
-    func embed(controller1: ProfileHeaderController) {
-        controller1.hasInfoButton = hasInfoButton
-        controller1.facebookUser = facebookUser
-    }
-    
-    func embed(controller2: ExploreController) {
-        controller2.facebookUser = facebookUser
-    }
-}
+////
+//// MARK: Routing Logic
+//extension UserController: UserRoutingLogic {
+//    
+//    func embed(controller1: ProfileHeaderController) {
+//        controller1.hasInfoButton = hasInfoButton
+//        controller1.facebookUser = facebookUser
+//    }
+//    
+//    func embed(controller2: ExploreController) {
+//        controller2.facebookUser = facebookUser
+//    }
+//}
+
