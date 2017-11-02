@@ -11,9 +11,9 @@ import UIKit
 protocol ReduxState {}
 
 struct AppState: ReduxState {
-    var loginState: LoginState = LoginState()
-    var profilesState: ProfilesState = ProfilesState()
-    var currentUser: FacebookProfile?
+    var loginState = LoginState()
+    var friendsState = FriendsState()
+    var currentUserState = CurrentUserState()
     var selectedUser: FacebookProfile? 
 }
 
@@ -24,7 +24,15 @@ struct LoginState: ReduxState {
     var error: BoxitError? = nil
 }
 
-struct ProfilesState: ReduxState {
-    var profiles: [String : FacebookProfile] = [:]
+struct CurrentUserState: ReduxState {
+    var currentUser: FacebookProfile?
     var error: BoxitError? = nil
+}
+
+struct FriendsState: ReduxState {
+    var isLoading: Bool = false
+    var friends: [FacebookProfile] = []
+    var error: BoxitError? = nil
+    var offset: String? = nil
+    var canStillAdd: Bool = false
 }

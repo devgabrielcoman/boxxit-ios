@@ -10,8 +10,8 @@ import UIKit
 
 func appReducer (_ previous: AppState, _ event: Event) -> AppState {
     return AppState(loginState: loginReducer(previous.loginState, event),
-                    profilesState: profilesReducer(previous.profilesState, event),
-                    currentUser: currentUserReducer(previous, event),
+                    friendsState: friendsReducer(previous.friendsState, event),
+                    currentUserState: currentUserReducer(previous, event),
                     selectedUser: selectedUserReducer(previous.selectedUser, event))
 }
 
@@ -37,14 +37,40 @@ func loginReducer (_ previous: LoginState, _ event: Event) -> LoginState {
     return state
 }
 
-func profilesReducer (_ previous: ProfilesState, _ event: Event) -> ProfilesState {
+func currentUserReducer (_ previous: AppState, _ event: Event) -> CurrentUserState {
     var state = previous
-    state.error = nil
+    state.currentUserState.error = nil
     
     switch event {
-    case .gotUser(let userId, let user, let error):
-        state.profiles[userId] = user
+    case .gotUser(_, let user, let error):
+        if let sId = user?.id, sId == previous.loginState.ownId {
+            state.currentUserState.currentUser = user
+        }
+        state.currentUserState.error = error
+        break
+    default:
+        // do nothing
+        break
+    }
+    
+    return state.currentUserState
+}
+
+func friendsReducer (_ previous: FriendsState, _ event: Event) -> FriendsState {
+    var state = previous
+    state.error = nil
+    state.isLoading = false
+    state.canStillAdd = false
+    
+    switch event {
+    case .loadingFriendsData:
+        state.isLoading = true
+        break
+    case .gotFriends(let friends, let offset, let error):
+        state.friends += friends
+        state.offset = offset
         state.error = error
+        state.canStillAdd = offset != nil && friends.count > 0
         break
     default:
         // do nothing
@@ -67,21 +93,4 @@ func selectedUserReducer (_ previous: FacebookProfile?, _ event: Event) -> Faceb
     }
     
     return state
-}
-
-func currentUserReducer (_ previous: AppState, _ event: Event) -> FacebookProfile? {
-    var state = previous
-    
-    switch event {
-    case .gotUser(_, let user, _):
-        if let sId = user?.id, sId == previous.loginState.ownId {
-            state.currentUser = user
-        }
-        break
-    default:
-        // do nothing
-        break
-    }
-    
-    return state.currentUser
 }

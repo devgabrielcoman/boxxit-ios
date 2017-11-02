@@ -24,11 +24,11 @@ class LoadController: BaseController {
     }
     
     override func handle(_ state: AppState) {
-        let profileState = state.profilesState
+        let currentUserState = state.currentUserState
         
         //
         // error case
-        if profileState.error != nil {
+        if currentUserState.error != nil {
             
             Alertift.alert(title: "Network Error Title".localized, message: "Network Error Message".localized)
                 .action(.cancel("Alert Cancel".localized))
@@ -40,7 +40,7 @@ class LoadController: BaseController {
         
         //
         // success case
-        if let userId = store.current.loginState.ownId, let _ = profileState.profiles[userId] {
+        if let _ = currentUserState.currentUser {
             performSegue(AppSegues.LoadToMain)
         }
     }

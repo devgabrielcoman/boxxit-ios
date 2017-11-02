@@ -984,20 +984,24 @@
                                     <rect key="frame" x="0.0" y="0.0" width="16" height="439"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </collectionReusableView>
+                                <connections>
+                                    <outlet property="dataSource" destination="k8x-Rm-DZq" id="JQJ-d6-LuA"/>
+                                    <outlet property="delegate" destination="k8x-Rm-DZq" id="DEv-JV-vUs"/>
+                                </connections>
                             </collectionView>
-                            <containerView opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2GG-9u-Aza">
+                            <containerView hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2GG-9u-Aza" userLabel="ErrorContainer">
                                 <rect key="frame" x="20" y="40" width="335" height="440"/>
                                 <connections>
                                     <segue destination="Y5j-Zd-XmF" kind="embed" identifier="EventsEmbedsError" id="jem-Bd-3yA"/>
                                 </connections>
                             </containerView>
-                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Bf4-U2-a0R">
+                            <containerView hidden="YES" opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Bf4-U2-a0R" userLabel="InviteContainer">
                                 <rect key="frame" x="20" y="40" width="335" height="440"/>
                                 <connections>
                                     <segue destination="Y4b-6w-20w" kind="embed" id="Bu8-m7-o9P"/>
                                 </connections>
                             </containerView>
-                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="kNv-3k-kCh">
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="kNv-3k-kCh">
                                 <rect key="frame" x="178" y="240" width="20" height="20"/>
                             </activityIndicatorView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="your friends" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FGA-GN-5bo">
@@ -1034,6 +1038,7 @@
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="375" height="500"/>
                     <connections>
+                        <outlet property="errorControllerView" destination="2GG-9u-Aza" id="Zae-rd-cvx"/>
                         <outlet property="eventsCollection" destination="3Ek-50-kH1" id="jW5-6l-Feo"/>
                         <outlet property="inviteControllerView" destination="Bf4-U2-a0R" id="ppz-MU-ITm"/>
                         <outlet property="spinner" destination="kNv-3k-kCh" id="k9P-Ns-5sW"/>

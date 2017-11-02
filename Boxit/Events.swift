@@ -11,10 +11,11 @@ import RxSwift
 import FBSDKCoreKit
 
 enum Event{
-    // login
     case loadingLoginData
     case checkedLoginState(token: String?, ownId: String?, error: BoxitError?)
     case gotUser(forUserId: String, user: FacebookProfile?, error: BoxitError?)
+    case loadingFriendsData
+    case gotFriends(friends: [FacebookProfile], offset: String?, error: BoxitError?)
 }
 
 extension Event {
@@ -70,6 +71,24 @@ extension Event {
                 return Event.gotUser(forUserId: id, user: profile, error: nil)
             }
             .catchErrorJustReturn(Event.gotUser(forUserId: id, user: nil, error: BoxitError.NoInternet))
+    }
+    
+    static func get(friendsForUserId id: String?, withOffset offset: String?) -> Observable<Event> {
+        
+        let request = NetworkRequest(withOperation: NetworkOperation.getFriendsFromFacebook(forUser: id!, offset: offset))
+        let task = NetworkTask ()
+        return task.execute(withInput: request)
+            .flatMap { friendData -> Single<FacebookData<FacebookProfile>> in
+                
+                let task = ParseFacebookDataTask<FacebookProfile>()
+                return task.execute(withInput: friendData)
+            }
+            .asObservable()
+            .map { fbData -> Event in
+                Event.gotFriends(friends: fbData.data, offset: fbData.offsetAfter, error: nil)
+            }
+            .catchErrorJustReturn(Event.gotFriends(friends: [], offset: nil, error: BoxitError.NoInternet))
+            .startWith(Event.loadingFriendsData)
     }
 }
 

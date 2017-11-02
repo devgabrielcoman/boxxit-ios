@@ -63,7 +63,6 @@
 		1BAF660E1EEB49DE00F0AB4C /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BAF660D1EEB49DE00F0AB4C /* Models.swift */; };
 		1BAF66111EEB4A5900F0AB4C /* LoadController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BAF66101EEB4A5900F0AB4C /* LoadController.swift */; };
 		1BAF66151EEB4BDE00F0AB4C /* CleanSwift.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BAF66141EEB4BDE00F0AB4C /* CleanSwift.swift */; };
-		1BAF66351EED774000F0AB4C /* EventsRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BAF66341EED774000F0AB4C /* EventsRouter.swift */; };
 		1BAF66371EED77CC00F0AB4C /* FavouriteRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BAF66361EED77CC00F0AB4C /* FavouriteRouter.swift */; };
 		1BAF66391EED786E00F0AB4C /* MainRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BAF66381EED786E00F0AB4C /* MainRouter.swift */; };
 		1BAF663B1EED791600F0AB4C /* UserRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BAF663A1EED791600F0AB4C /* UserRouter.swift */; };
@@ -161,7 +160,6 @@
 		1BAF660D1EEB49DE00F0AB4C /* Models.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Models.swift; sourceTree = "<group>"; };
 		1BAF66101EEB4A5900F0AB4C /* LoadController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadController.swift; sourceTree = "<group>"; };
 		1BAF66141EEB4BDE00F0AB4C /* CleanSwift.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CleanSwift.swift; sourceTree = "<group>"; };
-		1BAF66341EED774000F0AB4C /* EventsRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventsRouter.swift; sourceTree = "<group>"; };
 		1BAF66361EED77CC00F0AB4C /* FavouriteRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FavouriteRouter.swift; sourceTree = "<group>"; };
 		1BAF66381EED786E00F0AB4C /* MainRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainRouter.swift; sourceTree = "<group>"; };
 		1BAF663A1EED791600F0AB4C /* UserRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserRouter.swift; sourceTree = "<group>"; };
@@ -293,7 +291,6 @@
 		1B520BE61EAEB02E006FD05E /* Events */ = {
 			isa = PBXGroup;
 			children = (
-				1BAF66341EED774000F0AB4C /* EventsRouter.swift */,
 				1B520BE71EAEB03F006FD05E /* EventsController.swift */,
 				1B520BE91EAEB052006FD05E /* EventsCell.swift */,
 			);
@@ -823,7 +820,6 @@
 				1BE7B4651EC5DB890085427A /* FacebookAuthTask.swift in Sources */,
 				1B7229C61EA6A9CF00B9897F /* IntroController.swift in Sources */,
 				1B2A7A071EF81E5400552DE6 /* NetworkRequest.swift in Sources */,
-				1BAF66351EED774000F0AB4C /* EventsRouter.swift in Sources */,
 				1BAF663B1EED791600F0AB4C /* UserRouter.swift in Sources */,
 				1BFA4CC91ED589FB00E00297 /* UIColor+Extensions.swift in Sources */,
 				1B520BDD1EAE8E05006FD05E /* ProfileHeaderController.swift in Sources */,
