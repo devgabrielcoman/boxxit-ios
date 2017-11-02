@@ -68,7 +68,9 @@ extension EventsController: UICollectionViewDelegate, UICollectionViewDataSource
     }
     
     public func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        // do nothing
+        let item = store.current.friendsState.friends[indexPath.row]
+        store.dispatch(Event.selectUser(user: item))
+        performSegue(AppSegues.EventsToUser)
     }
     
     public func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {

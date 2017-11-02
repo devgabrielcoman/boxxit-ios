@@ -16,6 +16,7 @@ enum Event{
     case gotUser(forUserId: String, user: FacebookProfile?, error: BoxitError?)
     case loadingFriendsData
     case gotFriends(friends: [FacebookProfile], offset: String?, error: BoxitError?)
+    case selectUser(user: FacebookProfile)
 }
 
 extension Event {

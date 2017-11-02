@@ -84,7 +84,7 @@ func selectedUserReducer (_ previous: FacebookProfile?, _ event: Event) -> Faceb
     var state = previous
     
     switch event {
-    case .gotUser(_, let user, _):
+    case .selectUser(let user):
         state = user
         break
     default:
