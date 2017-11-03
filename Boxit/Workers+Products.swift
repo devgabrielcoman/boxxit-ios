@@ -13,42 +13,42 @@ import RxSwift
 // MARK: Get all product & favourite products metadata for a user
 extension ProductsWorker {
     
-    //
-    // get all products, in a random order
-    static func get(productsForUserId id:String, withMinPrice min: Int?, andMaxPrice max: Int?) -> Observable<Product> {
-        
-        let request = NetworkRequest(withOperation: NetworkOperation.getProductsForUser(id: id, min: min, max: max))
-        let task = NetworkTask()
-        return task.execute(withInput: request)
-            .flatMap { productData -> Single<BackendData<Product>> in
-                
-                let task = ParseNetworkDataTask<Product>()
-                return task.execute(withInput: productData)
-            }
-            .asObservable()
-            .flatMap { data -> Observable<Product> in
-                return Observable.from(data.data)
-            }
-        
-    }
-    
-    //
-    // only get the favourite products
-    static func get(favouriteProductsForUserId id: String) -> Observable<Product> {
-        
-        let request = NetworkRequest(withOperation: NetworkOperation.getFavouriteProductsForUser(id: id))
-        let task = NetworkTask()
-        return task.execute(withInput: request)
-            .flatMap { productData -> Single<BackendData<Product>> in
-                
-                let task = ParseNetworkDataTask<Product>()
-                return task.execute(withInput: productData)
-            }
-            .asObservable()
-            .flatMap { data -> Observable<Product> in
-                return Observable.from(data.data)
-            }
-        }
+//    //
+//    // get all products, in a random order
+//    static func get(productsForUserId id:String, withMinPrice min: Int?, andMaxPrice max: Int?) -> Observable<Product> {
+//        
+//        let request = NetworkRequest(withOperation: NetworkOperation.getProductsForUser(id: id, min: min, max: max))
+//        let task = NetworkTask()
+//        return task.execute(withInput: request)
+//            .flatMap { productData -> Single<BackendData<Product>> in
+//                
+//                let task = ParseNetworkDataTask<Product>()
+//                return task.execute(withInput: productData)
+//            }
+//            .asObservable()
+//            .flatMap { data -> Observable<Product> in
+//                return Observable.from(data.data)
+//            }
+//        
+//    }
+//    
+//    //
+//    // only get the favourite products
+//    static func get(favouriteProductsForUserId id: String) -> Observable<Product> {
+//        
+//        let request = NetworkRequest(withOperation: NetworkOperation.getFavouriteProductsForUser(id: id))
+//        let task = NetworkTask()
+//        return task.execute(withInput: request)
+//            .flatMap { productData -> Single<BackendData<Product>> in
+//                
+//                let task = ParseNetworkDataTask<Product>()
+//                return task.execute(withInput: productData)
+//            }
+//            .asObservable()
+//            .flatMap { data -> Observable<Product> in
+//                return Observable.from(data.data)
+//            }
+//        }
 }
 
 //

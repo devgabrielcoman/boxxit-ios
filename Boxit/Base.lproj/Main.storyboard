@@ -653,7 +653,7 @@
                                     <segue destination="XuC-Po-dTO" kind="embed" id="GE8-e8-uOY"/>
                                 </connections>
                             </containerView>
-                            <tableView hidden="YES" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="152" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="xIB-sD-KEL">
+                            <tableView hidden="YES" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="152" estimatedRowHeight="200" sectionHeaderHeight="28" estimatedSectionHeaderHeight="8" sectionFooterHeight="28" contentViewInsetsToSafeArea="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xIB-sD-KEL">
                                 <rect key="frame" x="0.0" y="90" width="375" height="577"/>
                                 <color key="backgroundColor" red="0.96470588239999999" green="0.96862745100000003" blue="0.92156862750000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <prototypes>
@@ -739,13 +739,11 @@
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="amazonButton" destination="N0k-th-t5b" id="R2z-Xc-hrH"/>
-                                            <outlet property="bottomContraint" destination="tfu-A6-Szx" id="j1Y-9n-UCe"/>
                                             <outlet property="icon" destination="dCd-cA-Ogv" id="1UT-Ya-RTg"/>
                                             <outlet property="panelView" destination="NUi-hS-Oth" id="dis-B8-gR5"/>
                                             <outlet property="price" destination="89P-fD-vwF" id="0f6-vJ-P3n"/>
                                             <outlet property="removeButton" destination="geN-vZ-d3H" id="G1k-lL-W2S"/>
                                             <outlet property="title" destination="Ud0-Ql-pkm" id="0CC-ER-zVe"/>
-                                            <outlet property="topConstraint" destination="XVB-f7-TJt" id="jz4-xw-NJ2"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>

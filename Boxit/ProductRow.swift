@@ -39,6 +39,17 @@ class ProductRow: UITableViewCell {
             panelView.layer.shadowRadius = 4
             panelView.layer.shadowOpacity = 0.15
             panelView.layer.shadowOffset = CGSize.zero
+            
+            saveToFavourites.onAction {
+                let asin = self.viewModel.asin
+                let ownId = store.current.loginState.ownId
+                if let ownId = ownId {
+                    let event = self.viewModel.isFavourite ?
+                        Event.delete(favouriteProduct: asin, forUserId: ownId) :
+                        Event.save(favouriteProduct: asin, forUserId: ownId)
+                    store.dispatch(event)
+                }
+            }
         }
     }
 }

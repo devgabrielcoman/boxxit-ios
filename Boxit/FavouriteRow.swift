@@ -4,8 +4,6 @@ class FavouriteRow: UITableViewCell {
 
     public static let Identifier = "FavouriteRowId"
     
-    @IBOutlet weak var topConstraint: NSLayoutConstraint!
-    @IBOutlet weak var bottomContraint: NSLayoutConstraint!
     @IBOutlet weak var panelView: UIView!
     @IBOutlet weak var icon: UIImageView!
     @IBOutlet weak var title: UILabel!
@@ -31,10 +29,15 @@ class FavouriteRow: UITableViewCell {
             amazonButton.layer.cornerRadius = 14
             amazonButton.layer.borderWidth = 1
             amazonButton.layer.borderColor = UIColor(rgb: 0xe6e7dc).cgColor
-//            topConstraint.constant = index.row == 0 ? 16 : 8
-//            bottomContraint.constant = index.row == total - 1 ? 16 : 8
             removeButton.isHidden = !isSelf
 
+            removeButton.onAction {
+                let asin = self.viewModel.asin
+                let ownId = store.current.loginState.ownId
+                if let ownId = ownId {
+                    store.dispatch(Event.delete(favouriteProduct: asin, forUserId: ownId))
+                }
+            }
         }
     }
 }

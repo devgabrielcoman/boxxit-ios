@@ -21,6 +21,12 @@ enum Event{
     case gotProducts(products: [Product], error: BoxitError?)
     case loadingFavouritesData
     case gotFavourites(products: [Product], error: BoxitError?)
+    case startSavingProduct(asin: String)
+    case revertSavingProduct(asin: String)
+    case commitSavingProduct
+    case startDeletingProduct(asin: String)
+    case revertDeletingProduct(asin: String)
+    case commitDeletingProduct
 }
 
 extension Event {
@@ -135,6 +141,26 @@ extension Event {
             }
             .catchErrorJustReturn(Event.gotFavourites(products: [], error: BoxitError.NoInternet))
             .startWith(Event.loadingFavouritesData)
+    }
+    
+    static func save(favouriteProduct productId: String, forUserId id: String) -> Observable<Event> {
+        let request = NetworkRequest(withOperation: NetworkOperation.saveProduct(id: id, asin: productId))
+        let task = NetworkTask()
+        return task.execute(withInput: request)
+            .asObservable()
+            .map { result in return Event.commitSavingProduct }
+            .catchErrorJustReturn(Event.revertSavingProduct(asin: productId))
+            .startWith(Event.startSavingProduct(asin: productId))
+    }
+    
+    static func delete(favouriteProduct productId: String, forUserId id: String) -> Observable<Event> {
+        let request = NetworkRequest(withOperation: NetworkOperation.deleteProduct(id: id, asin: productId))
+        let task = NetworkTask()
+        return task.execute(withInput: request)
+            .asObservable()
+            .map { result in return Event.commitDeletingProduct }
+            .catchErrorJustReturn(Event.revertDeletingProduct(asin: productId))
+            .startWith(Event.startDeletingProduct(asin: productId))
     }
 }
 

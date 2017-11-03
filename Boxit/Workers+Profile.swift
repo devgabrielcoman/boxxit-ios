@@ -54,22 +54,22 @@ extension UserWorker {
     }
 }
 
-//
-// Get friends - from facebook
-extension UserWorker {
-    
-    static func get(eventsForUserId id: String, andOffset offset: String?) -> Single<FacebookData<FacebookProfile>> {
-        
-        let request = NetworkRequest(withOperation: NetworkOperation.getFriendsFromFacebook(forUser: id, offset: offset))
-        let task = NetworkTask ()
-        return task.execute(withInput: request)
-            .flatMap { friendData -> Single<FacebookData<FacebookProfile>> in
-                
-                let task = ParseFacebookDataTask<FacebookProfile>()
-                return task.execute(withInput: friendData)
-        }
-    }
-}
+////
+//// Get friends - from facebook
+//extension UserWorker {
+//    
+//    static func get(eventsForUserId id: String, andOffset offset: String?) -> Single<FacebookData<FacebookProfile>> {
+//        
+//        let request = NetworkRequest(withOperation: NetworkOperation.getFriendsFromFacebook(forUser: id, offset: offset))
+//        let task = NetworkTask ()
+//        return task.execute(withInput: request)
+//            .flatMap { friendData -> Single<FacebookData<FacebookProfile>> in
+//                
+//                let task = ParseFacebookDataTask<FacebookProfile>()
+//                return task.execute(withInput: friendData)
+//        }
+//    }
+//}
 
 ////
 //// MARK: Invite

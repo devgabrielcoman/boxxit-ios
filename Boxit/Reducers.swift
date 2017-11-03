@@ -115,6 +115,28 @@ func productsReducer (_ previous: ProductState, _ event: Event) -> ProductState 
         state.products = products
         state.error = error
         break
+    case .startSavingProduct(let asin):
+        let product = state.products.filter { prod -> Bool in prod.asin == asin }.first
+        product?.isFavourite = true
+        break
+    case .revertSavingProduct(let asin):
+        let product = state.products.filter { prod -> Bool in prod.asin == asin }.first
+        product?.isFavourite = false
+        break
+    case .commitSavingProduct:
+        // do nothing
+        break
+    case .startDeletingProduct(let asin):
+        let product = state.products.filter { prod -> Bool in prod.asin == asin }.first
+        product?.isFavourite = false
+        break
+    case .revertDeletingProduct(let asin):
+        let product = state.products.filter { prod -> Bool in prod.asin == asin }.first
+        product?.isFavourite = true
+        break
+    case .commitDeletingProduct:
+        // do nothing
+        break
     default:
         // do nothing
         break
@@ -135,6 +157,16 @@ func favouritesState (_ previous: FavouritesState, _ event: Event) -> Favourites
     case .gotFavourites(let products, let error):
         state.products = products
         state.error = error
+        break
+    case .startDeletingProduct(let asin):
+        let product = state.products.filter { prod -> Bool in prod.asin == asin }.first
+        product?.isFavourite = false
+        break
+    case .revertDeletingProduct(_):
+        // do nothing
+        break
+    case .commitDeletingProduct:
+        // do nothing
         break
     default:
         // do nothing

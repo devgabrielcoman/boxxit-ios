@@ -56,4 +56,9 @@ struct FavouritesState: ReduxState {
     var isLoading: Bool = false
     var products: [Product] = []
     var error: BoxitError? = nil
+    var favourites:[Product] {
+        return products.filter { prod -> Bool in
+            return prod.isFavourite
+        }
+    }
 }

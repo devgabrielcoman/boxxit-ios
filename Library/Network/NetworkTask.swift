@@ -24,8 +24,12 @@ public class NetworkTask: Task {
             }
             
             return Disposables.create()
-            
         }
+            .do(onNext: { _ in
+                print("OK | \(input.url)")
+            }, onError: { _ in
+                print("ERROR | \(input.url)")
+            })
     }
     
     public init() {

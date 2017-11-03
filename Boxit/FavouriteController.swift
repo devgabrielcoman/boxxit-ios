@@ -11,37 +11,11 @@ import RxSwift
 import RxTableAndCollectionView
 import Kingfisher
 
-//extension State {
-//    enum Favourite {
-//        case initial
-//        case success(withViewModels: [Product])
-//        case error(withViewModel: ViewModels.DataLoadError)
-//    }
-//}
-
-//
-// MARK: Base
 class FavouriteController: BaseController {
 
-//    var facebookUser = "me"
-    
     @IBOutlet weak var favouritesTable: UITableView!
     @IBOutlet weak var spinner: UIActivityIndicatorView!
     @IBOutlet weak var errorContainer: UIView!
-    
-//    fileprivate var rxFavouritesTable: RxTableView?
-//    fileprivate var mProducts:[Product] = []
-//
-//    override func viewDidLoad() {
-//        super.viewDidLoad()
-//        setState(state: State.Favourite.initial)
-//        getProducts()
-//    }
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        favouritesTable.estimatedRowHeight = 200
-    }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
@@ -62,7 +36,23 @@ class FavouriteController: BaseController {
 extension FavouriteController: UITableViewDelegate, UITableViewDataSource {
     
     public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return store.current.favouritesState.products.count
+        return store.current.favouritesState.favourites.count
+    }
+    
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        return UIView.transparentView()
+    }
+    
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 8
+    }
+    
+    func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
+        return 8
+    }
+    
+    func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
+        return UIView.transparentView()
     }
     
     public func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -71,7 +61,7 @@ extension FavouriteController: UITableViewDelegate, UITableViewDataSource {
     
     public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let row = tableView.dequeueReusableCell(withIdentifier: FavouriteRow.Identifier, for: indexPath) as! FavouriteRow
-        row.viewModel = store.current.favouritesState.products[indexPath.row]
+        row.viewModel = store.current.favouritesState.favourites[indexPath.row]
         return row
     }
 }
