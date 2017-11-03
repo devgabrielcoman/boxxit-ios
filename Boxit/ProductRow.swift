@@ -50,6 +50,10 @@ class ProductRow: UITableViewCell {
                     store.dispatch(event)
                 }
             }
+            
+            getOnAmazon.onAction {
+                store.dispatch(Event.openAmazonUrlAsSideEffect(forProduct: self.viewModel))
+            }
         }
     }
 }

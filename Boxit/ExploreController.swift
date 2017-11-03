@@ -47,14 +47,19 @@ class ExploreController: BaseController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        tableView.estimatedRowHeight = 200
-    }
-    
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
+        store.addListener(self)
+        
         if let userId = store.current.selectedUserState.user?.id {
             store.dispatch(Event.get(productsForUserid: userId, withMinPrice: 0, andMaxPrice: 5000))
         }
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        // do nothing
+    }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        // do nothing
     }
     
     override func handle(_ state: AppState) {
@@ -64,12 +69,32 @@ class ExploreController: BaseController {
         errorContainerView.isHidden = productsState.error == nil
         tableView.reloadData()
     }
+    
+    deinit {
+        store.removeListener(self)
+    }
 }
 
 extension ExploreController: UITableViewDelegate, UITableViewDataSource,UIScrollViewDelegate {
  
     public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return store.current.productState.products.count
+    }
+    
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 8
+    }
+    
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        return UIView.transparentView()
+    }
+    
+    func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
+        return 8
+    }
+    
+    func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
+        return UIView.transparentView()
     }
     
     public func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -80,10 +105,6 @@ extension ExploreController: UITableViewDelegate, UITableViewDataSource,UIScroll
         let row = tableView.dequeueReusableCell(withIdentifier: ProductRow.Identifier, for: indexPath) as! ProductRow
         row.viewModel = store.current.productState.products[indexPath.row]
         return row
-    }
-    
-    public func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        //
     }
     
     public func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {

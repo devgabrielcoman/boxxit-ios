@@ -1,4 +1,5 @@
 import UIKit
+import Firebase
 
 class FavouriteRow: UITableViewCell {
 
@@ -37,6 +38,10 @@ class FavouriteRow: UITableViewCell {
                 if let ownId = ownId {
                     store.dispatch(Event.delete(favouriteProduct: asin, forUserId: ownId))
                 }
+            }
+            
+            amazonButton.onAction {
+                store.dispatch(Event.openAmazonUrlAsSideEffect(forProduct: self.viewModel))
             }
         }
     }

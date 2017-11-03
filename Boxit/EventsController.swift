@@ -23,6 +23,9 @@ class EventsController: BaseController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        //
+        // do some setup
         let controller: ErrorController? = self.getChild()
         controller?.textLabel.text = "Events Error".localized
         controller?.didClickOnRetry = { self.reloadData() }

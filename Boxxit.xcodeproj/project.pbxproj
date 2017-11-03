@@ -32,7 +32,6 @@
 		1B7229BC1EA6A9CF00B9897F /* BaseController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B7229A71EA6A9CF00B9897F /* BaseController.swift */; };
 		1B7229C61EA6A9CF00B9897F /* IntroController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B7229B11EA6A9CF00B9897F /* IntroController.swift */; };
 		1B7229C71EA6A9CF00B9897F /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B7229B21EA6A9CF00B9897F /* LoginController.swift */; };
-		1B7229C81EA6A9CF00B9897F /* MainController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B7229B31EA6A9CF00B9897F /* MainController.swift */; };
 		1B7229C91EA6A9CF00B9897F /* secrets.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1B7229B41EA6A9CF00B9897F /* secrets.plist */; };
 		1B7341B51EEDAD5300ED0FEC /* DataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B7341B41EEDAD5300ED0FEC /* DataStore.swift */; };
 		1B7341B71EEDE6E400ED0FEC /* Workers+Login.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B7341B61EEDE6E400ED0FEC /* Workers+Login.swift */; };
@@ -124,7 +123,6 @@
 		1B7229B01EA6A9CF00B9897F /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1B7229B11EA6A9CF00B9897F /* IntroController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IntroController.swift; sourceTree = "<group>"; };
 		1B7229B21EA6A9CF00B9897F /* LoginController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
-		1B7229B31EA6A9CF00B9897F /* MainController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainController.swift; sourceTree = "<group>"; };
 		1B7229B41EA6A9CF00B9897F /* secrets.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = secrets.plist; sourceTree = "<group>"; };
 		1B7341B41EEDAD5300ED0FEC /* DataStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataStore.swift; sourceTree = "<group>"; };
 		1B7341B61EEDE6E400ED0FEC /* Workers+Login.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Workers+Login.swift"; sourceTree = "<group>"; };
@@ -321,7 +319,6 @@
 				1B7229CE1EA6AB7C00B9897F /* Intro */,
 				1B7229CF1EA6AB8000B9897F /* Login */,
 				1BAF660F1EEB4A4A00F0AB4C /* Load */,
-				1B7229D01EA6AB8400B9897F /* Main */,
 				1BAF663C1EED7ABE00F0AB4C /* ProfileMain */,
 				1B520BE61EAEB02E006FD05E /* Events */,
 				1BEEA2FF1FA200680007E565 /* Invite */,
@@ -349,14 +346,6 @@
 				1B7229B21EA6A9CF00B9897F /* LoginController.swift */,
 			);
 			name = Login;
-			sourceTree = "<group>";
-		};
-		1B7229D01EA6AB8400B9897F /* Main */ = {
-			isa = PBXGroup;
-			children = (
-				1B7229B31EA6A9CF00B9897F /* MainController.swift */,
-			);
-			name = Main;
 			sourceTree = "<group>";
 		};
 		1B904CAB1F17A34B008254FB /* Style */ = {
@@ -766,7 +755,6 @@
 				1B520BC01EABF2F2006FD05E /* ExploreController.swift in Sources */,
 				1BE7B4641EC5DB890085427A /* FacebookAuthRequest.swift in Sources */,
 				1BFA4CC41ED589FB00E00297 /* Bundle+Extensions.swift in Sources */,
-				1B7229C81EA6A9CF00B9897F /* MainController.swift in Sources */,
 				1BAF660C1EEB49D900F0AB4C /* Workers.swift in Sources */,
 				1B520B9D1EA9236F006FD05E /* UserController.swift in Sources */,
 				1BAF66111EEB4A5900F0AB4C /* LoadController.swift in Sources */,

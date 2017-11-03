@@ -9,8 +9,10 @@
 import UIKit
 import RxSwift
 import FBSDKCoreKit
+import Firebase
 
 enum Event{
+    case sideEffect
     case loadingLoginData
     case checkedLoginState(token: String?, ownId: String?, error: BoxitError?)
     case gotUser(forUserId: String, user: FacebookProfile?, error: BoxitError?)
@@ -161,6 +163,44 @@ extension Event {
             .map { result in return Event.commitDeletingProduct }
             .catchErrorJustReturn(Event.revertDeletingProduct(asin: productId))
             .startWith(Event.startDeletingProduct(asin: productId))
+    }
+    
+    static func openAmazonUrlAsSideEffect(forProduct product: Product) -> Observable<Event> {
+        //
+        // get store
+        let del = UIApplication.shared.delegate as! AppDelegate
+        let store = del.store!
+        
+        //
+        // open product
+        if let url = product.clickUrl {
+            if #available(iOS 10.0, *) {
+                UIApplication.shared.open(url, options: [:], completionHandler: nil)
+            } else {
+                UIApplication.shared.openURL(url)
+            }
+        }
+        
+        //
+        // get current user
+        let ownId = store.current.loginState.ownId ?? ""
+        let user = store.current.selectedUserState.user
+        
+        //
+        // prep data
+        let data = [
+            "user_id": ownId,
+            "friend_id": user?.id ?? "",
+            "friend_name": user?.name ?? "",
+            "product_id": product.asin,
+            "product_name": product.title
+        ]
+        
+        //
+        // send analytics
+        Analytics.logEvent("view_product", parameters: data)
+        
+        return Observable.just(Event.sideEffect)
     }
 }
 
