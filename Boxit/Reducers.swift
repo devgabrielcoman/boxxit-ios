@@ -13,7 +13,8 @@ func appReducer (_ previous: AppState, _ event: Event) -> AppState {
                     friendsState: friendsReducer(previous.friendsState, event),
                     currentUserState: currentUserReducer(previous, event),
                     selectedUserState: selectedUserReducer(previous, event),
-                    productState: productsReducer(previous.productState, event))
+                    productState: productsReducer(previous.productState, event),
+                    favouritesState: favouritesState(previous.favouritesState, event))
 }
 
 func loginReducer (_ previous: LoginState, _ event: Event) -> LoginState {
@@ -111,6 +112,27 @@ func productsReducer (_ previous: ProductState, _ event: Event) -> ProductState 
         state.isLoading = true
         break
     case .gotProducts(let products, let error):
+        state.products = products
+        state.error = error
+        break
+    default:
+        // do nothing
+        break
+    }
+    
+    return state
+}
+
+func favouritesState (_ previous: FavouritesState, _ event: Event) -> FavouritesState {
+    var state = previous
+    state.error = nil
+    state.isLoading = false
+    
+    switch event {
+    case .loadingFavouritesData:
+        state.isLoading = true
+        break
+    case .gotFavourites(let products, let error):
         state.products = products
         state.error = error
         break

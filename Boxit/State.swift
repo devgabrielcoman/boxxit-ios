@@ -16,6 +16,7 @@ struct AppState: ReduxState {
     var currentUserState = CurrentUserState()
     var selectedUserState = SelectedUserState()
     var productState = ProductState()
+    var favouritesState = FavouritesState()
 }
 
 struct LoginState: ReduxState {
@@ -49,4 +50,10 @@ struct ProductState: ReduxState {
     var error: BoxitError? = nil
     var minProie: Int = 0
     var maxPrice: Int = 5000
+}
+
+struct FavouritesState: ReduxState {
+    var isLoading: Bool = false
+    var products: [Product] = []
+    var error: BoxitError? = nil
 }

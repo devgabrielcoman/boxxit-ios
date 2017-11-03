@@ -653,7 +653,7 @@
                                     <segue destination="XuC-Po-dTO" kind="embed" id="GE8-e8-uOY"/>
                                 </connections>
                             </containerView>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="152" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="xIB-sD-KEL">
+                            <tableView hidden="YES" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="152" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="xIB-sD-KEL">
                                 <rect key="frame" x="0.0" y="90" width="375" height="577"/>
                                 <color key="backgroundColor" red="0.96470588239999999" green="0.96862745100000003" blue="0.92156862750000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <prototypes>
@@ -749,14 +749,18 @@
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="oFV-3q-6Th" id="Dcz-Ag-e9W"/>
+                                    <outlet property="delegate" destination="oFV-3q-6Th" id="TwD-Sg-mxe"/>
+                                </connections>
                             </tableView>
-                            <containerView opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hhl-hJ-oaW" userLabel="Error Controller">
+                            <containerView hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hhl-hJ-oaW" userLabel="Error Controller">
                                 <rect key="frame" x="20" y="110" width="335" height="537"/>
                                 <connections>
                                     <segue destination="Y5j-Zd-XmF" kind="embed" identifier="FavouritesEmbedsError" id="p4C-KC-lY3"/>
                                 </connections>
                             </containerView>
-                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="BJc-ls-9Sp">
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="BJc-ls-9Sp">
                                 <rect key="frame" x="177" y="324" width="20" height="20"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="20" id="B6m-GJ-b0u"/>
@@ -784,6 +788,7 @@
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="375" height="667"/>
                     <connections>
+                        <outlet property="errorContainer" destination="hhl-hJ-oaW" id="H8l-6x-DZ2"/>
                         <outlet property="favouritesTable" destination="xIB-sD-KEL" id="ARm-RJ-Ja1"/>
                         <outlet property="spinner" destination="BJc-ls-9Sp" id="ybf-48-zby"/>
                     </connections>
@@ -2051,8 +2056,8 @@ Invite them to the app or explore gift ideas for you.  </string>
         <image name="title" width="214" height="27"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="lDA-lJ-h1A"/>
-        <segue reference="gHf-x3-zak"/>
+        <segue reference="p4C-KC-lY3"/>
+        <segue reference="GE8-e8-uOY"/>
         <segue reference="Jfg-N3-0k3"/>
         <segue reference="vxm-ae-saz"/>
     </inferredMetricsTieBreakers>
