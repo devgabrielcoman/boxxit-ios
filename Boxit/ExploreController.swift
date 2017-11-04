@@ -48,9 +48,14 @@ class ExploreController: BaseController {
     override func viewDidLoad() {
         super.viewDidLoad()
         store.addListener(self)
-        
+        self.loadData()
+    }
+    
+    func loadData () {
         if let userId = store.current.selectedUserState.user?.id {
-            store.dispatch(Event.get(productsForUserid: userId, withMinPrice: 0, andMaxPrice: 5000))
+            let min = store.current.productState.minPrice
+            let max = store.current.productState.maxPrice
+            store.dispatch(Event.get(productsForUserid: userId, withMinPrice: min, andMaxPrice: max))
         }
     }
     
@@ -72,6 +77,15 @@ class ExploreController: BaseController {
     
     deinit {
         store.removeListener(self)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let embed = segue.destination as? SliderController {
+            embed.didSlideCallback = { min, max in
+                self.store.dispatch(Event.updatePriceRange(withMin: min * 100, andMax: max * 100))
+                self.loadData()
+            }
+        }
     }
 }
 
@@ -109,7 +123,7 @@ extension ExploreController: UITableViewDelegate, UITableViewDataSource,UIScroll
     
     public func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
         if scrollView.bounds.maxY >= scrollView.contentSize.height {
-            print("GOT TO THE END!")
+            self.loadData()
         }
     }
 }

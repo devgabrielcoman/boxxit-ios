@@ -48,7 +48,7 @@ struct ProductState: ReduxState {
     var isLoading: Bool = false
     var products: [Product] = []
     var error: BoxitError? = nil
-    var minProie: Int = 0
+    var minPrice: Int = 0
     var maxPrice: Int = 5000
 }
 

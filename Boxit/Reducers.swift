@@ -109,10 +109,15 @@ func productsReducer (_ previous: ProductState, _ event: Event) -> ProductState 
     
     switch event {
     case .loadingProductsData:
-        state.isLoading = true
+        state.isLoading = state.products.count == 0 ? true : false
+        break
+    case .updatePriceRange(let min, let max):
+        state.products = []
+        state.minPrice = min
+        state.maxPrice = max
         break
     case .gotProducts(let products, let error):
-        state.products = products
+        state.products += products
         state.error = error
         break
     case .startSavingProduct(let asin):

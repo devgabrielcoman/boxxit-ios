@@ -49,6 +49,14 @@ class EventsController: BaseController {
         inviteControllerView.isHidden = friendsState.isLoading || friendsState.friends.count > 0 || friendsState.error != nil
         errorControllerView.isHidden = friendsState.error == nil
     }
+//    
+//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+//        if let embed = segue.destination as? ErrorController {
+//            print("Embed is \(embed.textLabel)")
+////            embed.textLabel.text = "Events Error".localized
+////            embed.didClickOnRetry = { self.reloadData() }
+//        }
+//    }
 }
 
 extension EventsController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, UIScrollViewDelegate {
