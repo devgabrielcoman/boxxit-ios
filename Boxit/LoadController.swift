@@ -12,6 +12,8 @@ import Alertift
 
 class LoadController: BaseController {
 
+    fileprivate var vc: TutorialMainController!
+    
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         self.loadUser()
@@ -41,7 +43,22 @@ class LoadController: BaseController {
         //
         // success case
         if let _ = currentUserState.currentUser {
+            //
+            // goto main screen
             performSegue(AppSegues.LoadToMain)
+            
+            //
+            // start tutorial
+            if state.tutorialState.hasTutorial {
+                if self.vc == nil {
+                    let screen = UIScreen.main.bounds.size
+                    let storyboard = UIStoryboard(name: "Main", bundle: nil)
+                    self.vc = storyboard.instantiateViewController(withIdentifier: "TutorialMainControllerID") as! TutorialMainController
+                    let window = UIApplication.shared.keyWindow
+                    self.vc.view.frame = CGRect(x: 0, y: 0, width: screen.width, height: screen.height)
+                    window?.addSubview(self.vc.view)
+                }
+            }
         }
     }
 }

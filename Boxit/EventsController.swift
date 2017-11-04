@@ -49,14 +49,6 @@ class EventsController: BaseController {
         inviteControllerView.isHidden = friendsState.isLoading || friendsState.friends.count > 0 || friendsState.error != nil
         errorControllerView.isHidden = friendsState.error == nil
     }
-//    
-//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-//        if let embed = segue.destination as? ErrorController {
-//            print("Embed is \(embed.textLabel)")
-////            embed.textLabel.text = "Events Error".localized
-////            embed.didClickOnRetry = { self.reloadData() }
-//        }
-//    }
 }
 
 extension EventsController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, UIScrollViewDelegate {
@@ -79,9 +71,18 @@ extension EventsController: UICollectionViewDelegate, UICollectionViewDataSource
     }
     
     public func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        //
+        // normal tap - go to see user products
         let item = store.current.friendsState.friends[indexPath.row]
         store.dispatch(Event.selectUser(user: item))
         performSegue(AppSegues.EventsToUser)
+        
+        //
+        // if tutorial is enabled, advance tutorial
+        let hasTutorial = store.current.tutorialState.hasTutorial
+        if hasTutorial {
+            store.dispatch(Event.advanceTutorial)
+        }
     }
     
     public func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {

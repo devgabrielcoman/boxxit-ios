@@ -8,14 +8,6 @@
 
 import UIKit
 
-extension State {
-    enum TutorialProfile {
-        case initial
-    }
-}
-
-//
-// MARK: Base
 class TutorialProfileController: BaseController {
 
     @IBOutlet weak var tutorialText: UILabel!
@@ -23,27 +15,7 @@ class TutorialProfileController: BaseController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        setState(state: State.TutorialProfile.initial)
+        continueText.text = "Continue Text".localized
+        tutorialText.text = "Tutorial Profile Text".localized
     }
-}
-
-//
-// MARK: State
-extension TutorialProfileController: StateLogic {
-    
-    func setState(state: State.TutorialProfile) {
-        switch state {
-        //
-        // initial state
-        case .initial:
-            
-            //
-            // set texts
-            continueText.text = "Continue Text".localized
-            tutorialText.text = "Tutorial Profile Text".localized
-            
-            break
-        }
-    }
-    
 }

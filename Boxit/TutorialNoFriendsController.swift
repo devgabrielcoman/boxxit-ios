@@ -33,7 +33,7 @@ class TutorialNoFriendsController: BaseController {
 extension TutorialNoFriendsController: BusinessLogic, FBSDKAppInviteDialogDelegate {
     
     @IBAction func exploreAction(_ sender: Any) {
-        TutorialDriver.shared.drivenAction?()
+        // TutorialDriver.shared.drivenAction?()
     }
     
     @IBAction func inviteAction(_ sender: Any) {

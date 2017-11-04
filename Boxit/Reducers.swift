@@ -14,12 +14,13 @@ func appReducer (_ previous: AppState, _ event: Event) -> AppState {
                     currentUserState: currentUserReducer(previous, event),
                     selectedUserState: selectedUserReducer(previous, event),
                     productState: productsReducer(previous.productState, event),
-                    favouritesState: favouritesState(previous.favouritesState, event))
+                    favouritesState: favouritesReducer(previous.favouritesState, event),
+                    tutorialState: tutorialReducer(previous.tutorialState, event))
 }
 
 func loginReducer (_ previous: LoginState, _ event: Event) -> LoginState {
     var state = previous
-    state.isLoading = false
+//    state.isLoading = false
     state.error = nil
     
     switch event {
@@ -30,6 +31,7 @@ func loginReducer (_ previous: LoginState, _ event: Event) -> LoginState {
         state.token = token
         state.ownId = ownId
         state.error = error
+        state.isLoading = false
         break
     default:
         // do nothing
@@ -150,7 +152,7 @@ func productsReducer (_ previous: ProductState, _ event: Event) -> ProductState 
     return state
 }
 
-func favouritesState (_ previous: FavouritesState, _ event: Event) -> FavouritesState {
+func favouritesReducer (_ previous: FavouritesState, _ event: Event) -> FavouritesState {
     var state = previous
     state.error = nil
     state.isLoading = false
@@ -173,6 +175,47 @@ func favouritesState (_ previous: FavouritesState, _ event: Event) -> Favourites
     case .commitDeletingProduct:
         // do nothing
         break
+    default:
+        // do nothing
+        break
+    }
+    
+    return state
+}
+
+func tutorialReducer (_ previous: TutorialState, _ event: Event) -> TutorialState {
+    
+    var state = previous
+    let step = state.currentStep
+    
+    switch event {
+    case .showTutorial:
+        state.hasTutorial = true
+        break
+    case .advanceTutorial:
+        switch step {
+        case .Welcome:
+            state.currentStep = .You
+            break
+        case .You:
+            state.currentStep = .Friends
+            break
+        case .Friends:
+            state.currentStep = .Explore
+            break
+        case .Explore:
+            state.currentStep = .Explore2
+            break
+        case .Explore2:
+            state.currentStep = .Final
+            break
+        case .Final:
+            state.currentStep = .Done
+            break
+        default:
+            // do nothing
+            break
+        }
     default:
         // do nothing
         break

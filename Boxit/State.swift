@@ -17,6 +17,7 @@ struct AppState: ReduxState {
     var selectedUserState = SelectedUserState()
     var productState = ProductState()
     var favouritesState = FavouritesState()
+    var tutorialState = TutorialState()
 }
 
 struct LoginState: ReduxState {
@@ -61,4 +62,20 @@ struct FavouritesState: ReduxState {
             return prod.isFavourite
         }
     }
+}
+
+enum TutorialSteps {
+    case Welcome
+    case You
+    case Friends
+    case NoFriends
+    case Explore
+    case Explore2
+    case Final
+    case Done
+}
+
+struct TutorialState: ReduxState {
+    var currentStep: TutorialSteps = .Welcome
+    var hasTutorial: Bool = false
 }

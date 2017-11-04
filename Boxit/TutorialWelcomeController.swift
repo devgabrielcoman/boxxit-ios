@@ -9,14 +9,7 @@
 import UIKit
 import Kingfisher
 
-extension State {
-    enum TutorialWecome {
-        case initial
-    }
-}
 
-//
-// MARK: Base
 class TutorialWelcomeController: BaseController {
 
     @IBOutlet weak var continueText: UILabel!
@@ -25,34 +18,13 @@ class TutorialWelcomeController: BaseController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        setState(state: State.TutorialWecome.initial)
-    }
-}
-
-//
-// MARK: State Logic
-extension TutorialWelcomeController: StateLogic {
-    
-    func setState (state: State.TutorialWecome) {
-        switch state {
-        //
-        // initital state
-        case .initial:
-            
-            //
-            // set profile dependent text
-            let profile = DataStore.shared.get(userForId: "me")
-            
-            if let profile = profile, let firstName = profile.firstName {
-                mainText.text = String(format: "Tutorial Welcome Text ".localized, firstName)
-                profilePicture.kf.setImage(with: profile.pictureUrl)
-            }
-            
-            //
-            // set continue text
-            continueText.text = "Start Text".localized
-            
-            break
+        
+        continueText.text = "Start Text".localized
+        
+        let user = store.current.currentUserState.currentUser
+        if let profile = user, let firstName = profile.firstName {
+            mainText.text = String(format: "Tutorial Welcome Text ".localized, firstName)
+            profilePicture.kf.setImage(with: profile.pictureUrl)
         }
     }
 }

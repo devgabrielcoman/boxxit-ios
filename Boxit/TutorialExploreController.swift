@@ -8,14 +8,6 @@
 
 import UIKit
 
-extension State {
-    enum TutorialExplore {
-        case initial
-    }
-}
-
-//
-// MARK: Base
 class TutorialExploreController: UIViewController {
 
     @IBOutlet weak var tutorialText: UILabel!
@@ -23,26 +15,7 @@ class TutorialExploreController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        setState(state: State.TutorialExplore.initial)
+        continueText.text = "Continue Text".localized
+        tutorialText.text = "Tutorial Explore Text".localized
    }
-}
-
-//
-// MARK: State
-extension TutorialExploreController: StateLogic {
-    
-    func setState(state: State.TutorialExplore) {
-        switch state {
-            //
-        // initial state
-        case .initial:
-            
-            //
-            // set texts
-            continueText.text = "Continue Text".localized
-            tutorialText.text = "Tutorial Explore Text".localized
-            
-            break
-        }
-    }
 }

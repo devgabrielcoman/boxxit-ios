@@ -11,14 +11,6 @@ import UserNotifications
 import Firebase
 import RxSwift
 
-extension State {
-    enum TutorialNotification {
-        case initial
-    }
-}
-
-//
-// MARK: Base
 class TutorialNotificationsController: BaseController {
 
     @IBOutlet weak var tutorialText: UILabel!
@@ -29,13 +21,21 @@ class TutorialNotificationsController: BaseController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        setState(state: State.TutorialNotification.initial)
+        
+        //
+        // set app delegate for notifications
+        (application?.delegate as? AppDelegate)?.delegate = self
+        
+        //
+        // set style
+        enableNotifButton.loginStyle()
+        skipText.text = "Skip Text".localized
+        enableNotifButton.setTitle("Enable Notifications".localized, for: .normal)
+        tutorialText.text = "Tutorial Notifications Text".localized
     }
 }
 
-//
-// MARK: Business Logic
-extension TutorialNotificationsController: BusinessLogic, EnableNotificationResponder {
+extension TutorialNotificationsController: EnableNotificationResponder {
     
     @IBAction func enableAction(sender: Any) {
         if #available(iOS 10.0, *) {
@@ -53,31 +53,6 @@ extension TutorialNotificationsController: BusinessLogic, EnableNotificationResp
     }
     
     func didTapOnNotificationAlert() {
-        TutorialDriver.shared.setState(state: State.Tutorial.hidden)
-    }
-}
-
-//
-// MARK: State Logic
-extension TutorialNotificationsController: StateLogic {
-    
-    func setState(state: State.TutorialNotification) {
-        switch state {
-        case .initial:
-            //
-            // set style
-            enableNotifButton.loginStyle()
-            
-            //
-            // set delegate
-            (application?.delegate as? AppDelegate)?.delegate = self
-            
-            //
-            // set text
-            skipText.text = "Skip Text".localized
-            enableNotifButton.setTitle("Enable Notifications".localized, for: .normal)
-            tutorialText.text = "Tutorial Notifications Text".localized
-            break
-        }
+        store.dispatch(Event.advanceTutorial)
     }
 }

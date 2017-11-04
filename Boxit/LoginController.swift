@@ -16,8 +16,6 @@ class LoginController: BaseController {
     @IBOutlet weak var loginButton: UIButton!
     @IBOutlet weak var spinner: UIActivityIndicatorView!
     
-    fileprivate var vc: TutorialMainController!
-
     override func viewDidLoad() {
         super.viewDidLoad()
         loginButton.loginStyle()
@@ -29,7 +27,7 @@ class LoginController: BaseController {
     }
     
     override func viewDidDisappear(_ animated: Bool) {
-        // do nothing
+        store.dispatch(Event.showTutorial)
     }
     
     override func handle(_ state: AppState) {
@@ -49,7 +47,13 @@ class LoginController: BaseController {
         //
         // login success
         if loginState.token != nil {
+            
+            //
+            // goto load page
             performSegue(.LoginToLoad)
+        
+            //
+            // remove listener
             store.removeListener(self)
         }
     }

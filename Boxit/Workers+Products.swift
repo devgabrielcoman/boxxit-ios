@@ -51,19 +51,20 @@ extension ProductsWorker {
 //        }
 }
 
-//
-// MARK: Save & Delete Favourite Products
-extension ProductsWorker {
-    
-    static func save(favouriteProduct productId: String, forUserId id: String) -> Single<Void> {
-        let request = NetworkRequest(withOperation: NetworkOperation.saveProduct(id: id, asin: productId))
-        let task = NetworkTask()
-        return task.execute(withInput: request).map { result in return () }
-    }
-    
-    static func delete(favouriteProduct productId: String, forUserId id: String) -> Single<Void> {
-        let request = NetworkRequest(withOperation: NetworkOperation.deleteProduct(id: id, asin: productId))
-        let task = NetworkTask()
-        return task.execute(withInput: request).map { result in return () }
-    }
-}
+////
+//// MARK: Save & Delete Favourite Products
+//extension ProductsWorker {
+//    
+//    static func save(favouriteProduct productId: String, forUserId id: String) -> Single<Void> {
+//        let request = NetworkRequest(withOperation: NetworkOperation.saveProduct(id: id, asin: productId))
+//        let task = NetworkTask()
+//        return task.execute(withInput: request).map { result in return () }
+//    }
+//    
+//    static func delete(favouriteProduct productId: String, forUserId id: String) -> Single<Void> {
+//        let request = NetworkRequest(withOperation: NetworkOperation.deleteProduct(id: id, asin: productId))
+//        let task = NetworkTask()
+//        return task.execute(withInput: request).map { result in return () }
+//    }
+//}
+

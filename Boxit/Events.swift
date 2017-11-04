@@ -30,6 +30,8 @@ enum Event{
     case startDeletingProduct(asin: String)
     case revertDeletingProduct(asin: String)
     case commitDeletingProduct
+    case showTutorial
+    case advanceTutorial
 }
 
 extension Event {

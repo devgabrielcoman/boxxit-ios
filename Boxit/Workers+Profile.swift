@@ -9,28 +9,28 @@
 import UIKit
 import RxSwift
 
-//
-// MARK: Get Profile
-extension UserWorker {
-    
-    static func get(profileForUserId id: String) -> Single<FacebookProfile> {
-        
-        if let user = DataStore.shared.get(userForId: id) {
-            return Single.just(user)
-        }
-        
-        let request = NetworkRequest(withOperation: NetworkOperation.getProfileFromFacebook(forUser: id))
-        let task = NetworkTask()
-        return task.execute(withInput: request)
-            .flatMap { fbData -> Single<FacebookProfile> in
-                let task = ParseFacebookProfileTask()
-                return task.execute(withInput: fbData)
-            }
-            .do(onNext: { profile in
-                DataStore.shared.save(user: profile, forId: id)
-            })
-    }
-}
+////
+//// MARK: Get Profile
+//extension UserWorker {
+//    
+//    static func get(profileForUserId id: String) -> Single<FacebookProfile> {
+//        
+//        if let user = DataStore.shared.get(userForId: id) {
+//            return Single.just(user)
+//        }
+//        
+//        let request = NetworkRequest(withOperation: NetworkOperation.getProfileFromFacebook(forUser: id))
+//        let task = NetworkTask()
+//        return task.execute(withInput: request)
+//            .flatMap { fbData -> Single<FacebookProfile> in
+//                let task = ParseFacebookProfileTask()
+//                return task.execute(withInput: fbData)
+//            }
+//            .do(onNext: { profile in
+//                DataStore.shared.save(user: profile, forId: id)
+//            })
+//    }
+//}
 
 ////
 //// Send Profile data main function

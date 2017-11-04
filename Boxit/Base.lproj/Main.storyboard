@@ -120,10 +120,14 @@
                                     <constraint firstAttribute="width" constant="100" id="Nyw-2G-Dkd"/>
                                 </constraints>
                             </imageView>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="white" translatesAutoresizingMaskIntoConstraints="NO" id="GRw-Gq-2hT">
+                                <rect key="frame" x="178" y="394" width="20" height="20"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="ZMe-ye-sgj" firstAttribute="top" secondItem="yUH-UD-grC" secondAttribute="bottom" constant="155" id="88A-Cm-7aw"/>
+                            <constraint firstItem="GRw-Gq-2hT" firstAttribute="top" secondItem="mgh-qv-ZPy" secondAttribute="bottom" constant="60" id="Lty-yL-iC1"/>
                             <constraint firstItem="ZMe-ye-sgj" firstAttribute="centerX" secondItem="7nY-rB-any" secondAttribute="centerX" id="Mng-OT-nLl"/>
                             <constraint firstItem="QJw-tc-qwt" firstAttribute="top" secondItem="yUH-UD-grC" secondAttribute="bottom" constant="-20" id="QnP-Du-bHT"/>
                             <constraint firstItem="bpk-J7-jnL" firstAttribute="top" secondItem="QJw-tc-qwt" secondAttribute="bottom" id="WbV-P0-gaM"/>
@@ -131,6 +135,7 @@
                             <constraint firstAttribute="trailing" secondItem="QJw-tc-qwt" secondAttribute="trailing" id="bmy-Vn-Yux"/>
                             <constraint firstItem="QJw-tc-qwt" firstAttribute="leading" secondItem="7nY-rB-any" secondAttribute="leading" id="cBe-wm-Tjr"/>
                             <constraint firstItem="mgh-qv-ZPy" firstAttribute="centerX" secondItem="7nY-rB-any" secondAttribute="centerX" id="eiC-2j-iWL"/>
+                            <constraint firstItem="GRw-Gq-2hT" firstAttribute="centerX" secondItem="7nY-rB-any" secondAttribute="centerX" id="tNa-qW-v10"/>
                         </constraints>
                     </view>
                     <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
@@ -272,7 +277,7 @@
                     <connections>
                         <outlet property="loginButton" destination="ft4-ih-VdD" id="qgk-fN-7aA"/>
                         <outlet property="spinner" destination="TMp-7U-hCB" id="mLE-m0-sAE"/>
-                        <segue destination="7rd-t4-Q7i" kind="show" identifier="LoginToLoad" id="vxm-ae-saz"/>
+                        <segue destination="7rd-t4-Q7i" kind="show" identifier="LoginToLoad" animates="NO" id="vxm-ae-saz"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cnD-uN-USk" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -759,7 +764,7 @@
                                 </connections>
                             </containerView>
                             <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VQa-gp-7pB">
-                                <rect key="frame" x="167" y="323.5" width="42" height="20"/>
+                                <rect key="frame" x="164.5" y="323.5" width="46.5" height="20"/>
                                 <fontDescription key="fontDescription" name="Raleway-Bold" family="Raleway" pointSize="17"/>
                                 <color key="textColor" red="0.015686274510000001" green="0.51764705879999995" blue="0.63921568630000003" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -1229,37 +1234,37 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="e8g-yk-fhe" userLabel="WelcomeContainer">
+                            <containerView hidden="YES" opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="e8g-yk-fhe" userLabel="WelcomeContainer">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <connections>
                                     <segue destination="vkq-Ha-BG7" kind="embed" id="V1i-mL-f6z"/>
                                 </connections>
                             </containerView>
-                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="udX-Jk-GcP" userLabel="YourProfileContainer">
+                            <containerView hidden="YES" opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="udX-Jk-GcP" userLabel="YourProfileContainer">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <connections>
                                     <segue destination="N3a-za-Asa" kind="embed" id="euN-EY-LhQ"/>
                                 </connections>
                             </containerView>
-                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nqn-wT-KJL" userLabel="ExploreContainer">
+                            <containerView hidden="YES" opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nqn-wT-KJL" userLabel="ExploreContainer">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <connections>
                                     <segue destination="cZA-7m-S1W" kind="embed" id="oz5-bq-1OH"/>
                                 </connections>
                             </containerView>
-                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Dbz-Ex-935" userLabel="NotificationContainer">
+                            <containerView hidden="YES" opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Dbz-Ex-935" userLabel="NotificationContainer">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <connections>
                                     <segue destination="xTm-Up-BvU" kind="embed" id="1r6-ey-hd6"/>
                                 </connections>
                             </containerView>
-                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aPO-iP-XZj" userLabel="NoFriendsContainer">
+                            <containerView hidden="YES" opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aPO-iP-XZj" userLabel="NoFriendsContainer">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <connections>
                                     <segue destination="knE-6s-Ogb" kind="embed" id="gZg-fF-Aae"/>
                                 </connections>
                             </containerView>
-                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Z3v-4i-lLy" userLabel="YourFriendsContainer">
+                            <containerView hidden="YES" opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Z3v-4i-lLy" userLabel="YourFriendsContainer">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <connections>
                                     <segue destination="HSd-72-Mxq" kind="embed" id="gqZ-de-Owp"/>
@@ -1336,10 +1341,10 @@
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="gYE-VA-0zJ">
-                                            <rect key="frame" x="20" y="40" width="40" height="40"/>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="gYE-VA-0zJ">
+                                            <rect key="frame" x="20" y="40" width="40" height="80"/>
                                             <constraints>
-                                                <constraint firstAttribute="height" constant="40" id="Hvh-3V-1Hb"/>
+                                                <constraint firstAttribute="height" constant="80" id="Hvh-3V-1Hb"/>
                                                 <constraint firstAttribute="width" constant="40" id="qHX-oA-rnX"/>
                                             </constraints>
                                         </imageView>
@@ -1351,18 +1356,18 @@
                                             <string key="text">Hey Name!
 Welcome to Boxxit, the app that helps you find interesting gift ideas for your friends.</string>
                                             <fontDescription key="fontDescription" name="Raleway-Bold" family="Raleway" pointSize="17"/>
-                                            <color key="textColor" red="0.89411764709999997" green="0.8980392157" blue="0.086274509799999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <color key="textColor" red="0.13725490200000001" green="0.1215686275" blue="0.12549019610000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tap to start" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gIe-vj-kbO">
                                             <rect key="frame" x="122" y="621" width="130" height="30"/>
-                                            <color key="backgroundColor" red="0.89411764709999997" green="0.8980392157" blue="0.086274509799999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <color key="backgroundColor" red="0.015686274510000001" green="0.51764705879999995" blue="0.63921568630000003" alpha="1" colorSpace="calibratedRGB"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="30" id="JpH-CX-Hmp"/>
                                                 <constraint firstAttribute="width" constant="130" id="LBa-cJ-fEU"/>
                                             </constraints>
                                             <fontDescription key="fontDescription" name="Raleway-Bold" family="Raleway" pointSize="13"/>
-                                            <color key="textColor" red="0.13725490196078433" green="0.12156862745098039" blue="0.12549019607843137" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <nil key="highlightedColor"/>
                                             <userDefinedRuntimeAttributes>
                                                 <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
@@ -1395,7 +1400,7 @@ Welcome to Boxxit, the app that helps you find interesting gift ideas for your f
                                         <constraint firstAttribute="bottom" secondItem="gIe-vj-kbO" secondAttribute="bottom" constant="16" id="zjr-ES-C7q"/>
                                     </constraints>
                                 </view>
-                                <blurEffect style="dark"/>
+                                <blurEffect style="light"/>
                             </visualEffectView>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -1444,18 +1449,18 @@ Welcome to Boxxit, the app that helps you find interesting gift ideas for your f
                                             <string key="text">This is your profile!
 Based on your likes and interests Boxxit has already prepared a list of gift ideas for you.</string>
                                             <fontDescription key="fontDescription" name="Raleway-Bold" family="Raleway" pointSize="17"/>
-                                            <color key="textColor" red="0.89411764709999997" green="0.8980392157" blue="0.086274509799999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <color key="textColor" red="0.13725490200000001" green="0.1215686275" blue="0.12549019610000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tap to continue" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fv5-qO-zP5">
                                             <rect key="frame" x="122.5" y="351" width="130" height="30"/>
-                                            <color key="backgroundColor" red="0.89411764709999997" green="0.8980392157" blue="0.086274509799999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <color key="backgroundColor" red="0.015686274510000001" green="0.51764705879999995" blue="0.63921568630000003" alpha="1" colorSpace="calibratedRGB"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="130" id="6P6-xr-8vN"/>
                                                 <constraint firstAttribute="height" constant="30" id="nVd-lO-X6D"/>
                                             </constraints>
                                             <fontDescription key="fontDescription" name="Raleway-Bold" family="Raleway" pointSize="13"/>
-                                            <color key="textColor" red="0.13725490200000001" green="0.1215686275" blue="0.12549019610000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <nil key="highlightedColor"/>
                                             <userDefinedRuntimeAttributes>
                                                 <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
@@ -1463,10 +1468,10 @@ Based on your likes and interests Boxxit has already prepared a list of gift ide
                                                 </userDefinedRuntimeAttribute>
                                             </userDefinedRuntimeAttributes>
                                         </label>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="xj8-uC-vom">
-                                            <rect key="frame" x="20" y="20" width="40" height="40"/>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="xj8-uC-vom">
+                                            <rect key="frame" x="20" y="20" width="40" height="80"/>
                                             <constraints>
-                                                <constraint firstAttribute="height" constant="40" id="aVU-zN-grH"/>
+                                                <constraint firstAttribute="height" constant="80" id="aVU-zN-grH"/>
                                                 <constraint firstAttribute="width" constant="40" id="fPI-K8-Hm9"/>
                                             </constraints>
                                         </imageView>
@@ -1481,7 +1486,7 @@ Based on your likes and interests Boxxit has already prepared a list of gift ide
                                         <constraint firstItem="Fv5-qO-zP5" firstAttribute="centerX" secondItem="GM4-De-eX5" secondAttribute="centerX" id="vod-Jk-DoP"/>
                                     </constraints>
                                 </view>
-                                <blurEffect style="dark"/>
+                                <blurEffect style="light"/>
                             </visualEffectView>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -1523,13 +1528,13 @@ Based on your likes and interests Boxxit has already prepared a list of gift ide
                                     <subviews>
                                         <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tap on any friend" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4pD-IR-Jec">
                                             <rect key="frame" x="122.5" y="224" width="130" height="30"/>
-                                            <color key="backgroundColor" red="0.89411764709999997" green="0.8980392157" blue="0.086274509799999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <color key="backgroundColor" red="0.015686274510000001" green="0.51764705879999995" blue="0.63921568630000003" alpha="1" colorSpace="calibratedRGB"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="130" id="Cd0-zj-1to"/>
                                                 <constraint firstAttribute="height" constant="30" id="hbK-Zc-LaG"/>
                                             </constraints>
                                             <fontDescription key="fontDescription" name="Raleway-Bold" family="Raleway" pointSize="13"/>
-                                            <color key="textColor" red="0.13725490200000001" green="0.1215686275" blue="0.12549019610000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <nil key="highlightedColor"/>
                                             <userDefinedRuntimeAttributes>
                                                 <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
@@ -1545,14 +1550,14 @@ Based on your likes and interests Boxxit has already prepared a list of gift ide
                                             <string key="text">And these are your friends!
 You can tap on any of them to see what gift ideas Boxxit suggests.</string>
                                             <fontDescription key="fontDescription" name="Raleway-Bold" family="Raleway" pointSize="17"/>
-                                            <color key="textColor" red="0.89411764709999997" green="0.8980392157" blue="0.086274509799999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <color key="textColor" red="0.13725490200000001" green="0.1215686275" blue="0.12549019610000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="1wX-j7-YkY">
-                                            <rect key="frame" x="20" y="40" width="40" height="40"/>
+                                            <rect key="frame" x="20" y="40" width="40" height="80"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="40" id="Uwk-mJ-hiq"/>
-                                                <constraint firstAttribute="height" constant="40" id="nuK-0Q-mGM"/>
+                                                <constraint firstAttribute="height" constant="80" id="nuK-0Q-mGM"/>
                                             </constraints>
                                         </imageView>
                                     </subviews>
@@ -1569,7 +1574,7 @@ You can tap on any of them to see what gift ideas Boxxit suggests.</string>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="270" id="BkC-9Q-mVK"/>
                                 </constraints>
-                                <blurEffect style="dark"/>
+                                <blurEffect style="light"/>
                             </visualEffectView>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -1608,13 +1613,13 @@ You can tap on any of them to see what gift ideas Boxxit suggests.</string>
                                     <subviews>
                                         <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tap to continue" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Zn-dy-AZH">
                                             <rect key="frame" x="122.5" y="621" width="130" height="30"/>
-                                            <color key="backgroundColor" red="0.89411764709999997" green="0.8980392157" blue="0.086274509799999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <color key="backgroundColor" red="0.015686274510000001" green="0.51764705879999995" blue="0.63921568630000003" alpha="1" colorSpace="calibratedRGB"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="30" id="Ejn-1a-ili"/>
                                                 <constraint firstAttribute="width" constant="130" id="Svd-Fd-DXr"/>
                                             </constraints>
                                             <fontDescription key="fontDescription" name="Raleway-Bold" family="Raleway" pointSize="13"/>
-                                            <color key="textColor" red="0.13725490200000001" green="0.1215686275" blue="0.12549019610000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <nil key="highlightedColor"/>
                                             <userDefinedRuntimeAttributes>
                                                 <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
@@ -1623,10 +1628,10 @@ You can tap on any of them to see what gift ideas Boxxit suggests.</string>
                                             </userDefinedRuntimeAttributes>
                                         </label>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="eDZ-bM-d5h">
-                                            <rect key="frame" x="20" y="40" width="40" height="40"/>
+                                            <rect key="frame" x="20" y="40" width="40" height="80"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="40" id="Hrw-w9-cAt"/>
-                                                <constraint firstAttribute="height" constant="40" id="USZ-YW-H3d"/>
+                                                <constraint firstAttribute="height" constant="80" id="USZ-YW-H3d"/>
                                             </constraints>
                                         </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lWU-oJ-tit">
@@ -1640,7 +1645,7 @@ You can scroll down to see more gifts ideas.
 
 We hope you like them and find one that's just right!  </string>
                                             <fontDescription key="fontDescription" name="Raleway-Bold" family="Raleway" pointSize="17"/>
-                                            <color key="textColor" red="0.89411764709999997" green="0.8980392157" blue="0.086274509799999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <color key="textColor" red="0.13725490200000001" green="0.1215686275" blue="0.12549019610000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
@@ -1653,7 +1658,7 @@ We hope you like them and find one that's just right!  </string>
                                         <constraint firstItem="lWU-oJ-tit" firstAttribute="centerY" secondItem="5hO-JW-1a0" secondAttribute="centerY" id="oH9-2O-tMe"/>
                                     </constraints>
                                 </view>
-                                <blurEffect style="dark"/>
+                                <blurEffect style="light"/>
                             </visualEffectView>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -1691,22 +1696,22 @@ We hope you like them and find one that's just right!  </string>
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="jZn-Oe-b42">
-                                            <rect key="frame" x="20" y="40" width="40" height="40"/>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="jZn-Oe-b42">
+                                            <rect key="frame" x="20" y="40" width="40" height="80"/>
                                             <constraints>
-                                                <constraint firstAttribute="height" constant="40" id="C8q-YM-onV"/>
+                                                <constraint firstAttribute="height" constant="80" id="C8q-YM-onV"/>
                                                 <constraint firstAttribute="width" constant="40" id="DNq-gJ-2La"/>
                                             </constraints>
                                         </imageView>
                                         <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tap to skip" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ChC-YC-x24">
                                             <rect key="frame" x="122.5" y="621" width="130" height="30"/>
-                                            <color key="backgroundColor" red="0.89411764709999997" green="0.8980392157" blue="0.086274509799999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <color key="backgroundColor" red="0.015686274510000001" green="0.51764705879999995" blue="0.63921568630000003" alpha="1" colorSpace="calibratedRGB"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="30" id="5t1-IN-4ng"/>
                                                 <constraint firstAttribute="width" constant="130" id="uuy-fP-Tcl"/>
                                             </constraints>
                                             <fontDescription key="fontDescription" name="Raleway-Bold" family="Raleway" pointSize="13"/>
-                                            <color key="textColor" red="0.13725490200000001" green="0.1215686275" blue="0.12549019610000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <nil key="highlightedColor"/>
                                             <userDefinedRuntimeAttributes>
                                                 <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
@@ -1740,7 +1745,7 @@ Tap the Enable Notifications button to always be alerted when a friend's birthda
 
 Or tap anywhere else to start using Boxxit!</string>
                                             <fontDescription key="fontDescription" name="Raleway-Bold" family="Raleway" pointSize="17"/>
-                                            <color key="textColor" red="0.89411764709999997" green="0.8980392157" blue="0.086274509799999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <color key="textColor" red="0.13725490200000001" green="0.1215686275" blue="0.12549019610000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
@@ -1757,7 +1762,7 @@ Or tap anywhere else to start using Boxxit!</string>
                                         <constraint firstItem="fPK-n3-1y7" firstAttribute="centerX" secondItem="UIm-UW-4h4" secondAttribute="centerX" id="vQb-Iu-6Pg"/>
                                     </constraints>
                                 </view>
-                                <blurEffect style="dark"/>
+                                <blurEffect style="light"/>
                             </visualEffectView>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -1796,22 +1801,22 @@ Or tap anywhere else to start using Boxxit!</string>
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="270"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="W80-3l-goh">
-                                            <rect key="frame" x="20" y="40" width="40" height="40"/>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="W80-3l-goh">
+                                            <rect key="frame" x="20" y="40" width="40" height="80"/>
                                             <constraints>
-                                                <constraint firstAttribute="height" constant="40" id="3bv-tP-LDh"/>
+                                                <constraint firstAttribute="height" constant="80" id="3bv-tP-LDh"/>
                                                 <constraint firstAttribute="width" constant="40" id="vIR-dk-hsV"/>
                                             </constraints>
                                         </imageView>
                                         <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AVh-Js-0cJ">
-                                            <rect key="frame" x="122" y="228" width="130" height="26"/>
-                                            <color key="backgroundColor" red="0.89411764709999997" green="0.8980392157" blue="0.086274509799999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <rect key="frame" x="122" y="227" width="130" height="27"/>
+                                            <color key="backgroundColor" red="0.015686274510000001" green="0.51764705879999995" blue="0.63921568630000003" alpha="1" colorSpace="calibratedRGB"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="130" id="eJ9-6V-GK3"/>
                                             </constraints>
                                             <fontDescription key="fontDescription" name="Raleway-Bold" family="Raleway" pointSize="12"/>
                                             <state key="normal" title="Gift ideas for you">
-                                                <color key="titleColor" red="0.13725490200000001" green="0.1215686275" blue="0.12549019610000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             </state>
                                             <userDefinedRuntimeAttributes>
                                                 <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
@@ -1823,19 +1828,19 @@ Or tap anywhere else to start using Boxxit!</string>
                                             </connections>
                                         </button>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XlQ-RU-z8C">
-                                            <rect key="frame" x="30" y="60" width="315" height="120"/>
+                                            <rect key="frame" x="30" y="80" width="315" height="120"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="120" id="6Sa-O3-W7d"/>
                                             </constraints>
                                             <string key="text">Oh! None of your friends are on Boxxit. 
 Invite them to the app or explore gift ideas for you.  </string>
                                             <fontDescription key="fontDescription" name="Raleway-Bold" family="Raleway" pointSize="17"/>
-                                            <color key="textColor" red="0.89411764709999997" green="0.8980392157" blue="0.086274509799999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <color key="textColor" red="0.13725490200000001" green="0.1215686275" blue="0.12549019610000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstItem="XlQ-RU-z8C" firstAttribute="top" secondItem="cfI-Kt-SUI" secondAttribute="top" constant="60" id="3Zn-2P-Esi"/>
+                                        <constraint firstItem="XlQ-RU-z8C" firstAttribute="top" secondItem="cfI-Kt-SUI" secondAttribute="top" constant="80" id="3Zn-2P-Esi"/>
                                         <constraint firstItem="W80-3l-goh" firstAttribute="top" secondItem="cfI-Kt-SUI" secondAttribute="top" constant="40" id="EpA-m8-eEa"/>
                                         <constraint firstItem="XlQ-RU-z8C" firstAttribute="leading" secondItem="cfI-Kt-SUI" secondAttribute="leading" constant="30" id="F9u-AB-Mfz"/>
                                         <constraint firstItem="W80-3l-goh" firstAttribute="leading" secondItem="cfI-Kt-SUI" secondAttribute="leading" constant="20" id="Ksg-eY-Yzt"/>
@@ -1847,7 +1852,7 @@ Invite them to the app or explore gift ideas for you.  </string>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="270" id="ZQm-I1-OEX"/>
                                 </constraints>
-                                <blurEffect style="dark"/>
+                                <blurEffect style="light"/>
                             </visualEffectView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gqv-aK-tEf">
                                 <rect key="frame" x="122.5" y="607" width="130" height="60"/>

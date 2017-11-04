@@ -29,7 +29,16 @@ class ProfileMainController: BaseController {
     }
     
     @IBAction func backButtonAction(_ sender: Any) {
+        //
+        // go back
         self.navigationController?.popViewController(animated: true)
+        
+        //
+        // if has tutorial make sure to show it
+        let hasTutorial = store.current.tutorialState.hasTutorial
+        if hasTutorial {
+            store.dispatch(Event.advanceTutorial)
+        }
     }
     
     @IBAction func gotoUserController(_ sender: Any) {
