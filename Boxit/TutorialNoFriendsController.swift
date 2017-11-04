@@ -9,14 +9,6 @@
 import UIKit
 import FBSDKShareKit
 
-extension State {
-    enum TutorialNoFriends {
-        case initial
-    }
-}
-
-//
-// MARK: Base
 class TutorialNoFriendsController: BaseController {
 
     @IBOutlet weak var tutorialText: UILabel!
@@ -24,13 +16,14 @@ class TutorialNoFriendsController: BaseController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        setState(state: State.TutorialNoFriends.initial)
+        tutorialText.text = "Tutorial No Friends Text".localized
+        exploreButton.setTitle("No Friends Action".localized, for: .normal)
     }
 }
 
 //
 // MARK: Business Logic
-extension TutorialNoFriendsController: BusinessLogic, FBSDKAppInviteDialogDelegate {
+extension TutorialNoFriendsController: FBSDKAppInviteDialogDelegate {
     
     @IBAction func exploreAction(_ sender: Any) {
         // TutorialDriver.shared.drivenAction?()
@@ -51,25 +44,5 @@ extension TutorialNoFriendsController: BusinessLogic, FBSDKAppInviteDialogDelega
     
     public func appInviteDialog(_ appInviteDialog: FBSDKAppInviteDialog!, didFailWithError error: Error!) {
         print("Complete with error \(error)")
-    }
-}
-
-//
-// MARK: State
-extension TutorialNoFriendsController: StateLogic {
-    
-    func setState(state: State.TutorialNoFriends) {
-        switch state {
-            //
-        // initial state
-        case .initial:
-            
-            //
-            // set state
-            tutorialText.text = "Tutorial No Friends Text".localized
-            exploreButton.setTitle("No Friends Action".localized, for: .normal)
-            
-            break
-        }
     }
 }

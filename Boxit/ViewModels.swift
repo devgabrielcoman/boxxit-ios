@@ -10,11 +10,6 @@ import UIKit
 
 struct ViewModels {
     
-    struct DataLoadError {
-        var hasRetry = false
-        var errorText: String
-    }
-    
     class User {
         var profile: FacebookProfile
         
@@ -40,12 +35,6 @@ struct ViewModels {
         
         init(profile: FacebookProfile) {
             self.profile = profile
-        }
-    }
-    
-    class Invite {
-        init() {
-            // do nothing
         }
     }
 }

@@ -20,6 +20,7 @@ enum Event{
     case gotFriends(friends: [FacebookProfile], offset: String?, error: BoxitError?)
     case selectUser(user: FacebookProfile?)
     case loadingProductsData
+    case resetProducts
     case updatePriceRange(withMin: Int, andMax: Int)
     case gotProducts(products: [Product], error: BoxitError?)
     case loadingFavouritesData

@@ -20,7 +20,6 @@ func appReducer (_ previous: AppState, _ event: Event) -> AppState {
 
 func loginReducer (_ previous: LoginState, _ event: Event) -> LoginState {
     var state = previous
-//    state.isLoading = false
     state.error = nil
     
     switch event {
@@ -112,6 +111,9 @@ func productsReducer (_ previous: ProductState, _ event: Event) -> ProductState 
     switch event {
     case .loadingProductsData:
         state.isLoading = state.products.count == 0 ? true : false
+        break
+    case .resetProducts:
+        state.products = []
         break
     case .updatePriceRange(let min, let max):
         state.products = []

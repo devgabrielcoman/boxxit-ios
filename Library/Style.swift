@@ -22,12 +22,4 @@ extension UIButton {
         self.layer.shadowColor = UIColor.black.cgColor
         self.layer.masksToBounds = false
     }
-    
-    func welcomeButton () {
-        self.backgroundColor = UIColor.white
-        self.layer.borderWidth = 1
-        self.layer.borderColor = UIColor(rgb: 0x0F2A42).cgColor
-        self.layer.cornerRadius = 20
-        self.setTitleColor(UIColor(rgb: 0x0F2A42), for: .normal)
-    }
 }

@@ -178,11 +178,13 @@ extension AppDelegate {
     func updateNotificationTokenForCurrentUser () {
         
         let token = InstanceID.instanceID().token()
-        let user = DataStore.shared.get(userForId: "me")
+        let userId = store.current.loginState.ownId
         
-        if let user = user, let token = token {
+        if let user = userId, let token = token {
             
-            UserWorker.update(notificationToken: token, forUserId: user.id)
+            let request = NetworkRequest(withOperation: NetworkOperation.saveNotificationToken(id: user, token: token))
+            let task = NetworkTask()
+            return task.execute(withInput: request).map{ result in return () }
             .subscribe(onSuccess: {
                 
                 //
@@ -212,8 +214,7 @@ extension AppDelegate {
             let root = window.rootViewController as? UINavigationController {
             
             let storyboard = UIStoryboard(name: "Main", bundle: nil)
-            let mvc = storyboard.instantiateViewController(withIdentifier: "UserControllerID") as! UserController
-            mvc.facebookUser = friendId
+            let mvc = storyboard.instantiateViewController(withIdentifier: "UserControllerID") as! UIViewController
             root.pushViewController(mvc, animated: true)
         }
         
