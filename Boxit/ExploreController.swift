@@ -9,45 +9,31 @@
 import UIKit
 import RxCocoa
 import RxSwift
-import RxTableAndCollectionView
 import Alertift
 import Firebase
 
-//extension State {
-//    enum Explore {
-//        case initial
-//        case success(viewViewModels: [Any])
-//        case error(withViewModel: ViewModels.DataLoadError)
-//    }
-//}
-
-//
-// MARK: Base
 class ExploreController: BaseController {
 
     @IBOutlet weak var tableView: UITableView!
-//    fileprivate var rxTableView: RxTableView?
-    
     @IBOutlet weak var loadingIcon: UIImageView!
-    
     @IBOutlet weak var errorContainerView: UIView!
     @IBOutlet weak var sliderContainer: UIView!
     
-//    var facebookUser: String = "me"
-//
-//    fileprivate var minPrice: Int?
-//    fileprivate var maxPrice: Int?
-//    fileprivate var products: [Product] = []
-    
-//    override func viewDidLoad() {
-//        super.viewDidLoad()
-//        self.setState(state: State.Explore.initial)
-//        self.getProducts()
-//    }
-    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        //
+        // setup
+        let error: ErrorController? = getChild()
+        error?.textLabel.text = "Product Error Message".localized
+        error?.didClickOnRetry = { self.loadData() }
+        
+        //
+        // add listener
         store.addListener(self)
+        
+        //
+        // load data
         self.loadData()
     }
     
