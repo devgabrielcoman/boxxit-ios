@@ -71,18 +71,9 @@ extension EventsController: UICollectionViewDelegate, UICollectionViewDataSource
     }
     
     public func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        //
-        // normal tap - go to see user products
         let item = store.current.friendsState.friends[indexPath.row]
         store.dispatch(Event.selectUser(user: item))
         performSegue(AppSegues.EventsToUser)
-        
-        //
-        // if tutorial is enabled, advance tutorial
-        let hasTutorial = store.current.tutorialState.hasTutorial
-        if hasTutorial {
-            store.dispatch(Event.advanceTutorial)
-        }
     }
     
     public func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {

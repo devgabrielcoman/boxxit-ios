@@ -764,7 +764,7 @@
                                 </connections>
                             </containerView>
                             <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VQa-gp-7pB">
-                                <rect key="frame" x="167.5" y="323.5" width="42" height="20"/>
+                                <rect key="frame" x="165" y="323.5" width="46.5" height="20"/>
                                 <fontDescription key="fontDescription" name="Raleway-Bold" family="Raleway" pointSize="17"/>
                                 <color key="textColor" red="0.015686274510000001" green="0.51764705879999995" blue="0.63921568630000003" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -1356,7 +1356,7 @@
                                             <string key="text">Hey Name!
 Welcome to Boxxit, the app that helps you find interesting gift ideas for your friends.</string>
                                             <fontDescription key="fontDescription" name="Raleway-Bold" family="Raleway" pointSize="17"/>
-                                            <color key="textColor" red="0.13725490200000001" green="0.1215686275" blue="0.12549019610000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tap to start" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gIe-vj-kbO">
@@ -1449,7 +1449,7 @@ Welcome to Boxxit, the app that helps you find interesting gift ideas for your f
                                             <string key="text">This is your profile!
 Based on your likes and interests Boxxit has already prepared a list of gift ideas for you.</string>
                                             <fontDescription key="fontDescription" name="Raleway-Bold" family="Raleway" pointSize="17"/>
-                                            <color key="textColor" red="0.13725490200000001" green="0.1215686275" blue="0.12549019610000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tap to continue" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fv5-qO-zP5">
@@ -1550,7 +1550,7 @@ Based on your likes and interests Boxxit has already prepared a list of gift ide
                                             <string key="text">And these are your friends!
 You can tap on any of them to see what gift ideas Boxxit suggests.</string>
                                             <fontDescription key="fontDescription" name="Raleway-Bold" family="Raleway" pointSize="17"/>
-                                            <color key="textColor" red="0.13725490200000001" green="0.1215686275" blue="0.12549019610000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="1wX-j7-YkY">
@@ -1645,7 +1645,7 @@ You can scroll down to see more gifts ideas.
 
 We hope you like them and find one that's just right!  </string>
                                             <fontDescription key="fontDescription" name="Raleway-Bold" family="Raleway" pointSize="17"/>
-                                            <color key="textColor" red="0.13725490200000001" green="0.1215686275" blue="0.12549019610000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
@@ -1745,7 +1745,7 @@ Tap the Enable Notifications button to always be alerted when a friend's birthda
 
 Or tap anywhere else to start using Boxxit!</string>
                                             <fontDescription key="fontDescription" name="Raleway-Bold" family="Raleway" pointSize="17"/>
-                                            <color key="textColor" red="0.13725490200000001" green="0.1215686275" blue="0.12549019610000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
@@ -1809,7 +1809,7 @@ Or tap anywhere else to start using Boxxit!</string>
                                             </constraints>
                                         </imageView>
                                         <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AVh-Js-0cJ">
-                                            <rect key="frame" x="122" y="228" width="130" height="26"/>
+                                            <rect key="frame" x="122" y="227" width="130" height="27"/>
                                             <color key="backgroundColor" red="0.015686274510000001" green="0.51764705879999995" blue="0.63921568630000003" alpha="1" colorSpace="calibratedRGB"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="130" id="eJ9-6V-GK3"/>
@@ -1835,7 +1835,7 @@ Or tap anywhere else to start using Boxxit!</string>
                                             <string key="text">Oh! None of your friends are on Boxxit. 
 Invite them to the app or explore gift ideas for you.  </string>
                                             <fontDescription key="fontDescription" name="Raleway-Bold" family="Raleway" pointSize="17"/>
-                                            <color key="textColor" red="0.13725490200000001" green="0.1215686275" blue="0.12549019610000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
