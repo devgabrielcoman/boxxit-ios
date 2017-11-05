@@ -51,6 +51,9 @@ func currentUserReducer (_ previous: AppState, _ event: Event) -> CurrentUserSta
         }
         state.currentUserState.error = error
         break
+    case .markCurrentUserAsLoaded:
+        state.currentUserState.alreadyLoaded = true
+        break
     default:
         // do nothing
         break

@@ -16,6 +16,7 @@ enum Event{
     case loadingLoginData
     case checkedLoginState(token: String?, ownId: String?, error: BoxitError?)
     case gotUser(forUserId: String, user: FacebookProfile?, error: BoxitError?)
+    case markCurrentUserAsLoaded
     case loadingFriendsData
     case gotFriends(friends: [FacebookProfile], offset: String?, error: BoxitError?)
     case selectUser(user: FacebookProfile?)

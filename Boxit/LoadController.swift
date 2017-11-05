@@ -42,9 +42,10 @@ class LoadController: BaseController {
         
         //
         // success case
-        if let _ = currentUserState.currentUser {
+        if currentUserState.currentUser != nil && !currentUserState.alreadyLoaded {
             //
             // goto main screen
+            store.dispatch(Event.markCurrentUserAsLoaded)
             performSegue(AppSegues.LoadToMain)
             
             //

@@ -30,6 +30,7 @@ struct LoginState: ReduxState {
 struct CurrentUserState: ReduxState {
     var currentUser: FacebookProfile?
     var error: BoxitError? = nil
+    var alreadyLoaded: Bool = false
 }
 
 struct FriendsState: ReduxState {

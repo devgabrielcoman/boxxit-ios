@@ -29,11 +29,19 @@ class EventsController: BaseController {
         let controller: ErrorController? = self.getChild()
         controller?.textLabel.text = "Events Error".localized
         controller?.didClickOnRetry = { self.reloadData() }
+        
+        //
+        // set store
+        store.addListener(self)
+        self.reloadData()
     }
     
     override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-        self.reloadData()
+        // do nothing
+    }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        // do nothing
     }
     
     func reloadData () {
@@ -48,6 +56,10 @@ class EventsController: BaseController {
         spinner.isHidden = !friendsState.isLoading
         inviteControllerView.isHidden = friendsState.isLoading || friendsState.friends.count > 0 || friendsState.error != nil
         errorControllerView.isHidden = friendsState.error == nil
+    }
+    
+    deinit {
+        store.removeListener(self)
     }
 }
 

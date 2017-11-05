@@ -53,8 +53,6 @@ class TutorialController: BaseController {
             // do nothing
             break
         case .Step1:
-            //
-            // set text & style
             continueText.text = "Tutorial - Continue Text".localized
             infoText.text = "Tutorial - Step 1".localized
             
