@@ -22,10 +22,12 @@ class ProfileMainController: BaseController {
     override func viewDidLoad() {
         super.viewDidLoad()
         let user = store.current.selectedUserState.user ?? store.current.currentUserState.currentUser
-        let viewModel = ViewModels.User(profile: user!)
-        profilePicture?.kf.setImage(with: viewModel.profile.pictureUrl)
-        profileName?.text = viewModel.profile.name
-        profileBirthday?.text = viewModel.birthdayShort
+        if let user = user {
+            let viewModel = ViewModels.User(profile: user)
+            profilePicture?.kf.setImage(with: viewModel.profile.pictureUrl)
+            profileName?.text = viewModel.profile.name
+            profileBirthday?.text = viewModel.birthdayShort
+        }
     }
     
     @IBAction func backButtonAction(_ sender: Any) {

@@ -176,21 +176,23 @@ extension AppDelegate {
     //
     // send an update to the DB regarding the current APNS token for this user
     func updateNotificationTokenForCurrentUser () {
-        
+    
         let token = InstanceID.instanceID().token()
         let userId = store.current.loginState.ownId
         
         if let user = userId, let token = token {
             
+            //
+            // invalidate timer
+            self.timer.invalidate()
+            
+            //
+            // do a network request
             let request = NetworkRequest(withOperation: NetworkOperation.saveNotificationToken(id: user, token: token))
             let task = NetworkTask()
-            return task.execute(withInput: request).map{ result in return () }
+            return task.execute(withInput: request).map { result in return () }
             .subscribe(onSuccess: {
-                
-                //
-                // invalidate timer
-                self.timer.invalidate()
-                
+                // do nothing
             }, onError: { error in
                 //
                 // could not send 
@@ -214,7 +216,7 @@ extension AppDelegate {
             let root = window.rootViewController as? UINavigationController {
             
             let storyboard = UIStoryboard(name: "Main", bundle: nil)
-            let mvc = storyboard.instantiateViewController(withIdentifier: "UserControllerID") as! UIViewController
+            let mvc = storyboard.instantiateViewController(withIdentifier: "UserControllerID")
             root.pushViewController(mvc, animated: true)
         }
         

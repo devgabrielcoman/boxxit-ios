@@ -31,9 +31,9 @@ class SliderController: BaseController {
             .flatMapLatest { (latest: (min: Int, max: Int)) -> Observable<(min: Int, max: Int)> in
                 return Observable.just(latest)
             }
-            .subscribeNext { (val: (min: Int, max: Int)) in
+            .subscribe(onNext: { (val: (min: Int, max: Int)) in
                 self.didSlideCallback?(val.min, val.max)
-            }
+            })
             .addDisposableTo(disposeBag)
     }
 }
