@@ -36,13 +36,6 @@ class ExploreController: BaseController {
         // load data
         store.dispatch(Event.resetProducts)
         self.loadData()
-        
-        //
-        // if tutorial is enabled, advance tutorial
-        let hasTutorial = store.current.tutorialState.hasTutorial
-        if hasTutorial {
-            store.dispatch(Event.advanceTutorial)
-        }
     }
     
     func loadData () {

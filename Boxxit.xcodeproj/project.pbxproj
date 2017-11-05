@@ -52,18 +52,12 @@
 		1B904CCF1F17A487008254FB /* Raleway-SemiBoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1B904CBD1F17A487008254FB /* Raleway-SemiBoldItalic.ttf */; };
 		1B904CD01F17A487008254FB /* Raleway-Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1B904CBE1F17A487008254FB /* Raleway-Thin.ttf */; };
 		1B904CD11F17A487008254FB /* Raleway-ThinItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1B904CBF1F17A487008254FB /* Raleway-ThinItalic.ttf */; };
-		1BA23B131ECDBECB00BBBB45 /* TutorialNotificationsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BA23B121ECDBECB00BBBB45 /* TutorialNotificationsController.swift */; };
 		1BAF660E1EEB49DE00F0AB4C /* ViewModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BAF660D1EEB49DE00F0AB4C /* ViewModels.swift */; };
 		1BAF66111EEB4A5900F0AB4C /* LoadController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BAF66101EEB4A5900F0AB4C /* LoadController.swift */; };
-		1BB132271F2CC60E0096B56C /* TutorialWelcomeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BB132261F2CC60E0096B56C /* TutorialWelcomeController.swift */; };
-		1BB132291F2CC61D0096B56C /* TutorialProfileController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BB132281F2CC61D0096B56C /* TutorialProfileController.swift */; };
-		1BB1322B1F2CC6270096B56C /* TutorialFriendsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BB1322A1F2CC6270096B56C /* TutorialFriendsController.swift */; };
-		1BB1322D1F2CC6370096B56C /* TutorialExploreController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BB1322C1F2CC6370096B56C /* TutorialExploreController.swift */; };
-		1BB1322F1F2D10010096B56C /* TutorialNoFriendsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BB1322E1F2D10010096B56C /* TutorialNoFriendsController.swift */; };
+		1BB132271F2CC60E0096B56C /* TutorialController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BB132261F2CC60E0096B56C /* TutorialController.swift */; };
 		1BB3F8121EE6065E00744B26 /* ParseNetworkDataTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BB3F8111EE6065E00744B26 /* ParseNetworkDataTask.swift */; };
 		1BB3F8141EE606BE00744B26 /* BackendData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BB3F8131EE606BE00744B26 /* BackendData.swift */; };
 		1BB3F8161EE6122400744B26 /* BoxitErrors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BB3F8151EE6122400744B26 /* BoxitErrors.swift */; };
-		1BC930311F27726C002E5114 /* TutorialMainController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BC930301F27726C002E5114 /* TutorialMainController.swift */; };
 		1BDB050A1EE6D5F70028E9A8 /* ErrorController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BDB05091EE6D5F70028E9A8 /* ErrorController.swift */; };
 		1BE7B4641EC5DB890085427A /* FacebookAuthRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BE7B4431EC5DB890085427A /* FacebookAuthRequest.swift */; };
 		1BE7B4651EC5DB890085427A /* FacebookAuthTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BE7B4441EC5DB890085427A /* FacebookAuthTask.swift */; };
@@ -135,19 +129,13 @@
 		1B904CBD1F17A487008254FB /* Raleway-SemiBoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Raleway-SemiBoldItalic.ttf"; sourceTree = "<group>"; };
 		1B904CBE1F17A487008254FB /* Raleway-Thin.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Raleway-Thin.ttf"; sourceTree = "<group>"; };
 		1B904CBF1F17A487008254FB /* Raleway-ThinItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Raleway-ThinItalic.ttf"; sourceTree = "<group>"; };
-		1BA23B121ECDBECB00BBBB45 /* TutorialNotificationsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TutorialNotificationsController.swift; sourceTree = "<group>"; };
 		1BAF660D1EEB49DE00F0AB4C /* ViewModels.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewModels.swift; sourceTree = "<group>"; };
 		1BAF66101EEB4A5900F0AB4C /* LoadController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadController.swift; sourceTree = "<group>"; };
-		1BB132261F2CC60E0096B56C /* TutorialWelcomeController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TutorialWelcomeController.swift; sourceTree = "<group>"; };
-		1BB132281F2CC61D0096B56C /* TutorialProfileController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TutorialProfileController.swift; sourceTree = "<group>"; };
-		1BB1322A1F2CC6270096B56C /* TutorialFriendsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TutorialFriendsController.swift; sourceTree = "<group>"; };
-		1BB1322C1F2CC6370096B56C /* TutorialExploreController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TutorialExploreController.swift; sourceTree = "<group>"; };
-		1BB1322E1F2D10010096B56C /* TutorialNoFriendsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TutorialNoFriendsController.swift; sourceTree = "<group>"; };
+		1BB132261F2CC60E0096B56C /* TutorialController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TutorialController.swift; sourceTree = "<group>"; };
 		1BB3F8111EE6065E00744B26 /* ParseNetworkDataTask.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParseNetworkDataTask.swift; sourceTree = "<group>"; };
 		1BB3F8131EE606BE00744B26 /* BackendData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BackendData.swift; path = ../BackendData.swift; sourceTree = "<group>"; };
 		1BB3F8151EE6122400744B26 /* BoxitErrors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BoxitErrors.swift; sourceTree = "<group>"; };
 		1BC35E691ECC6C0500006915 /* Boxit.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Boxit.entitlements; sourceTree = "<group>"; };
-		1BC930301F27726C002E5114 /* TutorialMainController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TutorialMainController.swift; sourceTree = "<group>"; };
 		1BDB05091EE6D5F70028E9A8 /* ErrorController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ErrorController.swift; sourceTree = "<group>"; };
 		1BE7B4431EC5DB890085427A /* FacebookAuthRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FacebookAuthRequest.swift; sourceTree = "<group>"; };
 		1BE7B4441EC5DB890085427A /* FacebookAuthTask.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FacebookAuthTask.swift; sourceTree = "<group>"; };
@@ -366,13 +354,7 @@
 		1BC9302F1F277256002E5114 /* Tutorial */ = {
 			isa = PBXGroup;
 			children = (
-				1BC930301F27726C002E5114 /* TutorialMainController.swift */,
-				1BB132261F2CC60E0096B56C /* TutorialWelcomeController.swift */,
-				1BB132281F2CC61D0096B56C /* TutorialProfileController.swift */,
-				1BB1322A1F2CC6270096B56C /* TutorialFriendsController.swift */,
-				1BB1322E1F2D10010096B56C /* TutorialNoFriendsController.swift */,
-				1BB1322C1F2CC6370096B56C /* TutorialExploreController.swift */,
-				1BA23B121ECDBECB00BBBB45 /* TutorialNotificationsController.swift */,
+				1BB132261F2CC60E0096B56C /* TutorialController.swift */,
 			);
 			name = Tutorial;
 			sourceTree = "<group>";
@@ -698,7 +680,6 @@
 			files = (
 				1B520BEA1EAEB052006FD05E /* EventsCell.swift in Sources */,
 				1BE7B4791EC5DB890085427A /* FacebookData.swift in Sources */,
-				1BC930311F27726C002E5114 /* TutorialMainController.swift in Sources */,
 				1B182AB91EDB5D04004C2A2C /* Button+Rx.swift in Sources */,
 				1BFA4CCA1ED589FB00E00297 /* UnicodeScalar+Extensions.swift in Sources */,
 				1B520BE21EAE9A69006FD05E /* ProfileMainController.swift in Sources */,
@@ -711,7 +692,6 @@
 				1BE7B4721EC5DB890085427A /* InviteRequest.swift in Sources */,
 				1BB3F8161EE6122400744B26 /* BoxitErrors.swift in Sources */,
 				1BDB050A1EE6D5F70028E9A8 /* ErrorController.swift in Sources */,
-				1BB132291F2CC61D0096B56C /* TutorialProfileController.swift in Sources */,
 				1BE7B4771EC5DB890085427A /* NetworkTask.swift in Sources */,
 				1B4E5DFF1EBF3B2E002DA018 /* SliderController.swift in Sources */,
 				1B3E53201FA787D000D76F49 /* State.swift in Sources */,
@@ -724,7 +704,6 @@
 				1B4E56E41EE1CDA500F67FC3 /* FavouriteController.swift in Sources */,
 				1B3E531E1FA787B300D76F49 /* Events.swift in Sources */,
 				1BAF660E1EEB49DE00F0AB4C /* ViewModels.swift in Sources */,
-				1BB1322B1F2CC6270096B56C /* TutorialFriendsController.swift in Sources */,
 				1BE7B4691EC5DB890085427A /* Task.swift in Sources */,
 				1BE7B4651EC5DB890085427A /* FacebookAuthTask.swift in Sources */,
 				1B7229C61EA6A9CF00B9897F /* IntroController.swift in Sources */,
@@ -739,15 +718,12 @@
 				1B520BE81EAEB03F006FD05E /* EventsController.swift in Sources */,
 				1B4E56E61EE2D9C900F67FC3 /* FavouriteRow.swift in Sources */,
 				1BFA4CC81ED589FB00E00297 /* String+Extensions.swift in Sources */,
-				1BB1322F1F2D10010096B56C /* TutorialNoFriendsController.swift in Sources */,
 				1BE7B4731EC5DB890085427A /* InviteTask.swift in Sources */,
 				1B5A367A1FACAA1C00BE818B /* TransparentView.swift in Sources */,
-				1BB1322D1F2CC6370096B56C /* TutorialExploreController.swift in Sources */,
 				1BFA4CC61ED589FB00E00297 /* Date+Extensions.swift in Sources */,
 				1BE7B47D1EC5DB890085427A /* ParseFacebookDataTask.swift in Sources */,
-				1BA23B131ECDBECB00BBBB45 /* TutorialNotificationsController.swift in Sources */,
 				1B7229C71EA6A9CF00B9897F /* LoginController.swift in Sources */,
-				1BB132271F2CC60E0096B56C /* TutorialWelcomeController.swift in Sources */,
+				1BB132271F2CC60E0096B56C /* TutorialController.swift in Sources */,
 				1B3E53221FA78A9700D76F49 /* Reducers.swift in Sources */,
 				1BE7B4681EC5DB890085427A /* Request.swift in Sources */,
 			);

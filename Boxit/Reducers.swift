@@ -196,22 +196,16 @@ func tutorialReducer (_ previous: TutorialState, _ event: Event) -> TutorialStat
         break
     case .advanceTutorial:
         switch step {
-        case .Welcome:
-            state.currentStep = .You
+        case .Initial:
+            state.currentStep = .Step1
             break
-        case .You:
-            state.currentStep = .Friends
+        case .Step1:
+            state.currentStep = .Step2
             break
-        case .Friends:
-            state.currentStep = .Explore
+        case .Step2:
+            state.currentStep = .Step3
             break
-        case .Explore:
-            state.currentStep = .Explore2
-            break
-        case .Explore2:
-            state.currentStep = .Final
-            break
-        case .Final:
+        case .Step3:
             state.currentStep = .Done
             break
         default:

@@ -65,17 +65,14 @@ struct FavouritesState: ReduxState {
 }
 
 enum TutorialSteps {
-    case Welcome
-    case You
-    case Friends
-    case NoFriends
-    case Explore
-    case Explore2
-    case Final
+    case Initial
+    case Step1
+    case Step2
+    case Step3
     case Done
 }
 
 struct TutorialState: ReduxState {
-    var currentStep: TutorialSteps = .Welcome
+    var currentStep: TutorialSteps = .Initial
     var hasTutorial: Bool = false
 }
