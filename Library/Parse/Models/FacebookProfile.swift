@@ -13,6 +13,10 @@ public class FacebookProfile: Mappable {
     public var picture: String?
     public var friends: [Any] = []
     
+    init() {
+        // do nothing
+    }
+    
     required public init?(map: Map) {
         // validation
         if map.JSON["id"] == nil {

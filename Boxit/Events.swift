@@ -91,6 +91,21 @@ extension Event {
             .catchErrorJustReturn(Event.gotUser(forUserId: id, user: nil, error: BoxitError.NoInternet))
     }
     
+    static func get(friendFromNotification id: String) -> Observable<Event> {
+        let request = NetworkRequest(withOperation: NetworkOperation.getProfileFromFacebook(forUser: id))
+        let task = NetworkTask()
+        return task.execute(withInput: request)
+            .flatMap { fbData -> Single<FacebookProfile> in
+                let task = ParseFacebookProfileTask()
+                return task.execute(withInput: fbData)
+            }
+            .asObservable()
+            .map { profile -> Event in
+                return Event.selectUser(user: profile)
+            }
+            .catchErrorJustReturn(Event.selectUser(user: nil))
+    }
+    
     static func get(friendsForUserId id: String?, withOffset offset: String?) -> Observable<Event> {
         
         let request = NetworkRequest(withOperation: NetworkOperation.getFriendsFromFacebook(forUser: id!, offset: offset))

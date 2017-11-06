@@ -209,17 +209,44 @@ extension AppDelegate {
     // handles a notification
     func handleBirthdayNotification(withUserInfo userInfo: [AnyHashable: Any]) {
         
-        //
-        // handle notifications
-        if let friendId = userInfo["friendId"] as? String,
-            let window = window,
-            let root = window.rootViewController as? UINavigationController {
-            
-            let storyboard = UIStoryboard(name: "Main", bundle: nil)
-            let mvc = storyboard.instantiateViewController(withIdentifier: "UserControllerID")
-            root.pushViewController(mvc, animated: true)
-        }
+//        if let friendId = userInfo["friendId"] as? String,
+//            let window = window,
+//            let root = window.rootViewController as? UINavigationController {
+//
+//            root.popToRootViewController(animated: true)
+//
+//            let user = FacebookProfile()
+//            user.id = friendId
+//            store.dispatch(Event.selectUser(user: user))
+//
+//            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+//            let mvc = storyboard.instantiateViewController(withIdentifier: "UserControllerID")
+//            root.pushViewController(mvc, animated: true)
+//        }
         
+//        //
+//        // handle notifications
+//        if let friendId = userInfo["friendId"] as? String {
+//            store.addListener(self)
+//            store.dispatch(Event.get(friendFromNotification: friendId))
+//        }
     }
 }
 // [END timer that sends data]
+
+//extension AppDelegate: HandlesStateUpdates {
+//    func handle(_ state: AppState) {
+//        store.removeListener(self)
+//
+//        let state = state.selectedUserState
+//
+//        if let window = window, let root = window.rootViewController as? UINavigationController {
+//            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+//            if state.user != nil {
+//                let mvc = storyboard.instantiateViewController(withIdentifier: "UserControllerID")
+//                root.pushViewController(mvc, animated: true)
+//            }
+//        }
+//    }
+//}
+

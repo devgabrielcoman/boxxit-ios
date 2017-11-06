@@ -16,14 +16,14 @@ class SliderController: BaseController {
     @IBOutlet weak var minLabel: UILabel!
     @IBOutlet weak var maxLabel: UILabel!
     
-    fileprivate var service = Service<(min: Int, max: Int)>()
+    fileprivate var service = PublishSubject<(min: Int, max: Int)>()
     
     var didSlideCallback: ((Int, Int) -> ())?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        service.listen()
+        service.asObservable()
             .debounce(0.3, scheduler: MainScheduler.instance)
             .distinctUntilChanged { (lhs: (min: Int, max: Int), rhs: (min: Int, max: Int)) -> Bool in
                 return lhs.min == rhs.min && lhs.max == rhs.max
@@ -45,6 +45,6 @@ extension SliderController: TTRangeSliderDelegate {
         let max = Int(selectedMaximum)
         minLabel.text = "£\(min)"
         maxLabel.text = "£\(max)"
-        service.next(value: (min, max))
+        service.onNext((min, max))
     }
 }

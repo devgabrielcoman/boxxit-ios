@@ -764,7 +764,7 @@
                                 </connections>
                             </containerView>
                             <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VQa-gp-7pB">
-                                <rect key="frame" x="167" y="323.5" width="42" height="20"/>
+                                <rect key="frame" x="167.5" y="323.5" width="42" height="20"/>
                                 <fontDescription key="fontDescription" name="Raleway-Bold" family="Raleway" pointSize="17"/>
                                 <color key="textColor" red="0.015686274510000001" green="0.51764705879999995" blue="0.63921568630000003" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -863,7 +863,7 @@
                                 </constraints>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oGM-XD-5Fw">
-                                <rect key="frame" x="255" y="200" width="80" height="26"/>
+                                <rect key="frame" x="255" y="188" width="80" height="26"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="80" id="Yp1-a2-e7r"/>
@@ -896,7 +896,7 @@
                             <constraint firstItem="WTc-pV-3xy" firstAttribute="top" secondItem="fjQ-nK-tAk" secondAttribute="bottom" id="CZ1-zh-nPg"/>
                             <constraint firstItem="ZxC-Ya-rVL" firstAttribute="leading" secondItem="RbX-Ik-OC0" secondAttribute="leading" id="GSI-la-9d5"/>
                             <constraint firstAttribute="trailing" secondItem="8dN-Gu-l5Y" secondAttribute="trailing" id="MSB-EW-Tkc"/>
-                            <constraint firstItem="oGM-XD-5Fw" firstAttribute="top" secondItem="WTc-pV-3xy" secondAttribute="bottom" constant="20" id="OKl-zG-EDx"/>
+                            <constraint firstItem="oGM-XD-5Fw" firstAttribute="top" secondItem="WTc-pV-3xy" secondAttribute="bottom" constant="8" id="OKl-zG-EDx"/>
                             <constraint firstItem="k6n-Yl-mfM" firstAttribute="top" secondItem="1Ys-1e-RZZ" secondAttribute="bottom" constant="20" id="TXe-Mp-uAN"/>
                             <constraint firstAttribute="trailing" secondItem="ZxC-Ya-rVL" secondAttribute="trailing" id="TdW-oq-vVc"/>
                             <constraint firstItem="WTc-pV-3xy" firstAttribute="leading" secondItem="RbX-Ik-OC0" secondAttribute="leading" constant="16" id="Win-EM-eIb"/>
