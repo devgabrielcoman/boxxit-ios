@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		1B182AB91EDB5D04004C2A2C /* Button+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B182AB81EDB5D04004C2A2C /* Button+Rx.swift */; };
 		1B2A7A071EF81E5400552DE6 /* NetworkRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B2A7A061EF81E5400552DE6 /* NetworkRequest.swift */; };
+		1B38AFED1FB339AD00F31504 /* ProfileHeaderController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B38AFEC1FB339AD00F31504 /* ProfileHeaderController.swift */; };
 		1B3E531E1FA787B300D76F49 /* Events.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B3E531D1FA787B300D76F49 /* Events.swift */; };
 		1B3E53201FA787D000D76F49 /* State.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B3E531F1FA787D000D76F49 /* State.swift */; };
 		1B3E53221FA78A9700D76F49 /* Reducers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B3E53211FA78A9700D76F49 /* Reducers.swift */; };
@@ -80,6 +81,7 @@
 /* Begin PBXFileReference section */
 		1B182AB81EDB5D04004C2A2C /* Button+Rx.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Button+Rx.swift"; sourceTree = "<group>"; };
 		1B2A7A061EF81E5400552DE6 /* NetworkRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkRequest.swift; sourceTree = "<group>"; };
+		1B38AFEC1FB339AD00F31504 /* ProfileHeaderController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileHeaderController.swift; sourceTree = "<group>"; };
 		1B3E531D1FA787B300D76F49 /* Events.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Events.swift; sourceTree = "<group>"; };
 		1B3E531F1FA787D000D76F49 /* State.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = State.swift; sourceTree = "<group>"; };
 		1B3E53211FA78A9700D76F49 /* Reducers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reducers.swift; sourceTree = "<group>"; };
@@ -255,7 +257,7 @@
 				1B7229CE1EA6AB7C00B9897F /* Intro */,
 				1B7229CF1EA6AB8000B9897F /* Login */,
 				1BAF660F1EEB4A4A00F0AB4C /* Load */,
-				1BAF663C1EED7ABE00F0AB4C /* ProfileMain */,
+				1BAF663C1EED7ABE00F0AB4C /* Profile */,
 				1B520BE61EAEB02E006FD05E /* Events */,
 				1BEEA2FF1FA200680007E565 /* Invite */,
 				1B520BBE1EABF2DA006FD05E /* Explore */,
@@ -326,12 +328,13 @@
 			name = Load;
 			sourceTree = "<group>";
 		};
-		1BAF663C1EED7ABE00F0AB4C /* ProfileMain */ = {
+		1BAF663C1EED7ABE00F0AB4C /* Profile */ = {
 			isa = PBXGroup;
 			children = (
 				1B520BE11EAE9A69006FD05E /* ProfileMainController.swift */,
+				1B38AFEC1FB339AD00F31504 /* ProfileHeaderController.swift */,
 			);
-			name = ProfileMain;
+			name = Profile;
 			sourceTree = "<group>";
 		};
 		1BC9302F1F277256002E5114 /* Tutorial */ = {
@@ -649,6 +652,7 @@
 			files = (
 				1B520BEA1EAEB052006FD05E /* EventsCell.swift in Sources */,
 				1BE7B4791EC5DB890085427A /* FacebookData.swift in Sources */,
+				1B38AFED1FB339AD00F31504 /* ProfileHeaderController.swift in Sources */,
 				1B182AB91EDB5D04004C2A2C /* Button+Rx.swift in Sources */,
 				1B520BE21EAE9A69006FD05E /* ProfileMainController.swift in Sources */,
 				1B520BC01EABF2F2006FD05E /* ExploreController.swift in Sources */,

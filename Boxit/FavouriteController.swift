@@ -23,7 +23,7 @@ class FavouriteController: BaseController {
         
         //
         // some setup
-        let header: ProfileMainController? = getChild()
+        let header: ProfileHeaderController? = getChild()
         header?.favouriteButton?.isHidden = true
         
         noFavLabel.text = "Favourites No Fav".localized
