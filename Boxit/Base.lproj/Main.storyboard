@@ -147,10 +147,10 @@
             </objects>
             <point key="canvasLocation" x="-1" y="468"/>
         </scene>
-        <!--View Controller-->
+        <!--Home Controller-->
         <scene sceneID="ibp-gd-IjV">
             <objects>
-                <viewController id="FU4-c1-Ce3" sceneMemberID="viewController">
+                <viewController id="FU4-c1-Ce3" customClass="HomeController" customModule="Boxxit" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="3xi-1e-oC1"/>
                         <viewControllerLayoutGuide type="bottom" id="HNF-08-bKo"/>
@@ -764,7 +764,7 @@
                                 </connections>
                             </containerView>
                             <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VQa-gp-7pB">
-                                <rect key="frame" x="167" y="323.5" width="42" height="20"/>
+                                <rect key="frame" x="167.5" y="323.5" width="42" height="20"/>
                                 <fontDescription key="fontDescription" name="Raleway-Bold" family="Raleway" pointSize="17"/>
                                 <color key="textColor" red="0.015686274510000001" green="0.51764705879999995" blue="0.63921568630000003" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>

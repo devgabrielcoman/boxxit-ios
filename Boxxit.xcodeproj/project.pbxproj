@@ -10,6 +10,7 @@
 		1B182AB91EDB5D04004C2A2C /* Button+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B182AB81EDB5D04004C2A2C /* Button+Rx.swift */; };
 		1B2A7A071EF81E5400552DE6 /* NetworkRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B2A7A061EF81E5400552DE6 /* NetworkRequest.swift */; };
 		1B38AFED1FB339AD00F31504 /* ProfileHeaderController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B38AFEC1FB339AD00F31504 /* ProfileHeaderController.swift */; };
+		1B38AFF01FB33D3C00F31504 /* HomeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B38AFEF1FB33D3C00F31504 /* HomeController.swift */; };
 		1B3E531E1FA787B300D76F49 /* Events.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B3E531D1FA787B300D76F49 /* Events.swift */; };
 		1B3E53201FA787D000D76F49 /* State.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B3E531F1FA787D000D76F49 /* State.swift */; };
 		1B3E53221FA78A9700D76F49 /* Reducers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B3E53211FA78A9700D76F49 /* Reducers.swift */; };
@@ -82,6 +83,7 @@
 		1B182AB81EDB5D04004C2A2C /* Button+Rx.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Button+Rx.swift"; sourceTree = "<group>"; };
 		1B2A7A061EF81E5400552DE6 /* NetworkRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkRequest.swift; sourceTree = "<group>"; };
 		1B38AFEC1FB339AD00F31504 /* ProfileHeaderController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileHeaderController.swift; sourceTree = "<group>"; };
+		1B38AFEF1FB33D3C00F31504 /* HomeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeController.swift; sourceTree = "<group>"; };
 		1B3E531D1FA787B300D76F49 /* Events.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Events.swift; sourceTree = "<group>"; };
 		1B3E531F1FA787D000D76F49 /* State.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = State.swift; sourceTree = "<group>"; };
 		1B3E53211FA78A9700D76F49 /* Reducers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reducers.swift; sourceTree = "<group>"; };
@@ -167,6 +169,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1B38AFEE1FB33D2D00F31504 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				1B38AFEF1FB33D3C00F31504 /* HomeController.swift */,
+			);
+			name = Home;
+			sourceTree = "<group>";
+		};
 		1B3E531C1FA787A400D76F49 /* State */ = {
 			isa = PBXGroup;
 			children = (
@@ -257,6 +267,7 @@
 				1B7229CE1EA6AB7C00B9897F /* Intro */,
 				1B7229CF1EA6AB8000B9897F /* Login */,
 				1BAF660F1EEB4A4A00F0AB4C /* Load */,
+				1B38AFEE1FB33D2D00F31504 /* Home */,
 				1BAF663C1EED7ABE00F0AB4C /* Profile */,
 				1B520BE61EAEB02E006FD05E /* Events */,
 				1BEEA2FF1FA200680007E565 /* Invite */,
@@ -664,6 +675,7 @@
 				1BDB050A1EE6D5F70028E9A8 /* ErrorController.swift in Sources */,
 				1BE7B4771EC5DB890085427A /* NetworkTask.swift in Sources */,
 				1B4E5DFF1EBF3B2E002DA018 /* SliderController.swift in Sources */,
+				1B38AFF01FB33D3C00F31504 /* HomeController.swift in Sources */,
 				1B3E53201FA787D000D76F49 /* State.swift in Sources */,
 				1BB3F8141EE606BE00744B26 /* BackendData.swift in Sources */,
 				1B7229BC1EA6A9CF00B9897F /* BaseController.swift in Sources */,

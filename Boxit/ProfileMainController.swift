@@ -19,7 +19,7 @@ class ProfileMainController: BaseController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        let user = store.current.selectedUserState.user ?? store.current.currentUserState.currentUser
+        let user = store.current.currentUserState.currentUser
         if let user = user {
             let viewModel = ViewModels.User(profile: user)
             profilePicture?.kf.setImage(with: viewModel.profile.pictureUrl)
@@ -30,8 +30,8 @@ class ProfileMainController: BaseController {
     
     @IBAction func gotoUserController(_ sender: Any) {
        let current = store.current.currentUserState.currentUser
-       store.dispatch(Event.selectUser(user: current))
-       performSegue(AppSegues.ProfileMainToUser)
+        performSegue(AppSegues.ProfileMainToUser)
+        store.dispatch(Event.selectUser(user: current))
     }
 }
 

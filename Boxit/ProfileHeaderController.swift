@@ -21,8 +21,20 @@ class ProfileHeaderController: BaseController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        let user = store.current.selectedUserState.user
-        if let user = user {
+        store.addListener(self)
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        //
+    }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        //
+    }
+    
+    override func handle(_ state: AppState) {
+        let selUserState = state.selectedUserState
+        if let user = selUserState.user {
             let viewModel = ViewModels.User(profile: user)
             profilePicture?.kf.setImage(with: viewModel.profile.pictureUrl)
             profileName?.text = viewModel.profile.name
