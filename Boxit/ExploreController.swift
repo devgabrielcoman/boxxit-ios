@@ -14,8 +14,8 @@ import Firebase
 
 class ExploreController: BaseController {
 
+    @IBOutlet weak var spinner: UIActivityIndicatorView!
     @IBOutlet weak var tableView: UITableView!
-    @IBOutlet weak var loadingIcon: UIImageView!
     @IBOutlet weak var errorContainerView: UIView!
     @IBOutlet weak var sliderContainer: UIView!
     
@@ -57,7 +57,7 @@ class ExploreController: BaseController {
     override func handle(_ state: AppState) {
         let productsState = state.productState
         tableView.isHidden = productsState.isLoading
-        loadingIcon.isHidden = !productsState.isLoading
+        spinner.isHidden = !productsState.isLoading
         errorContainerView.isHidden = productsState.error == nil
         tableView.reloadData()
     }

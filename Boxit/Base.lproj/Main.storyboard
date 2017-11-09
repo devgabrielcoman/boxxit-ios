@@ -478,19 +478,15 @@
                                     <outlet property="delegate" destination="nHD-2z-Xjb" id="uEo-fE-YXj"/>
                                 </connections>
                             </tableView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="AZm-aN-1Fi" userLabel="Loading">
-                                <rect key="frame" x="157" y="253" width="60" height="60"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="60" id="COQ-If-G6A"/>
-                                    <constraint firstAttribute="height" constant="60" id="hCN-Bh-dQ3"/>
-                                </constraints>
-                            </imageView>
                             <containerView hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Xir-yb-aEd" userLabel="Error Controller">
                                 <rect key="frame" x="20" y="40" width="335" height="457"/>
                                 <connections>
                                     <segue destination="Y5j-Zd-XmF" kind="embed" identifier="ExploreEmbedsError" id="lDA-lJ-h1A"/>
                                 </connections>
                             </containerView>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="Dkt-Mc-XZ8">
+                                <rect key="frame" x="177" y="273" width="20" height="20"/>
+                            </activityIndicatorView>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Dyb-BT-LWb">
                                 <rect key="frame" x="0.0" y="517" width="375" height="50"/>
                                 <constraints>
@@ -503,14 +499,14 @@
                         </subviews>
                         <color key="backgroundColor" red="0.96470588239999999" green="0.96862745100000003" blue="0.92156862750000001" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="AZm-aN-1Fi" firstAttribute="centerX" secondItem="qCZ-9M-ASV" secondAttribute="centerX" id="7MB-y4-GVp"/>
                             <constraint firstAttribute="trailing" secondItem="Xir-yb-aEd" secondAttribute="trailing" constant="20" id="8Gt-HK-ujp"/>
                             <constraint firstItem="Dyb-BT-LWb" firstAttribute="top" secondItem="4HO-Zf-hbr" secondAttribute="bottom" id="A5n-Xs-f3S"/>
+                            <constraint firstItem="Dkt-Mc-XZ8" firstAttribute="centerY" secondItem="qCZ-9M-ASV" secondAttribute="centerY" id="HoC-aC-Sto"/>
                             <constraint firstItem="4HO-Zf-hbr" firstAttribute="leading" secondItem="qCZ-9M-ASV" secondAttribute="leading" id="QNh-Cj-Zcq"/>
                             <constraint firstItem="Xir-yb-aEd" firstAttribute="top" secondItem="6xx-8M-gzi" secondAttribute="bottom" constant="20" id="Taz-Iz-xA9"/>
                             <constraint firstAttribute="trailing" secondItem="4HO-Zf-hbr" secondAttribute="trailing" id="TwH-QZ-8dY"/>
                             <constraint firstItem="Xir-yb-aEd" firstAttribute="leading" secondItem="qCZ-9M-ASV" secondAttribute="leading" constant="20" id="VvI-KI-QP8"/>
-                            <constraint firstItem="AZm-aN-1Fi" firstAttribute="centerY" secondItem="qCZ-9M-ASV" secondAttribute="centerY" id="WxX-Yl-SeU"/>
+                            <constraint firstItem="Dkt-Mc-XZ8" firstAttribute="centerX" secondItem="qCZ-9M-ASV" secondAttribute="centerX" id="bVv-0b-7AT"/>
                             <constraint firstItem="09x-oV-3QY" firstAttribute="top" secondItem="Dyb-BT-LWb" secondAttribute="bottom" id="c1Z-5y-Jqs"/>
                             <constraint firstItem="Dyb-BT-LWb" firstAttribute="top" secondItem="Xir-yb-aEd" secondAttribute="bottom" constant="20" id="dUQ-az-dBS"/>
                             <constraint firstItem="4HO-Zf-hbr" firstAttribute="top" secondItem="6xx-8M-gzi" secondAttribute="bottom" id="eRm-Gu-UCo"/>
@@ -522,8 +518,8 @@
                     <size key="freeformSize" width="375" height="567"/>
                     <connections>
                         <outlet property="errorContainerView" destination="Xir-yb-aEd" id="Ncw-Bi-Cp3"/>
-                        <outlet property="loadingIcon" destination="AZm-aN-1Fi" id="atO-0M-XX3"/>
                         <outlet property="sliderContainer" destination="Dyb-BT-LWb" id="Vv7-Pe-E90"/>
+                        <outlet property="spinner" destination="Dkt-Mc-XZ8" id="srE-lW-zoG"/>
                         <outlet property="tableView" destination="4HO-Zf-hbr" id="Nym-Sv-8aG"/>
                     </connections>
                 </viewController>
@@ -764,7 +760,7 @@
                                 </connections>
                             </containerView>
                             <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VQa-gp-7pB">
-                                <rect key="frame" x="164.5" y="323.5" width="46.5" height="20"/>
+                                <rect key="frame" x="167.5" y="323.5" width="42" height="20"/>
                                 <fontDescription key="fontDescription" name="Raleway-Bold" family="Raleway" pointSize="17"/>
                                 <color key="textColor" red="0.015686274510000001" green="0.51764705879999995" blue="0.63921568630000003" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -1525,9 +1521,9 @@ Welcome to Boxxit!</string>
         <image name="title" width="214" height="27"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="lDA-lJ-h1A"/>
+        <segue reference="jem-Bd-3yA"/>
         <segue reference="gHf-x3-zak"/>
-        <segue reference="Jfg-N3-0k3"/>
+        <segue reference="X0K-L3-TN7"/>
         <segue reference="vxm-ae-saz"/>
     </inferredMetricsTieBreakers>
 </document>
