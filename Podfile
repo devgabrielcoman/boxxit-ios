@@ -15,14 +15,12 @@ target 'Boxxit' do
   pod 'Crashlytics'
   pod 'TTRangeSlider'
   pod 'FBSDKCoreKit'
-  pod 'FBSDKShareKit'
   pod 'FBSDKLoginKit'
   pod 'Firebase/Core'
   pod 'Firebase/Auth'
   pod 'Firebase/Database'
   pod 'Firebase/Messaging'
   pod 'Alamofire', '~> 4.4'
-  pod 'SWXMLHash'
   pod 'Alertift', '~> 1.3'
 end
 

@@ -11,7 +11,6 @@ import RxCocoa
 import RxSwift
 import RxTableAndCollectionView
 import Kingfisher
-import FBSDKShareKit
 
 class EventsController: BaseController {
     

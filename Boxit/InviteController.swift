@@ -7,9 +7,8 @@
 //
 
 import UIKit
-import FBSDKShareKit
 
-class InviteController: BaseController, FBSDKAppInviteDialogDelegate {
+class InviteController: BaseController {
 
     @IBOutlet weak var inviteText: UILabel?
     @IBOutlet weak var bigInviteText1: UILabel?
@@ -26,18 +25,8 @@ class InviteController: BaseController, FBSDKAppInviteDialogDelegate {
     
     @IBAction func inviteAction() {
         
-        let request = InviteRequest()
-        let content = FBSDKAppInviteContent()
-        content.appLinkURL = request.inviteUrl
-        content.appInvitePreviewImageURL = request.previewUrl
-        FBSDKAppInviteDialog.show(from: self, with: content, delegate: self)
-    }
-    
-    public func appInviteDialog(_ appInviteDialog: FBSDKAppInviteDialog!, didCompleteWithResults results: [AnyHashable : Any]!) {
-        print("Results are \(results)")
-    }
-    
-    public func appInviteDialog(_ appInviteDialog: FBSDKAppInviteDialog!, didFailWithError error: Error!) {
-        print("Complete with error \(error)")
+        let shareContent = "Invite Message".localized
+        let activityViewController = UIActivityViewController(activityItems: [shareContent as NSString], applicationActivities: nil)
+        present(activityViewController, animated: true, completion: {})
     }
 }

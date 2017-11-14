@@ -64,8 +64,6 @@
 		1BE7B4651EC5DB890085427A /* FacebookAuthTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BE7B4441EC5DB890085427A /* FacebookAuthTask.swift */; };
 		1BE7B4681EC5DB890085427A /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BE7B4481EC5DB890085427A /* Request.swift */; };
 		1BE7B4691EC5DB890085427A /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BE7B4491EC5DB890085427A /* Task.swift */; };
-		1BE7B4721EC5DB890085427A /* InviteRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BE7B4541EC5DB890085427A /* InviteRequest.swift */; };
-		1BE7B4731EC5DB890085427A /* InviteTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BE7B4551EC5DB890085427A /* InviteTask.swift */; };
 		1BE7B4771EC5DB890085427A /* NetworkTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BE7B45A1EC5DB890085427A /* NetworkTask.swift */; };
 		1BE7B4781EC5DB890085427A /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BE7B45D1EC5DB890085427A /* Product.swift */; };
 		1BE7B4791EC5DB890085427A /* FacebookData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BE7B45E1EC5DB890085427A /* FacebookData.swift */; };
@@ -139,8 +137,6 @@
 		1BE7B4441EC5DB890085427A /* FacebookAuthTask.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FacebookAuthTask.swift; sourceTree = "<group>"; };
 		1BE7B4481EC5DB890085427A /* Request.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Request.swift; sourceTree = "<group>"; };
 		1BE7B4491EC5DB890085427A /* Task.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Task.swift; sourceTree = "<group>"; };
-		1BE7B4541EC5DB890085427A /* InviteRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InviteRequest.swift; sourceTree = "<group>"; };
-		1BE7B4551EC5DB890085427A /* InviteTask.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InviteTask.swift; sourceTree = "<group>"; };
 		1BE7B45A1EC5DB890085427A /* NetworkTask.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkTask.swift; sourceTree = "<group>"; };
 		1BE7B45D1EC5DB890085427A /* Product.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
 		1BE7B45E1EC5DB890085427A /* FacebookData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FacebookData.swift; sourceTree = "<group>"; };
@@ -371,7 +367,6 @@
 				1B904CAB1F17A34B008254FB /* Style */,
 				1BE7B4471EC5DB890085427A /* Base */,
 				1BE7B4421EC5DB890085427A /* Auth */,
-				1BE7B4531EC5DB890085427A /* Invite */,
 				1BE7B4561EC5DB890085427A /* Network */,
 				1BE7B45B1EC5DB890085427A /* Parse */,
 			);
@@ -395,15 +390,6 @@
 				1BE7B4491EC5DB890085427A /* Task.swift */,
 			);
 			path = Base;
-			sourceTree = "<group>";
-		};
-		1BE7B4531EC5DB890085427A /* Invite */ = {
-			isa = PBXGroup;
-			children = (
-				1BE7B4541EC5DB890085427A /* InviteRequest.swift */,
-				1BE7B4551EC5DB890085427A /* InviteTask.swift */,
-			);
-			path = Invite;
 			sourceTree = "<group>";
 		};
 		1BE7B4561EC5DB890085427A /* Network */ = {
@@ -670,7 +656,6 @@
 				1BE7B4641EC5DB890085427A /* FacebookAuthRequest.swift in Sources */,
 				1BAF66111EEB4A5900F0AB4C /* LoadController.swift in Sources */,
 				1BEEA3011FA2007E0007E565 /* InviteController.swift in Sources */,
-				1BE7B4721EC5DB890085427A /* InviteRequest.swift in Sources */,
 				1BB3F8161EE6122400744B26 /* BoxitErrors.swift in Sources */,
 				1BDB050A1EE6D5F70028E9A8 /* ErrorController.swift in Sources */,
 				1BE7B4771EC5DB890085427A /* NetworkTask.swift in Sources */,
@@ -698,7 +683,6 @@
 				1B520BE81EAEB03F006FD05E /* EventsController.swift in Sources */,
 				1B4E56E61EE2D9C900F67FC3 /* FavouriteRow.swift in Sources */,
 				1BFA4CC81ED589FB00E00297 /* String+Extensions.swift in Sources */,
-				1BE7B4731EC5DB890085427A /* InviteTask.swift in Sources */,
 				1B5A367A1FACAA1C00BE818B /* TransparentView.swift in Sources */,
 				1BFA4CC61ED589FB00E00297 /* Date+Extensions.swift in Sources */,
 				1BE7B47D1EC5DB890085427A /* ParseFacebookDataTask.swift in Sources */,
@@ -870,8 +854,6 @@
 					"-framework",
 					"\"FBSDKCoreKit\"",
 					"-framework",
-					"\"FBSDKShareKit\"",
-					"-framework",
 					"\"Fabric\"",
 					"-framework",
 					"\"Kingfisher\"",
@@ -881,8 +863,6 @@
 					"\"RxCocoa\"",
 					"-framework",
 					"\"RxSwift\"",
-					"-framework",
-					"\"SWXMLHash\"",
 					"-framework",
 					"\"Security\"",
 					"-framework",
@@ -938,8 +918,6 @@
 					"-framework",
 					"\"FBSDKCoreKit\"",
 					"-framework",
-					"\"FBSDKShareKit\"",
-					"-framework",
 					"\"Fabric\"",
 					"-framework",
 					"\"Kingfisher\"",
@@ -949,8 +927,6 @@
 					"\"RxCocoa\"",
 					"-framework",
 					"\"RxSwift\"",
-					"-framework",
-					"\"SWXMLHash\"",
 					"-framework",
 					"\"Security\"",
 					"-framework",
