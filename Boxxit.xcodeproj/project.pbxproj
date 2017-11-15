@@ -877,7 +877,7 @@
 				PROVISIONING_PROFILE = "6baa8289-6baa-4640-bbb4-8c0a477a2731";
 				PROVISIONING_PROFILE_SPECIFIER = BoxxitDevelopment;
 				SWIFT_VERSION = 3.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -941,7 +941,7 @@
 				PROVISIONING_PROFILE = "9e15804c-e5f9-4b7d-8d86-57b76c3e7c02";
 				PROVISIONING_PROFILE_SPECIFIER = BoxxitAdHocProduction;
 				SWIFT_VERSION = 3.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
