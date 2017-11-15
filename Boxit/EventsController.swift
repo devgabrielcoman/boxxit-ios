@@ -54,6 +54,7 @@ class EventsController: BaseController {
         eventsCollection.reloadData()
         spinner.isHidden = !friendsState.isLoading
         inviteControllerView.isHidden = friendsState.isLoading || friendsState.friends.count > 0 || friendsState.error != nil
+        yourFriendsLabel.isHidden = !inviteControllerView.isHidden
         errorControllerView.isHidden = friendsState.error == nil
     }
     
@@ -77,7 +78,9 @@ extension EventsController: UICollectionViewDelegate, UICollectionViewDataSource
     
     public func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let width = UIScreen.main.bounds.size.width / 2.15
-        let height = (UIScreen.main.bounds.size.height - 80) / 2 - 41
+        let height = isHackyiPhoneX() ?
+            (UIScreen.main.bounds.size.height - 80) / 2 - 81 :
+            (UIScreen.main.bounds.size.height - 80) / 2 - 41
         return CGSize(width: width, height: height)
     }
     

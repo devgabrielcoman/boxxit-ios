@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		1B182AB91EDB5D04004C2A2C /* Button+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B182AB81EDB5D04004C2A2C /* Button+Rx.swift */; };
+		1B27F0841FBCBDF400E39D31 /* AuxFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B27F0831FBCBDF400E39D31 /* AuxFunctions.swift */; };
 		1B2A7A071EF81E5400552DE6 /* NetworkRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B2A7A061EF81E5400552DE6 /* NetworkRequest.swift */; };
 		1B38AFED1FB339AD00F31504 /* ProfileHeaderController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B38AFEC1FB339AD00F31504 /* ProfileHeaderController.swift */; };
 		1B38AFF01FB33D3C00F31504 /* HomeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B38AFEF1FB33D3C00F31504 /* HomeController.swift */; };
@@ -79,6 +80,7 @@
 
 /* Begin PBXFileReference section */
 		1B182AB81EDB5D04004C2A2C /* Button+Rx.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Button+Rx.swift"; sourceTree = "<group>"; };
+		1B27F0831FBCBDF400E39D31 /* AuxFunctions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuxFunctions.swift; sourceTree = "<group>"; };
 		1B2A7A061EF81E5400552DE6 /* NetworkRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkRequest.swift; sourceTree = "<group>"; };
 		1B38AFEC1FB339AD00F31504 /* ProfileHeaderController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileHeaderController.swift; sourceTree = "<group>"; };
 		1B38AFEF1FB33D3C00F31504 /* HomeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeController.swift; sourceTree = "<group>"; };
@@ -437,6 +439,7 @@
 				1BFA4CBE1ED589FB00E00297 /* Date+Extensions.swift */,
 				1BFA4CC01ED589FB00E00297 /* String+Extensions.swift */,
 				1BFA4CC11ED589FB00E00297 /* UIColor+Extensions.swift */,
+				1B27F0831FBCBDF400E39D31 /* AuxFunctions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -647,6 +650,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1B27F0841FBCBDF400E39D31 /* AuxFunctions.swift in Sources */,
 				1B520BEA1EAEB052006FD05E /* EventsCell.swift in Sources */,
 				1BE7B4791EC5DB890085427A /* FacebookData.swift in Sources */,
 				1B38AFED1FB339AD00F31504 /* ProfileHeaderController.swift in Sources */,

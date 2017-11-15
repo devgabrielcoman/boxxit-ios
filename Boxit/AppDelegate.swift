@@ -24,7 +24,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         store = Store<AppState>(state: AppState(), reducer: appReducer)
         
-        let view = UIView(frame: CGRect(x: 0.0, y: 0.0, width: UIScreen.main.bounds.size.width, height: 20.0))
+        let height: CGFloat = isHackyiPhoneX() ? 45.0 : 20.0
+        let view = UIView(frame: CGRect(x: 0.0, y: 0.0, width: UIScreen.main.bounds.size.width, height: height))
         view.backgroundColor = UIColor(red: 0, green: 87/255, blue: 116/255, alpha: 1)
         self.window?.rootViewController?.view.addSubview(view)
         
@@ -198,7 +199,7 @@ extension AppDelegate {
                 // could not send 
                 print("Count not send token \(token)")
             })
-            .addDisposableTo(bag)
+            .disposed(by: bag)
             
         } else {
             print("Trying to send new token to user ...")

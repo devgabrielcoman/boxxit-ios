@@ -198,6 +198,10 @@
                     </view>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="375" height="667"/>
+                    <connections>
+                        <outlet property="footerContainer" destination="yuO-9G-ZRD" id="8Li-Bm-PZp"/>
+                        <outlet property="footerHeight" destination="sxk-K7-i8h" id="JUd-A0-Y6X"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="R5Z-5E-BQY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
