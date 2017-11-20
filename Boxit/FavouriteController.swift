@@ -101,3 +101,10 @@ extension FavouriteController: UITableViewDelegate, UITableViewDataSource {
         return row
     }
 }
+
+extension FavouriteController {
+    
+    @IBAction func didSwipe(_ sender: Any) {
+        self.navigationController?.popViewController(animated: true)
+    }
+}

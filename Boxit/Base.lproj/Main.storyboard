@@ -288,10 +288,10 @@
             </objects>
             <point key="canvasLocation" x="636" y="-506"/>
         </scene>
-        <!--View Controller-->
+        <!--User Controller-->
         <scene sceneID="6mI-ws-cVg">
             <objects>
-                <viewController storyboardIdentifier="UserControllerID" useStoryboardIdentifierAsRestorationIdentifier="YES" id="AWS-OB-3z2" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="UserControllerID" useStoryboardIdentifierAsRestorationIdentifier="YES" id="AWS-OB-3z2" customClass="UserController" customModule="Boxxit" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="5zT-qk-nlC"/>
                         <viewControllerLayoutGuide type="bottom" id="zKH-B0-4Y1"/>
@@ -317,6 +317,7 @@
                             </containerView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="HuI-Bq-mKs" firstAttribute="top" secondItem="JxM-ax-gVj" secondAttribute="bottom" id="HmM-Xg-E37"/>
                             <constraint firstItem="HuI-Bq-mKs" firstAttribute="leading" secondItem="Nd7-BX-Vsr" secondAttribute="leading" id="N4u-7k-13C"/>
@@ -326,11 +327,19 @@
                             <constraint firstAttribute="trailing" secondItem="JxM-ax-gVj" secondAttribute="trailing" id="p54-aw-Yok"/>
                             <constraint firstItem="JxM-ax-gVj" firstAttribute="top" secondItem="5zT-qk-nlC" secondAttribute="bottom" id="pbj-y3-lLi"/>
                         </constraints>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="xVd-hl-mqL" appends="YES" id="faw-u6-gWh"/>
+                        </connections>
                     </view>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="375" height="667"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uHo-0l-iIw" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <swipeGestureRecognizer direction="right" id="xVd-hl-mqL">
+                    <connections>
+                        <action selector="didSwipe:" destination="AWS-OB-3z2" id="wu3-yY-VVm"/>
+                    </connections>
+                </swipeGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="3169" y="468"/>
         </scene>
@@ -373,6 +382,13 @@
                                                             <color key="textColor" red="0.47843137254901957" green="0.49019607843137253" blue="0.49803921568627452" alpha="1" colorSpace="calibratedRGB"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
+                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QGu-Rm-gRc" customClass="RxButton" customModule="Boxxit" customModuleProvider="target">
+                                                            <rect key="frame" x="31.5" y="16" width="280" height="210"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="width" constant="280" id="7sy-v8-mwx"/>
+                                                                <constraint firstAttribute="height" constant="210" id="MBL-m6-oql"/>
+                                                            </constraints>
+                                                        </button>
                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xqp-Db-o6J">
                                                             <rect key="frame" x="91" y="310" width="160" height="28"/>
                                                             <subviews>
@@ -442,6 +458,7 @@
                                                     <constraints>
                                                         <constraint firstAttribute="trailing" secondItem="OSY-7c-OQe" secondAttribute="trailing" constant="8" id="0j2-dD-i4p"/>
                                                         <constraint firstItem="i5I-4r-VHv" firstAttribute="leading" secondItem="xqp-Db-o6J" secondAttribute="trailing" constant="13" id="15g-0V-nhM"/>
+                                                        <constraint firstItem="QGu-Rm-gRc" firstAttribute="top" secondItem="e4l-pK-qlw" secondAttribute="top" constant="16" id="3Tq-3d-z7x"/>
                                                         <constraint firstItem="xqp-Db-o6J" firstAttribute="top" secondItem="7YG-g5-dgK" secondAttribute="bottom" constant="16" id="6RL-US-RHX"/>
                                                         <constraint firstItem="7YG-g5-dgK" firstAttribute="leading" secondItem="e4l-pK-qlw" secondAttribute="leading" constant="8" id="CNv-oz-9V6"/>
                                                         <constraint firstItem="OSY-7c-OQe" firstAttribute="leading" secondItem="e4l-pK-qlw" secondAttribute="leading" constant="8" id="FQw-wM-xaa"/>
@@ -452,6 +469,7 @@
                                                         <constraint firstAttribute="trailing" secondItem="7YG-g5-dgK" secondAttribute="trailing" constant="8" id="Z9E-rd-f1z"/>
                                                         <constraint firstItem="xqp-Db-o6J" firstAttribute="centerX" secondItem="e4l-pK-qlw" secondAttribute="centerX" id="c7d-X0-nFM"/>
                                                         <constraint firstItem="7YG-g5-dgK" firstAttribute="top" secondItem="OSY-7c-OQe" secondAttribute="bottom" constant="6" id="cHH-gt-PCX"/>
+                                                        <constraint firstItem="QGu-Rm-gRc" firstAttribute="centerX" secondItem="e4l-pK-qlw" secondAttribute="centerX" id="rBf-dq-YDS"/>
                                                         <constraint firstAttribute="bottom" secondItem="xqp-Db-o6J" secondAttribute="bottom" constant="16" id="yFF-GF-h7I"/>
                                                     </constraints>
                                                 </view>
@@ -466,7 +484,8 @@
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="buttonHolder" destination="xqp-Db-o6J" id="mYs-co-pn3"/>
-                                            <outlet property="getOnAmazon" destination="445-Tk-fdD" id="xpL-gx-fum"/>
+                                            <outlet property="getOnAmazon" destination="QGu-Rm-gRc" id="97d-ZV-E8z"/>
+                                            <outlet property="getOnAmazon2" destination="445-Tk-fdD" id="z9t-n6-wik"/>
                                             <outlet property="getOnAmazonLabel" destination="vhU-4e-pRQ" id="bKg-8F-22D"/>
                                             <outlet property="panelView" destination="e4l-pK-qlw" id="q9z-8c-fMZ"/>
                                             <outlet property="productName" destination="OSY-7c-OQe" id="gek-R1-g5O"/>
@@ -529,7 +548,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5fP-8j-f6k" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3993" y="444"/>
+            <point key="canvasLocation" x="3992.8000000000002" y="443.92803598200902"/>
         </scene>
         <!--Profile Header Controller-->
         <scene sceneID="Z4n-Cj-UGu">
@@ -764,7 +783,7 @@
                                 </connections>
                             </containerView>
                             <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VQa-gp-7pB">
-                                <rect key="frame" x="167" y="323.5" width="42" height="20"/>
+                                <rect key="frame" x="167.5" y="323.5" width="42" height="20"/>
                                 <fontDescription key="fontDescription" name="Raleway-Bold" family="Raleway" pointSize="17"/>
                                 <color key="textColor" red="0.015686274510000001" green="0.51764705879999995" blue="0.63921568630000003" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -778,6 +797,7 @@
                             </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" red="0.96470588239999999" green="0.96862745100000003" blue="0.92156862750000001" alpha="1" colorSpace="calibratedRGB"/>
+                        <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="BJc-ls-9Sp" firstAttribute="centerY" secondItem="MG5-Et-Tlg" secondAttribute="centerY" id="0rU-fC-LRz"/>
                             <constraint firstItem="KeS-Nz-r4L" firstAttribute="top" secondItem="3py-3m-uzd" secondAttribute="bottom" id="3fW-0C-0s7"/>
@@ -795,6 +815,9 @@
                             <constraint firstItem="VQa-gp-7pB" firstAttribute="centerY" secondItem="MG5-Et-Tlg" secondAttribute="centerY" id="nBk-AY-baU"/>
                             <constraint firstItem="6df-dG-EJ4" firstAttribute="top" secondItem="hhl-hJ-oaW" secondAttribute="bottom" constant="20" id="yZc-Xl-6T1"/>
                         </constraints>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="Z9D-Sp-tWc" appends="YES" id="ORe-nM-Hqk"/>
+                        </connections>
                     </view>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="375" height="667"/>
@@ -806,6 +829,11 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9iF-j7-kfe" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <swipeGestureRecognizer direction="right" id="Z9D-Sp-tWc">
+                    <connections>
+                        <action selector="didSwipe:" destination="oFV-3q-6Th" id="ntE-OB-gxF"/>
+                    </connections>
+                </swipeGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="3992.8000000000002" y="1196.8515742128936"/>
         </scene>
@@ -1525,8 +1553,8 @@ Welcome to Boxxit!</string>
         <image name="title" width="214" height="27"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="jem-Bd-3yA"/>
-        <segue reference="gHf-x3-zak"/>
+        <segue reference="p4C-KC-lY3"/>
+        <segue reference="GE8-e8-uOY"/>
         <segue reference="X0K-L3-TN7"/>
         <segue reference="vxm-ae-saz"/>
     </inferredMetricsTieBreakers>

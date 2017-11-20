@@ -13,6 +13,7 @@ class ProductRow: UITableViewCell {
     @IBOutlet weak var getOnAmazonLabel: UILabel!
     @IBOutlet weak var saveToFavourites: RxButton!
     @IBOutlet weak var buttonHolder: UIView!
+    @IBOutlet weak var getOnAmazon2: RxButton!
     
     var viewModel: Product! {
         didSet {
@@ -52,6 +53,10 @@ class ProductRow: UITableViewCell {
             }
             
             getOnAmazon.onAction {
+                store.dispatch(Event.openAmazonUrlAsSideEffect(forProduct: self.viewModel))
+            }
+            
+            getOnAmazon2.onAction {
                 store.dispatch(Event.openAmazonUrlAsSideEffect(forProduct: self.viewModel))
             }
         }
